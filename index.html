@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMS Protocol Quick Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Simple scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .protocol-content h3 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* semibold */
+            margin-top: 1.5rem; /* mt-6 */
+            margin-bottom: 0.5rem; /* mb-2 */
+            padding-bottom: 0.25rem; /* pb-1 */
+            border-bottom: 1px solid #e5e7eb; /* border-b border-gray-200 */
+        }
+        .protocol-content h4 {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* semibold */
+            margin-top: 1rem; /* mt-4 */
+            margin-bottom: 0.5rem; /* mb-2 */
+        }
+        .protocol-content ul {
+            list-style-type: disc;
+            padding-left: 1.5rem; /* pl-6 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .protocol-content li {
+            margin-bottom: 0.25rem; /* mb-1 */
+        }
+        .protocol-content .medication {
+            color: #3b82f6; /* text-blue-600 */
+            font-weight: 600;
+        }
+        .protocol-content .procedure {
+            font-weight: 700; /* bold */
+        }
+        .protocol-content .protocol-link {
+            color: #8b5cf6; /* text-purple-600 */
+            font-weight: 600;
+        }
+        .protocol-content .important-note {
+            color: #ef4444; /* text-red-600 */
+            font-weight: 700; /* bold */
+        }
+        .skill-level-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+        .skill-level-indicator {
+            font-weight: 700;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div id="app-container" class="max-w-4xl mx-auto bg-white min-h-screen shadow-lg">
+        
+        <!-- Header -->
+        <header class="bg-gray-800 text-white p-4 sticky top-0 z-10 shadow-md flex items-center justify-between">
+            <button id="back-button" class="hidden text-white">&larr; Back</button>
+            <h1 id="app-title" class="text-xl font-bold text-center flex-grow">EMS Protocols</h1>
+            <div class="w-16"></div> <!-- Spacer -->
+        </header>
+        
+        <!-- Search Bar (on main screen) -->
+        <div id="search-container" class="p-4 bg-gray-50 border-b border-gray-200">
+            <input type="text" id="search-input" placeholder="Search protocols and meds..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
+        </div>
+
+        <!-- Main Content Area -->
+        <main id="content-area" class="p-4">
+            <!-- Content will be dynamically injected here -->
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bg-gray-800 text-white p-2 sticky bottom-0 z-10 shadow-inner flex justify-around">
+            <button id="nav-protocols" class="flex-1 text-center py-2 rounded-lg font-semibold bg-gray-700">Protocols</button>
+            <button id="nav-meds" class="flex-1 text-center py-2 rounded-lg font-semibold">Medications</button>
+        </nav>
+
+    </div>
+
+    <script>
+        // --- DATA STORE ---
+        // This section holds all the protocol and medication data extracted from the PDF.
+        const db = {
+            categories: [
+                { id: 'general', name: 'General Protocols', color: 'green' },
+                { id: 'adult_medical', name: 'Adult Medical', color: 'blue' },
+                { id: 'adult_trauma', name: 'Adult Trauma', color: 'red' },
+                { id: 'obgyn', name: 'OB/GYN & Neonatal', color: 'pink' },
+                { id: 'peds_medical', name: 'Pediatric Medical', color: 'yellow' },
+                { id: 'peds_trauma', name: 'Pediatric Trauma', color: 'purple' },
+                { id: 'specialty', name: 'Specialty Protocols', color: 'gray' }
+            ],
+            protocols: [
+                {
+                    id: 'A-1',
+                    title: 'Trauma Center / Air Ambulance Criteria',
+                    category: 'general',
+                    content: `
+                        <h3>Trauma Center Criteria (CDC)</h3>
+                        <p class="mb-2">Based on the CDC Guidelines for Field Triage of Injured Patients.</p>
+                        <h4>Step One: Vitals & LOC</h4>
+                        <ul>
+                            <li>Glasgow Coma Scale &leq; 13</li>
+                            <li>Systolic Blood Pressure < 90 mmHg</li>
+                            <li>Respiratory Rate < 10 or > 29 breaths/min (&lt; 20 in infant) or need for ventilatory support</li>
+                        </ul>
+                        <p class="font-bold">If Yes to any &rarr; Transport to highest level trauma center.</p>
+
+                        <h4>Step Two: Anatomy of Injury</h4>
+                        <ul>
+                            <li>All penetrating injuries to head, neck, torso, and extremities proximal to elbow or knees</li>
+                            <li>Chest wall instability or deformity (e.g., flail chest)</li>
+                            <li>Two or more proximal long-bone fractures</li>
+                            <li>Crushed, degloved, mangled, or pulseless extremity</li>
+                            <li>Amputation proximal to wrist or ankle</li>
+                            <li>Pelvic fractures</li>
+                            <li>Open or depressed skull fracture</li>
+                            <li>Paralysis</li>
+                        </ul>
+                        <p class="font-bold">If Yes to any &rarr; Transport to highest level trauma center.</p>
+
+                        <h4>Step Three: Mechanism of Injury</h4>
+                        <ul>
+                            <li><strong>Falls:</strong> Adults > 20 feet; Children > 10 feet or 2-3x child's height</li>
+                            <li><strong>High-Risk Auto Crash:</strong> Intrusion > 12 in. occupant site, > 18 in. any site; Ejection (partial or complete); Death in same passenger compartment</li>
+                            <li>Auto vs. pedestrian/bicyclist thrown, run over, or with significant (>20 mph) impact</li>
+                            <li>Motorcycle crash > 20 mph</li>
+                        </ul>
+                        <p class="font-bold">If Yes to any &rarr; Transport to a trauma center.</p>
+
+                        <h4>Step Four: Special Considerations</h4>
+                        <ul>
+                            <li>Older adults (> 55 years)</li>
+                            <li>Children should be triaged preferentially to pediatric-capable trauma centers</li>
+                            <li>Anticoagulants and bleeding disorders</li>
+                            <li>Burns (with trauma mechanism, triage to trauma center)</li>
+                            <li>Pregnancy > 20 weeks</li>
+                            <li>EMS provider judgment</li>
+                        </ul>
+                        <p class="font-bold">If Yes &rarr; Transport to a trauma center or hospital capable of managing serious injuries. Consider OLMC consultation.</p>
+                        <p class="mt-4 italic">When in doubt, transport to a trauma center.</p>
+
+                        <h3>Helicopter EMS (HEMS) Guidelines</h3>
+                        <ol class="list-decimal pl-6 space-y-2">
+                            <li>Does patient meet CDC Field Triage criteria? If No, Ground EMS. If Yes, proceed.</li>
+                            <li>Does patient meet Step 1 or 2 of CDC criteria? If No, can ground EMS transport to an appropriate hospital? If yes, ground. If no, consider HEMS. If Yes, proceed.</li>
+                            <li>Is there significant time savings with HEMS vs. Ground?
+                                <ul>
+                                    <li>If Yes &rarr; HEMS to appropriate trauma center.</li>
+                                    <li>If No &rarr; Ground EMS to appropriate trauma center.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>Medical Launch Considerations (Non-Trauma)</h3>
+                        <ul>
+                            <li>Acute coronary syndrome needing interventional therapy.</li>
+                            <li>Cardiogenic shock.</li>
+                            <li>Cardiac tamponade with hemodynamic compromise.</li>
+                            <li>Post cardiac/respiratory arrest.</li>
+                            <li>Requirement for IV vasoactive medications or mechanical ventilation.</li>
+                            <li>Risk for airway deterioration (e.g., angioedema).</li>
+                            <li>Severe poisoning/overdose requiring specialized toxicology services.</li>
+                            <li>Urgent need for hyperbaric oxygen therapy.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'A-2',
+                    title: 'Care of Minors',
+                    category: 'general',
+                    content: `
+                        <h3>Consent & Implied Consent</h3>
+                        <ul>
+                            <li><strong>Care of Minors:</strong> Generally, any patient under 18.</li>
+                            <li><strong>Parent/Guardian Consent:</strong> Must be given for evaluation, treatment, and transport of a non-emancipated minor for non-life-threatening conditions. If unable to reach or they refuse, contact OLMC.</li>
+                            <li><strong>Emancipated Minors:</strong> Consent not required. Must show proof. Includes military members < 18, financially self-supporting, or declared by court.</li>
+                            <li><strong>Implied Consent:</strong> Applies when consent isn't given, but a reasonable person would expect it (e.g., life-threatening condition where patient/guardian lacks capacity).</li>
+                        </ul>
+                        <h3>Abuse & Neglect (Mandatory Reporting)</h3>
+                        <ul>
+                            <li>Child abuse is physical/mental injury, sexual abuse, or negligent treatment of a child < 18.</li>
+                            <li><strong>Suspected Abuse/Neglect:</strong> Suspect if injury/illness is inconsistent with history. Document psychological signs (passivity, fear, aggression) and physical signs (unexplained bruises, burns, poor hygiene, malnutrition).</li>
+                            <li>Contact OLMC for immediate reporting. Contact LE for protective custody.</li>
+                        </ul>
+                        <h3>Sexual Assault (Mandatory Reporting)</h3>
+                        <ul>
+                            <li>Document signs like pain/itching/bleeding in genital area.</li>
+                            <li>Contact OLMC for immediate reporting. This is a legal requirement.</li>
+                            <li><strong>Care:</strong> Address only life threats to avoid destroying evidence. Place clothing in paper bags. Collect bodily fluids if possible.</li>
+                            <li>Transport to a facility capable of pediatric sexual assault examinations.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'A-3',
+                    title: 'Care of Adults',
+                    category: 'general',
+                    content: `
+                        <h3>Consent & Implied Consent</h3>
+                        <ul>
+                            <li><strong>Consent:</strong> Must be given for evaluation, treatment, and transport for non-life-threatening conditions.</li>
+                            <li><strong>Capacity:</strong> Patient must be alert and oriented, GCS 15, understand their condition, and verbalize risks/benefits.</li>
+                            <li><strong>Implied Consent:</strong> Applies in life-threatening conditions where patient lacks capacity.</li>
+                            <li><strong>Legal Incompetence:</strong> If a court appointed a guardian, they must consent unless implied consent applies.</li>
+                        </ul>
+                        <h3>Elder/Incompetent Patient Abuse & Neglect</h3>
+                        <ul>
+                            <li>Suspect if injury/illness is inconsistent with history. Document psychological and physical signs.</li>
+                            <li>Contact OLMC for immediate reporting (Family Advocacy, Adult Protective Services, LE).</li>
+                        </ul>
+                        <h3>Domestic Violence</h3>
+                        <ul>
+                            <li>Be aware of state/federal reporting laws (often required for firearm injuries, rape, stabbings).</li>
+                            <li>Ensure scene safety. Contact LE as needed.</li>
+                        </ul>
+                        <h3>Sexual Assault</h3>
+                        <ul>
+                            <li>Address only life threats to avoid destroying evidence.</li>
+                            <li>Place clothing in paper bags. Collect bodily fluids if possible.</li>
+                            <li>LE should secure the scene. Transport to a facility capable of sexual assault examinations.</li>
+                            <li>Contacting law enforcement is at the discretion of the adult patient.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'A-4',
+                    title: 'Patient Refusal / AMA & Active Duty Considerations',
+                    category: 'general',
+                    content: `
+                        <h3>Refusal Guidelines</h3>
+                        <ul>
+                            <li><strong>Adults & Emancipated Minors:</strong> May accept refusal if patient is A&O x4, GCS 15, and demonstrates capacity (understands risks, benefits, consequences).</li>
+                            <li><strong>Children (<18, not emancipated):</strong> Must obtain parental/guardian consent for refusal.</li>
+                            <li>If a patient with a life-threatening condition refuses, contact OLMC immediately.</li>
+                            <li>For any refusal against medical advice (AMA), contact OLMC to speak with the patient. Document the release as "Against Medical Advice", obtain patient and witness signatures.</li>
+                        </ul>
+                        <h3>Special Considerations</h3>
+                        <ul>
+                            <li><strong>SI/HI:</strong> For patients endorsing suicidal/homicidal ideation who refuse transport, contact OLMC and LE to discuss detention for evaluation.</li>
+                            <li><strong>Military Service Members:</strong> Contact OLMC. Consider contacting the patient's Commander or First Sergeant.</li>
+                            <li><strong>Diabetics:</strong> Patient must meet ALL criteria to refuse: Hx of insulin-dependent DM, no oral hypoglycemics/long-acting insulin in 24 hrs, return to baseline mental status after Dextrose, BGL <60 pre-treatment and >100 post-treatment, can eat, has follow-up, normal VS, and a competent adult supervisor is present.</li>
+                            <li><strong>Overdose:</strong> If naloxone is given and patient recovers and refuses, contact OLMC. Patient must be left with a competent adult supervisor.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'A-5',
+                    title: 'Combative Patients & Law Enforcement Restraint',
+                    category: 'general',
+                    content: `
+                        <h3>Combative Patients</h3>
+                        <ul>
+                            <li>Ensure scene safety. LE should assist with physical restraint.</li>
+                            <li>Use soft restraints. Never place patient prone (face down).</li>
+                            <li>If chemical restraints are used, apply physical restraints once sedated.</li>
+                        </ul>
+                        <h3>Law Enforcement (LE) Restrained Patients</h3>
+                        <ul>
+                            <li>An officer must remain present. If transported with LE restraints, an officer with a key must accompany the patient in the ambulance.</li>
+                            <li>Handcuffs should be in front or on side rails.</li>
+                            <li>If not under arrest, transition to soft restraints if possible.</li>
+                        </ul>
+                        <h3>Conducted Electrical Weapon (CEW) / Taser® Probe Removal</h3>
+                        <ul>
+                            <li>Performed by SL2 or higher. Probes may be evidence. LE should remove if possible.</li>
+                            <li><strong>Contraindications for EMS removal:</strong> Probes in face, above clavicles, breast, groin, or hand; or embedded in a vessel, joint, or bone.</li>
+                            <li><strong>Procedure:</strong>
+                                <ol class="list-decimal pl-6">
+                                    <li>Ensure PPE and that probe wires are disconnected.</li>
+                                    <li>Stabilize skin. Grasp probe by metal body.</li>
+                                    <li>Remove in a single quick motion.</li>
+                                    <li>Ensure probe is intact. Clean wound and apply dressing.</li>
+                                    <li>Dispose of as sharps hazard if not evidence.</li>
+                                    <li>If not easily extracted, leave in place and transport.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'A-6',
+                    title: 'Field Termination / Non-Initiation of CPR',
+                    category: 'general',
+                    content: `
+                        <h3>Non-Initiation of Resuscitation</h3>
+                        <p>Contact OLMC immediately to discuss non-initiation if any of the following are present:</p>
+                        <h4>Universal Criteria (SL 1-5)</h4>
+                        <ul>
+                            <li>Situations where CPR would place rescuers at risk.</li>
+                            <li>Patient presentation incompatible with life (rigor mortis, decapitation, dependent lividity, decomposition).</li>
+                            <li>A valid Advanced Directive (AD) or Do Not Resuscitate (DNR) order is present.</li>
+                        </ul>
+                        <h4>Traumatic Non-Initiation Criteria (SL 1-5)</h4>
+                        <ul>
+                            <li>Injuries incompatible with life (decapitation, transection, incineration).</li>
+                            <li>Blunt/penetrating trauma with evidence of prolonged cardiac arrest.</li>
+                            <li>Penetrating trauma, absent signs of life, and found in asystole.</li>
+                            <li>Cardiac arrest secondary to blunt trauma with no organized cardiac rhythm.</li>
+                        </ul>
+
+                        <h3>Field Termination Criteria</h3>
+                        <h4>BLS Termination - Medical Arrest (ALL CRITERIA MUST BE MET)</h4>
+                        <ul>
+                            <li>Unwitnessed Arrest.</li>
+                            <li>Airway effectively managed.</li>
+                            <li>At least 20 minutes of high-quality CPR performed.</li>
+                            <li>3 AED analyses without shock advised.</li>
+                            <li>BGL > 60 mg/dL.</li>
+                            <li>EtCO2 < 10 mmHg despite effective CPR.</li>
+                            <li>Medical Control approves termination.</li>
+                        </ul>
+                        <h4>BLS Termination - Traumatic Arrest (ALL CRITERIA MUST BE MET)</h4>
+                        <ul>
+                            <li>Airway effectively managed.</li>
+                            <li>10 minutes of high-quality CPR without ROSC.</li>
+                            <li>2 AED analyses without shock advised.</li>
+                            <li>Bilateral needle decompression performed (SL2+) without improvement.</li>
+                            <li>BGL > 60 mg/dL.</li>
+                            <li>Medical Control approves termination.</li>
+                        </ul>
+                        <h4>Additional ALS Criteria (SL 4-5)</h4>
+                        <ul>
+                            <li>Rhythm has remained asystole or PEA for at least the last 10 minutes of resuscitation.</li>
+                        </ul>
+                        <p class="important-note mt-4">Resuscitation should NOT be terminated for pregnant women with a potentially viable fetus (>20 weeks) without OLMC contact.</p>
+                    `
+                },
+                {
+                    id: 'B-1',
+                    title: 'General Patient Care / Monitoring & Vascular Access',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Treat all patients with respect; ensure scene/crew safety, BSI/PPE precautions.</li>
+                                    <li>Request ALS/additional resources as needed. Consult On-Line Medical Control (OLMC) as needed.</li>
+                                    <li>Establish Level of Consciousness (LOC), manage Immediate Life Threats.</li>
+                                    <li>Complete initial assessment/patient history/physical exam. Treat illness/injury IAW applicable protocol.</li>
+                                    <li><span class="protocol-link">B-2, Airway Management</span>. Oxygen - Titrate SpO2 ≥ 94%.</li>
+                                    <li><strong>Patient Monitoring / Vital Signs:</strong> Obtain initial HR, RR, BP, SpO2, Pain.</li>
+                                    <li><strong>Blood Glucose Level (BGL):</strong> Obtain as patient condition or protocol requires.</li>
+                                    <li><strong>Carbon Monoxide (SpCO):</strong> Monitor CO (if available) if suspected CO exposure.</li>
+                                    <li>Transport to the most appropriate facility based on chief complaint.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                             <div>
+                                <ul>
+                                    <li><strong>EtCO2 (Capnometry):</strong> Monitor (if equipped) for all AMS/lethargy, hypotension, SOB, trauma, or cardiac arrest.</li>
+                                    <li><strong>Cardiac Monitoring:</strong> Monitor (if equipped) for all AMS/lethargy, hypotension, CP/SOB, trauma, or cardiac arrest.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>12-Lead EKG:</strong> If indicated/equipped, obtain 12-Lead/q 10 min serial EKGs (PRN) and transmit if able.</li>
+                                    <li><strong>Vascular Access:</strong> As needed per protocol. IV Access (Saline Lock), IO Access if needed.</li>
+                                    <li>Infuse fluids with a pressure infusion bag.</li>
+                                    <li><strong>Blood/Fluid Warmers:</strong> use for all Trauma/Hypovolemia & Hypothermic patients, if available.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Additional Considerations</h3>
+                        <ul>
+                            <li>Patient care should be a team effort by all personnel on-scene.</li>
+                            <li>Every patient evaluated by EMS must have a patient care report (PCR) completed.</li>
+                            <li>Record Vital Signs (minimum of 2 sets): CRITICAL patient q 5 min; NON-CRITICAL q 15 mins.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'B-2',
+                    title: 'Airway Management',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Open, Assess, Clear Airway - Finger sweeps (not blind), head-tilt/chin-lift or jaw thrust.</li>
+                                    <li>If obstructed, perform Abdominal or Chest thrusts.</li>
+                                    <li>Suction Oral/nasal suction PRN.</li>
+                                    <li>BVM Ventilations - Adult normal rate 12-20, assist ventilations <10 and >30.</li>
+                                    <li>NPA/OPA - Insert appropriate size as indicated.</li>
+                                    <li>Oxygen - Titrate to SpO2 ≥ 94%.</li>
+                                    <li>High Flow Nasal Cannula - 15-25 LPM NC if SpO2 < 85%, 10 min max.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Supraglottic Airway (SGA) - Insert SGA as needed (PRIMARY for Cardiac Arrest).</li>
+                                    <li>Suction of advanced airway.</li>
+                                    <li>EtCO2 (Capnometry) - For any lethargic, altered, hypotensive patient or with SGA.</li>
+                                    <li>Needle Thoracentesis - Suspected tension pneumothorax (Lateral site preferred). SL2/3 w/ TCCC Tier 2+ and OLMC approval.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li>PEEP Valve - Use w/BVM for hypoxia despite O2/Airway, begin 5cmH2O, titrate to 10cmH2O max.</li>
+                                    <li>CPAP - If no contraindications initiate at 5cmH20 w/severe respiratory distress.</li>
+                                    <li>Gastric Decompression - Insert OG tube after advanced airway placement.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>BiLevel CPAP (BiPAP) - If equipped, for severe respiratory distress.</li>
+                                    <li><span class="important-note">USAF NRPs Only:</span> ETI via video or direct laryngoscopy if concerns for airway burns or if SGA ineffective.</li>
+                                    <li>Cricothyrotomy - EMERGENCY means to secure airway if SGA ineffective or required by pt condition.</li>
+                                    <li>Foreign body removal - Utilize Magill forceps under direct visualization.</li>
+                                    <li>EtCO2 (Capnography) monitoring.</li>
+                                    <li>Post-Advanced Airway Sedation and Pain Control (Ketamine, Midazolam, Fentanyl).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-3',
+                    title: 'Nausea & Vomiting',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Place in position of comfort, provide verbal reassurance.</li>
+                                    <li>For Nausea: Inhale Alcohol Pad vapor x 3 min, repeat PRN.</li>
+                                    <li>BGL - If <60mg/dL or >300mg/dL, see B-20, Diabetic Emergencies.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><span class="procedure">Vascular Access</span> - Administer fluids per B-29, Shock/Hypotension.</li>
+                                    <li><span class="medication">Ondansetron</span> 4mg IV/IO or ODT PO, repeat x 1 in 15-20 min PRN, max dose 8mg.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>If Ondansetron is ineffective: <span class="medication">Metoclopramide</span> 5-10mg in 100mL NS IV/IO.</li>
+                                    <li>For dystonia/akathisia from Metoclopramide: <span class="medication">Diphenhydramine</span> 25 mg IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-4',
+                    title: 'Pain Management',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Determine pain score using DVPRS or Wong-Baker.</li>
+                                    <li>Place in position of comfort, apply ice packs/splints.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><span class="procedure">Vascular Access</span> - Administer fluids per B-29, Shock/Hypotension.</li>
+                                    <li>Monitor V/S & EtCO2 for controlled substances.</li>
+                                    <li><strong>MILD Pain:</strong> <span class="medication">Acetaminophen</span> 1000mg PO AND/OR <span class="medication">Meloxicam</span> 15mg PO.</li>
+                                    <li><strong>MODERATE to SEVERE Pain (SBP > 100mmHg):</strong> <span class="medication">Fentanyl</span> 400mcg OTFC buccal OR 100mcg IN.</li>
+                                    <li><strong>MODERATE to SEVERE Pain:</strong> <span class="medication">Ketamine</span> 50mg IN, repeat q 20 min PRN.</li>
+                                    <li><strong>Opioid Reversal:</strong> <span class="medication">Naloxone</span> (slow or emergent dosing available).</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>MODERATE to SEVERE Pain:</strong>
+                                        <ul>
+                                            <li>Any SBP: <span class="medication">Ketamine</span> 0.2 mg/kg IV/IO or 0.5mg/kg IM/IN.</li>
+                                            <li>SBP > 100mmHg: <span class="medication">Fentanyl</span> 1mcg/kg IV/IO/IN/IM (100mcg max single dose).</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-5',
+                    title: 'Cardiac Arrest',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Establish pulselessness/apnea; call for ALS/additional resources.</li>
+                                    <li>Evaluate for non-initiation/termination criteria per <span class="protocol-link">A-6</span>.</li>
+                                    <li>Initiate high-quality CPR (30:2) / Apply AED, follow prompts.</li>
+                                    <li>Airway: BVM with 100% O2, place NPA and OPA. See <span class="protocol-link">B-2, Airway Management</span>.</li>
+                                    <li>Suspected Overdose: <span class="medication">Naloxone</span> 4mg IN, repeat q 2-3 min PRN.</li>
+                                    <li>Assess for Hypothermia & BGL.</li>
+                                    <li>For ROSC: see <span class="protocol-link">B-6, ROSC</span>.</li>
+                                    <li>After 20 min of high-quality CPR, contact OLMC to discuss termination.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Capnometry (in line with BVM or SGA) - Maintain > 10mmHg.</li>
+                                    <li>Supraglottic Airway (SGA) - As soon as possible.</li>
+                                    <li>Needle Thoracentesis - Bilateral for suspected tension pneumothorax (with OLMC approval for SL2/3).</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                             <div>
+                                <ul>
+                                    <li><strong>Vascular Access:</strong> Establish ASAP.</li>
+                                    <li>Immediately after access - <span class="medication">Epinephrine (1mg/10mL)</span> 1mg IV/IO, then q 3-5 min.</li>
+                                    <li>Hypovolemia - <span class="medication">LR</span> 1000mL bolus, may repeat x 1 PRN.</li>
+                                    <li>BGL < 60mg/dL: <span class="medication">Dextrose 10% (D10W)</span>, 250mL IV/IO over 2 min.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>VF/Pulseless VT:</strong> Defibrillate at 200J (biphasic).</li>
+                                    <li>After first shock & Epi: <span class="medication">Amiodarone</span> 300mg IV/IO, then 150mg IV/IO.</li>
+                                    <li><strong>Torsades de Pointes:</strong> <span class="medication">Magnesium Sulfate</span> 2g in 10mL NS IV/IO.</li>
+                                    <li><strong>Hyperkalemia:</strong> <span class="medication">Calcium Gluconate</span> 2g IV/IO, <span class="medication">Sodium Bicarbonate</span> 100mEq IV/IO, <span class="medication">Albuterol</span> 15mg Nebulized.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Additional Considerations (Hs & Ts)</h3>
+                        <ul>
+                            <li><strong>Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia</strong></li>
+                            <li><strong>Tension Pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (pulmonary), Thrombosis (coronary)</strong></li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'B-6',
+                    title: 'ROSC & Post-Arrest Care',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Treat underlying Hs & Ts.</li>
+                                    <li>Assess/treat for Hypothermia.</li>
+                                    <li>Check BGL.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>EtCO2 (Capnometry) - Continuous monitoring.</li>
+                                    <li>Cardiac Monitoring & 12-Lead EKG - Obtain serial EKGs.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><span class="procedure">Vascular Access</span> - Ensure IV/IO x2.</li>
+                                    <li>If SBP < 90mmHg: 500mL <span class="medication">LR</span> IV/IO bolus, may repeat x3 PRN.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Persistent Hypotension:</strong> Consider Push Dose <span class="medication">Epinephrine</span> as bridge to <span class="medication">Norepinephrine</span> drip 2-12mcg/min.</li>
+                                    <li>If refractory, <span class="medication">Dexamethasone</span> 10mg IV/IO.</li>
+                                    <li>For post-arrest VT/VF: <span class="medication">Amiodarone</span> 150mg IV/IO over 10 min, then drip.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-7',
+                    title: 'Bradycardia',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <p class="mb-2 italic">Unstable (CHAPS): Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs of Shock.</p>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>B-2, Airway Management / Oxygen.</li>
+                                    <li>Check BGL.</li>
+                                    <li>If overdose suspected, see B-24.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Asymptomatic: Closely monitor, no intervention required.</li>
+                                    <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                    <li>EtCO2 (Capnometry) if lethargic/altered/hypotensive.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Stable and Symptomatic:</strong> <span class="medication">Atropine</span> 1mg IV/IO; repeat q 3-5 min PRN; max 3mg.</li>
+                                    <li><strong>Unstable and Symptomatic:</strong> Transcutaneously Pace at HR 70. Consider sedation (<span class="medication">Ketamine</span> or <span class="medication">Midazolam</span>).</li>
+                                    <li><strong>Refractory Bradycardia:</strong> <span class="medication">Epinephrine</span> Drip 2-10mcg/min or <span class="medication">Norepinephrine</span> Drip 2-12mcg/min.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-8',
+                    title: 'Tachycardia, Narrow Complex',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <p class="mb-2 italic">Unstable (CHAPS): Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs of Shock.</p>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Asymptomatic: Closely monitor.</li>
+                                    <li>EtCO2 (Capnometry).</li>
+                                    <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Unstable and Symptomatic:</strong> Synchronized Cardiovert. Regular rhythm: 50-100J. Irregular rhythm: 120-200J. Consider sedation.</li>
+                                    <li><strong>Stable and Symptomatic (HR >= 150):</strong>
+                                        <ul>
+                                            <li>Vagal Maneuvers.</li>
+                                            <li><span class="medication">Adenosine</span> 6mg rapid IV/IO push, then 12mg if no conversion.</li>
+                                            <li>If no conversion, contact OLMC for <span class="medication">Metoprolol</span> 5mg IV/IO.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-9',
+                    title: 'Tachycardia, Wide Complex',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <p class="mb-2 italic">Unstable (CHAPS): Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs of Shock.</p>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Polymorphic (Torsades de Pointes):</strong> If pulseless, begin CPR. If pulse present, <span class="medication">Magnesium</span> 2g in 10mL NS IV/IO over 2-3 min.</li>
+                                    <li><strong>Stable & Asymptomatic (Regular/Monomorphic):</strong>
+                                        <ul>
+                                            <li><span class="medication">Adenosine</span> 6mg then 12mg rapid IV/IO push.</li>
+                                            <li>If not effective: <span class="medication">Amiodarone</span> 150mg IV/IO in 100mL NS over 10 min. Repeat if needed.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Unstable & Symptomatic:</strong> Synchronized Cardiovert. Wide Regular: 100J. Wide Irregular: 120-200J.</li>
+                                    <li>If rhythm converts, give <span class="medication">Amiodarone</span> 150mg IV/IO over 10 min.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-10',
+                    title: 'Chest Pain',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Keep patient in position of comfort.</li>
+                                    <li><span class="medication">Aspirin</span> 324mg (four 81mg tablets) chewed.</li>
+                                    <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                    <li>If SBP ≥ 100mmHg, assist with patient's prescribed <span class="medication">Nitroglycerin</span>.</li>
+                                    <li><span class="important-note">NTG Contraindicated:</span> Right-Sided MI, SBP < 100, Viagra/Levitra in 24 hrs, Cialis in 48 hrs.</li>
+                                    <li>Transport to PCI capable facility; scene time < 10 min.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Pain Management:</strong>
+                                        <ul>
+                                            <li><span class="medication">Nitroglycerin</span> 0.4mg SL q 3-5 min PRN if SBP > 100mmHg.</li>
+                                            <li>Pain unresolved by NTG (if SBP > 100mmHg): <span class="medication">Fentanyl</span> 50-100mcg IV/IO.</li>
+                                        </ul>
+                                    </li>
+                                    <li>If Chest Pain from suspected stimulant abuse (HTN & Tachycardia > 120): <span class="medication">Midazolam</span> 2.5-5mg IV/IO/IN/IM.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-11',
+                    title: 'Difficulty Breathing - Asthma / COPD',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>E-2, Airway Management. Ventilate at 6-8 breaths/min if required.</li>
+                                    <li>Severe Asthma: Assist with patient's prescribed Epinephrine Autoinjector 0.3mg IM.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>EtCO2 (Capnometry) monitoring.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Wheezing/Respiratory Distress:</strong>
+                                        <ul>
+                                            <li><span class="medication">Albuterol</span> 2.5mg/2.5mL nebulized, repeat PRN.</li>
+                                            <li><span class="medication">Ipratropium Bromide</span> 0.5mg/3mL nebulized, repeat PRN (max 1.5mg).</li>
+                                        </ul>
+                                    </li>
+                                    <li>Severe distress with no improvement: <span class="medication">Epinephrine Autoinjector</span> 0.3mg IM.</li>
+                                    <li>Consider CPAP.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>Audible wheezing/distress: <span class="medication">Dexamethasone</span> 10mg IV/IO/IM/PO.</li>
+                                    <li>If unimproved: <span class="medication">Epinephrine (1mg/mL)</span> 0.3mg IM, <span class="medication">Magnesium Sulfate</span> 2g IV/IO, <span class="medication">Ketamine</span> 0.2 mg/kg slow IV.</li>
+                                    <li>If still no improvement, consider <span class="medication">Epinephrine</span> Drip 2-10mcg/min IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-12',
+                    title: 'Difficulty Breathing - CHF / Pulmonary Edema',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                             <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>B-2, Airway Management / Oxygen.</li>
+                                    <li>If chest pain, see B-10.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                    <li>EtCO2 (Capnometry).</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li>Consider CPAP.</li>
+                                    <li>If using BVM, consider PEEP Valve.</li>
+                                    <li>Vascular Access.</li>
+                                    <li>SBP > 100mmHg: <span class="medication">Nitroglycerin</span> 0.4mg SL; repeat q 5 min PRN.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>Consider BiLevel CPAP (BiPAP).</li>
+                                    <li>SBP <90mmHg despite Fluid Bolus: <span class="medication">Norepinephrine</span> 2-12mcg/min IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-13',
+                    title: 'Stroke / CVA',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Establish onset of symptoms (last known well time).</li>
+                                    <li>Check BGL. If <60mg/dL, treat per B-20.</li>
+                                    <li>Perform Cincinnati Pre-Hospital Stroke Scale (CPSS).</li>
+                                    <li>Minimize scene time to < 10 min.</li>
+                                    <li>If CPSS positive & onset < 6 hours: Initiate "Stroke Alert", transport to Primary Stroke Center.</li>
+                                    <li>If SBP > 110mmHg: Elevate head of stretcher 15-30°.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                     <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li>Vascular Access - Large bore IVs.</li>
+                                    <li>Perform Large Vessel Occlusion (LVO) *VAN Stroke Exam.</li>
+                                    <li>If LVO positive & onset > 6 hrs but < 24 hrs: Transport to Comprehensive Stroke Center.</li>
+                                    <li><span class="important-note">Hypertension should NOT be treated in possible CVA patients.</span></li>
+                                    <li>If Hypotensive, see B-29.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                 {
+                    id: 'B-14',
+                    title: 'Airborne Pathogens (COVID, etc.)',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li><span class="important-note">Ensure proper PPE (N95, Eye/Face protection, gown, gloves).</span></li>
+                                    <li>Limit exposed responders. Apply surgical mask to patient.</li>
+                                    <li>Airway Management: Use HEPA filter on BVM. Place surgical mask over NC or NRB.</li>
+                                    <li><span class="important-note">Wheezing/Distress:</span> Do NOT use nebulizer unless HEPA filter can be attached to exhaust. Use MDI with spacer instead.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-15',
+                    title: 'Abdominal Pain',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Check BGL. Treat per B-20 if indicated.</li>
+                                    <li>Nausea/Vomiting: See B-3.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>12-Lead EKG and Cardiac Monitoring as clinically indicated.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                     <li>Vascular Access if hypotensive (see B-29).</li>
+                                     <li>Pain Management: See B-4.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Additional Considerations</h3>
+                        <ul>
+                            <li>Consider cardiac etiology in patients >50yo, diabetics, and females with upper abdominal complaints.</li>
+                            <li>Abdominal pain in females of childbearing age should be treated as an ectopic pregnancy until proven otherwise.</li>
+                            <li>Consider Abdominal Aortic Aneurysm (AAA) in patients >50yo with abdominal/flank/back pain.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'B-16',
+                    title: 'Altered Mental Status',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                         <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Crew/responder safety is main priority. See B-18 for restraints.</li>
+                                    <li>Check pupillary response, treat suspected overdose (B-24).</li>
+                                    <li>Check BGL (B-20). If no improvement, perform stroke screen (B-13).</li>
+                                    <li>Check for signs of Seizure (B-28), Hyperthermia (B-22), Hypothermia (B-23), or Head Trauma (C-6).</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                     <li>EtCO2 (Capnometry).</li>
+                                     <li>Cardiac Monitor & 12-Lead EKG.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                     <li>Vascular Access.</li>
+                                     <li>Check for signs of Sepsis (B-27).</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Additional Considerations: AEIOU-TIPS</h3>
+                        <p>Acidosis/Alcohol, Epilepsy/Electrolytes, Infection, Overdose, Uremia, Trauma/Tumor, Insulin, Psychosis/Poisoning, Stroke/Shock/Seizure.</p>
+                    `
+                },
+                {
+                    id: 'B-17',
+                    title: 'Anaphylaxis & Allergic Reaction',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>B-2, Airway Management. Apply cold pack to insect bite/sting.</li>
+                                    <li>Moderate/Severe Reaction: Assist with patient's prescribed <span class="medication">Epinephrine Autoinjector</span> 0.3mg IM.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                     <li>EtCO2 (Capnometry) and Cardiac Monitoring.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                     <li><strong>Moderate/Severe:</strong> Administer agency <span class="medication">Epinephrine Autoinjector</span> 0.3mg IM.</li>
+                                     <li><strong>Wheezing/Distress:</strong> <span class="medication">Albuterol</span> & <span class="medication">Ipratropium Bromide</span> nebulized.</li>
+                                     <li><span class="procedure">Vascular Access</span>.</li>
+                                     <li><strong>Mild Reaction:</strong> <span class="medication">Diphenhydramine</span> 25mg IV/IO/IM.</li>
+                                     <li><strong>Moderate/Severe Reaction:</strong> <span class="medication">Diphenhydramine</span> 50mg IV/IO/IM.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Moderate/Severe:</strong> <span class="medication">Epinephrine (1mg/1mL)</span> 0.3mg IM if not given. <span class="medication">Dexamethasone</span> 10mg IV/IO/IM/PO.</li>
+                                    <li>Unresponsive to above & patient on beta-blockers: consider <span class="medication">Glucagon</span> 1mg slow IV push.</li>
+                                    <li>If hypotensive despite above: <span class="medication">Epinephrine Drip</span> 2-10mcg/min IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-18',
+                    title: 'Behavioral Emergencies',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                         <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Stage until scene is safe.</li>
+                                    <li><span class="procedure">Physical Restraint If Indicated:</span> Use soft restraints. <span class="important-note">Never keep patient prone.</span></li>
+                                    <li>Check BGL. See overdose protocol if indicated.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                             <div>
+                                <ul>
+                                     <li><strong>Combative patients (Chemical Restraint):</strong>
+                                        <ul>
+                                            <li><span class="medication">Ketamine</span> 4mg/kg IM x 1 OR</li>
+                                            <li><span class="medication">Midazolam</span> 10mg IM/IN x 1 OR 5mg IV/IO x 1.</li>
+                                            <li>(Reduce Midazolam dose for patients >= 65 yrs).</li>
+                                        </ul>
+                                    </li>
+                                    <li>Cardiac monitoring and capnography required for all sedated patients.</li>
+                                </ul>
+                             </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-19',
+                    title: 'Bites and Envenomations',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Identify source of bite/envenomation if able.</li>
+                                    <li>Provide general wound care/irrigation. Immobilize the injury.</li>
+                                    <li><strong>Spider/Scorpion/Bee/Wasp:</strong> Remove stinger if present.</li>
+                                    <li><strong>Snake Bite:</strong> Outline margin of swelling/redness and note time. <span class="important-note">DO NOT apply ice.</span></li>
+                                    <li><strong>Jellyfish/Man-O-War:</strong> Lift tentacles away. Wash with sea water or vinegar for >= 30 seconds. <span class="important-note">DO NOT use fresh water.</span></li>
+                                    <li><strong>Stingray/Lion Fish:</strong> Splint barbs in place, do not remove.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Spider/Scorpion Bite with severe muscle spasms (SBP > 100):</strong> <span class="medication">Midazolam</span> 2.5mg IV/IO/IM/IN.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-20',
+                    title: 'Diabetic Emergencies',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li><strong>BGL < 60mg/dL & can swallow:</strong> <span class="medication">Oral Glucose</span> 15g PO, repeat x 1 in 10 min PRN.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>BGL < 60mg/dL & unable to swallow/AMS:</strong> <span class="medication">Dextrose 10% (D10W)</span> 250mL IV/IO, repeat x 1 PRN.</li>
+                                    <li><strong>BGL < 60mg/dL & no IV/IO access:</strong> <span class="medication">Glucagon</span> 1-2mg IM, repeat x 1 in 15 min PRN.</li>
+                                    <li><strong>BGL > 300mg/dL:</strong> <span class="medication">LR</span> 1000mL bolus, repeat x 1 PRN.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-21',
+                    title: 'Hypertension (Non-Pregnant)',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Asymptomatic HTN: No intervention required, supportive care.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                     <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                     <li>Transport with head of gurney raised to 30°.</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <h3>Additional Considerations</h3>
+                        <p>Aggressive treatment of HTN increases mortality. Most patients require only supportive care. Hypertensive Emergency is typically defined as SBP > 220 or DBP > 120 AND signs of end organ damage (AMS, Chest Pain, Stroke-like Sx).</p>
+                    `
+                },
+                {
+                    id: 'B-22',
+                    title: 'Hyperthermia / Heat Injuries',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Move patient to a cool environment.</li>
+                                    <li>Encourage PO fluids if tolerated.</li>
+                                    <li><strong>Heat Exhaustion or Heat Stroke:</strong> Initiate active cooling measures (ice sheets, misting, ice packs to neck/axilla/groin).</li>
+                                    <li><span class="important-note">STOP active cooling when temperature reaches 102°F.</span></li>
+                                    <li>Check BGL.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>If shivering occurs during cooling: <span class="medication">Midazolam</span> 2.5mg IV/IO or 5mg IM/IN.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-23',
+                    title: 'Hypothermia / Cold Injuries',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Handle patient gently, maintain horizontal position.</li>
+                                    <li>Remove wet clothing.</li>
+                                    <li><strong>Passive Warming (Core temp > 90°F):</strong> Warm/reflective blankets, cover head.</li>
+                                    <li><strong>Active Warming (Core temp < 90°F):</strong> Heat packs in armpit/groin (not directly on skin).</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <h3>Additional Considerations</h3>
+                        <ul>
+                            <li><strong>Cardiac Arrest:</strong> Pulse should be assessed for 60 seconds if not on monitor.</li>
+                            <li>Do NOT administer IV cardiac medications if core temp < 86°F.</li>
+                            <li>Limit defibrillation to 3 attempts if core temp < 86°F.</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'B-24',
+                    title: 'Overdose / Toxic Ingestion',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Contact Poison Control (1-800-222-1222).</li>
+                                    <li><strong>Suspected Opioid Overdose/AMS or RR < 8:</strong> <span class="medication">Naloxone</span> Nasal Spray 4mg IN.</li>
+                                    <li>Check for analgesic patches. If seizure, see B-28.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                     <li><strong>Suspected Dystonic Reaction:</strong> <span class="medication">Diphenhydramine</span> 25mg IV.</li>
+                                     <li><strong>Suspected Tricyclic Antidepressant Overdose (QRS > 0.12s):</strong> <span class="medication">Sodium Bicarbonate</span> 100mEq IV/IO.</li>
+                                     <li><strong>Suspected Beta Blocker/Calcium Channel Blocker Overdose (bradycardic):</strong> <span class="medication">Calcium Gluconate</span> 2g IV/IO AND <span class="medication">Glucagon</span> 3mg IV/IO.</li>
+                                     <li><strong>Cocaine/Amphetamine OD with Agitation:</strong> <span class="medication">Midazolam</span> 2.5-5mg IM/IN/IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-25',
+                    title: 'Renal Failure / Dialysis',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                             <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Check BGL.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li>If past scheduled dialysis w/AMS, suspect hyperkalemia: <span class="medication">Albuterol</span> 5mg Nebulized, repeat x 3 PRN.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>If evidence of Hyperkalemia with EKG changes:</strong> Continue Albuterol AND give <span class="medication">Calcium Gluconate</span> 2g slow IV/IO AND <span class="medication">Sodium Bicarbonate</span> 100mEq IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3>Additional Considerations</h3>
+                        <p class="important-note">ALWAYS consider hyperkalemia. Do not start an IV or take a BP in an extremity with a shunt/fistula.</p>
+                    `
+                },
+                {
+                    id: 'B-26',
+                    title: 'Drowning / Submersion',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Suction PRN; DO NOT waste time suctioning unless water/emesis visible.</li>
+                                    <li><strong>Conscious:</strong> Oxygen PRN, SpO2 > 94%. Consider CPAP.</li>
+                                    <li><strong>Conscious with AMS:</strong> 5 assisted breaths via BVM.</li>
+                                    <li><strong>Unresponsive:</strong> 5 breaths via BVM. If pulse, ventilate 1 breath q 5-6 seconds. If no pulse, start CPR (B-5).</li>
+                                    <li>Remove wet clothing; dry/warm patient.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-27',
+                    title: 'Sepsis / Septic Shock',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Sepsis Guidelines</h3>
+                        <p>Suspected or known infection, EtCO2 < 26 AND 2 or more of the following:</p>
+                        <ul>
+                            <li>Temp < 96.0°F or > 100.4°F</li>
+                            <li>HR > 90 AND RR > 20</li>
+                            <li>SBP < 90 mmHg</li>
+                            <li>Altered Mental Status (GCS < 15)</li>
+                        </ul>
+                         <h3>Clinical Practice Guidelines</h3>
+                         <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li>Vascular Access - IV/IO x 2.</li>
+                                    <li>Fluid Admin: <span class="medication">LR</span> 500mL IV/IO Bolus to maintain SBP ≥ 90mmHg, repeat PRN to max 2L.</li>
+                                    <li>Temp > 100.4°F: <span class="medication">Acetaminophen</span> 1000mg PO.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                             <div>
+                                <ul>
+                                    <li>If hypotension remains despite fluids: Consider Push Dose <span class="medication">Epinephrine</span> as bridge to <span class="medication">Norepinephrine</span> Drip 2-12mcg/min.</li>
+                                    <li>If no improvement (refractory shock): <span class="medication">Dexamethasone</span> 10mg IV/IO.</li>
+                                </ul>
+                             </div>
+                         </div>
+                    `
+                },
+                {
+                    id: 'B-28',
+                    title: 'Seizures (Non-Pregnant)',
+                    category: 'adult_medical',
+                    content: `
+                         <h3>Clinical Practice Guidelines</h3>
+                         <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Place in Supine or Recovery Position.</li>
+                                    <li>Check BGL.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>Actively Seizing Patient:</strong>
+                                        <ul>
+                                            <li><span class="medication">Midazolam</span> 5mg IV/IO, repeat x 1 in 5 min PRN, OR</li>
+                                            <li><span class="medication">Midazolam</span> 10mg IN/IM x 1.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                         </div>
+                    `
+                },
+                {
+                    id: 'B-29',
+                    title: 'Shock / Hypotension (Non-Trauma)',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                         <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li>Vascular Access - IV/IO x 2.</li>
+                                    <li><strong>Hypotension (SBP < 90):</strong>
+                                        <ul>
+                                            <li>Hypovolemic, Septic, Neurogenic, Anaphylactic: <span class="medication">LR</span> 500mL IV/IO, repeat PRN to max 2000mL.</li>
+                                            <li>Cardiogenic: <span class="medication">LR</span> 250mL IV/IO, repeat PRN to max 1000mL.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>Condition unchanged after fluid: Consider Push Dose <span class="medication">Epinephrine</span> as bridge to <span class="medication">Norepinephrine</span> drip 2-12mcg/min.</li>
+                                    <li>If refractory to fluids/pressors: <span class="medication">Dexamethasone</span> 10mg IV/IO.</li>
+                                </ul>
+                            </div>
+                         </div>
+                    `
+                },
+                {
+                    id: 'B-30',
+                    title: 'Syncope/ Dizziness / Weakness',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                             <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Consider need for Spinal Motion Restriction (C-7).</li>
+                                    <li>Treat injuries per C-1, Trauma.</li>
+                                    <li>Check BGL.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Perform Cincinnati Pre-Hospital Stroke Scale (CPSS).</li>
+                                    <li>Cardiac Monitoring & 12-Lead EKG.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                     <li>Vascular Access if SBP < 90mmHg.</li>
+                                     <li>HR > 100bpm with normal SBP: <span class="medication">LR</span> 500mL IV/IO fluid bolus, repeat x 2 PRN.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li>Perform VAN LVO Assessment.</li>
+                                    <li>Treat dysrhythmias per applicable protocol.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'B-31',
+                    title: 'Medical Support Apparatus',
+                    category: 'adult_medical',
+                    content: `
+                        <h3>Key Concepts</h3>
+                        <p>EMS may encounter medically complex patients with devices like tracheostomies, home ventilators, chest drains, Ventricular Assist Devices (VADs), defibrillator vests, indwelling catheters, dialysis fistulas, feeding tubes, etc.</p>
+                        <h3>Clinical Practice Guidelines</h3>
+                        <ul>
+                            <li><strong>Tracheostomies:</strong> If dislodged, ask caregiver to reinsert if able. Otherwise, ventilate with infant mask over stoma.</li>
+                            <li><strong>Home Ventilators:</strong> If malfunctioning, immediately transition to BVM.</li>
+                            <li><strong>Chest Drains:</strong> If dislodged, cover tract with occlusive dressing. Watch for tension pneumothorax.</li>
+                            <li><strong>Ventricular Assist Devices (VADs):</strong> Central/peripheral pulses may not be felt. Use skin color, temp, LOC to assess perfusion. MAP from monitor is key (usual range 70-90mmHg). CPR may be performed but risks displacement. Contact VAD coordinator.</li>
+                            <li><strong>Defibrillator Vests:</strong> If patient is critical or has been shocked, remove vest and apply monitor pads.</li>
+                            <li><strong>Indwelling Catheters (PICC, Hickman, etc.):</strong> SL 4/5 may access per B-1. If dislodged, cover site and control bleeding.</li>
+                            <li><strong>Dialysis Fistulas/Grafts:</strong> Assess for "thrill". Control bleeding with direct pressure. <span class="important-note">DO NOT use TQ unless direct pressure fails.</span> Access only in pulseless/peri-arrest patients (SL 4/5).</li>
+                        </ul>
+                    `
+                },
+                {
+                    id: 'C-1',
+                    title: 'Trauma, General',
+                    category: 'adult_trauma',
+                    content: `
+                        <h3>Key Concepts: MARCH-PAWS</h3>
+                        <ul>
+                            <li><strong>M</strong> – Massive hemorrhage</li>
+                            <li><strong>A</strong> – Airway / AVPU</li>
+                            <li><strong>R</strong> – Respiration</li>
+                            <li><strong>C</strong> – Circulation</li>
+                            <li><strong>H</strong> – Hypothermia/Head Injury</li>
+                            <li>---</li>
+                            <li><strong>P</strong> – Pain</li>
+                            <li><strong>A</strong> – Antibiotics</li>
+                            <li><strong>W</strong> – Wounds</li>
+                            <li><strong>S</strong> – Splints</li>
+                        </ul>
+                        <h3>Clinical Practice Guidelines</h3>
+                         <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Perform triage / life-saving interventions.</li>
+                                    <li><span class="procedure">Massive Hemorrhage:</span> Apply approved TQs / hemostatic dressings & pressure dressing.</li>
+                                    <li><span class="procedure">Airway:</span> B-2, Airway Management & Assess Mental Status (AVPU).</li>
+                                    <li><span class="procedure">Respirations:</span> Place occlusive dressings on penetrating chest/abdominal wounds.</li>
+                                    <li><span class="procedure">Circulation:</span> Re-check TQ placement, assess HR, BP, SpO2.</li>
+                                    <li><span class="procedure">Hypothermia:</span> Remove wet clothing; utilize blankets, HPMK.</li>
+                                    <li><span class="procedure">Head Injury:</span> Elevate head of cot 30°. See C-6, Head Injuries.</li>
+                                    <li><span class="procedure">Pain:</span> Position of comfort if no spinal motion restrictions.</li>
+                                    <li><span class="procedure">Wounds:</span> Secure penetrating objects, cover exposed injuries.</li>
+                                    <li><span class="procedure">Splint:</span> Joints above and below suspected fracture; check CSM.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                     <li><span class="procedure">Vascular Access:</span> 2 large bore IVs or IOs as needed.</li>
+                                     <li>Life threatening hemorrhage within 3 hrs of injury: <span class="medication">Tranexamic Acid (TXA)</span> 2g IV/IO over 1 min.</li>
+                                     <li><span class="procedure">Fluid Resuscitation:</span>
+                                        <ul>
+                                            <li>WITH Head Injury: <span class="medication">LR</span> minimum volume IV/IO to SBP 110mmHg.</li>
+                                            <li>WITHOUT Head Injury: <span class="medication">LR</span> minimum volume IV/IO to SBP 80-90mmHg.</li>
+                                        </ul>
+                                     </li>
+                                     <li><span class="procedure">Antibiotics:</span> Open wounds and >60 min transport: <span class="medication">Ertapenem (Invanz)</span> 1g IV/IO.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                {
+                    id: 'D-3',
+                    title: 'Childbirth / Labor',
+                    category: 'obgyn',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Evaluate patient. If no crowning or abnormal presentations, place in left lateral position.</li>
+                                    <li>If bleeding, see <span class="protocol-link">D-1, Vaginal Bleeding</span>.</li>
+                                    <li><span class="important-note">Imminent birth (crowning, urge to push):</span>
+                                        <ul>
+                                            <li>Support baby’s head, control the delivery.</li>
+                                            <li>Check for nuchal cord. If present, slip over head or clamp and cut.</li>
+                                            <li>Deliver anterior shoulder, then posterior shoulder.</li>
+                                            <li>If baby is crying: wrap in dry blanket, place on mother's abdomen, delay clamping cord 30-60 seconds.</li>
+                                            <li>If baby is unstable: immediately clamp and cut cord. See <span class="protocol-link">D-5, Newborn Resuscitation</span>.</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="procedure">Continued Care of Mother:</span> Anticipate placenta delivery within 30 min. Do NOT pull cord. Perform fundal massage after delivery.</li>
+                                    <li><span class="important-note">Prolapsed Umbilical Cord:</span> Place mother in knee-to-chest position. Insert gloved hand to displace presenting part from cord. Transport immediately.</li>
+                                    <li><span class="important-note">Shoulder Dystocia:</span> Place mother in McRoberts Maneuver (hyperflexion of legs). Apply suprapubic pressure.</li>
+                                    <li><span class="important-note">Breech Birth/Presenting Limb:</span> Support presenting part. Place mother in knee-to-chest. If head fails to deliver, insert gloved hand to create airway for baby.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><span class="procedure">Vascular Access:</span> 2 large bore IVs or IOs as needed.</li>
+                                    <li>After placenta delivery: <span class="medication">Oxytocin</span> 10 Units IM x 1 to prevent hemorrhage.</li>
+                                    <li>Life threatening bleeding: <span class="medication">Tranexamic Acid (TXA)</span> 1g in 10mL NS IV/IO over 10 min.</li>
+                                    <li>Hypotension: <span class="medication">LR</span> IV/IO to maintain SBP ≥ 90mmHg.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                 {
+                    id: 'E-5',
+                    title: 'Cardiac Arrest (Pediatric)',
+                    category: 'peds_medical',
+                    content: `
+                        <h3>Clinical Practice Guidelines</h3>
+                        <div class="skill-level-grid">
+                            <div class="skill-level-indicator bg-gray-200 text-gray-800">SL 1-5</div>
+                            <div>
+                                <ul>
+                                    <li>Establish pulselessness/apnea; call for ALS/additional resources.</li>
+                                    <li>Initiate high-quality CPR (15:2 for 2-rescuer) / Apply AED (use Peds pads).</li>
+                                    <li><span class="protocol-link">E-2, Airway Management</span> / Oxygen.</li>
+                                    <li>If >60kg or signs of puberty, see <span class="protocol-link">B-5, Cardiac Arrest</span>.</li>
+                                    <li>Assess for BGL & Hypothermia.</li>
+                                    <li>Treat H's & T's.</li>
+                                    <li>ROSC: See <span class="protocol-link">E-6, ROSC (Peds)</span>.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-blue-200 text-blue-800">SL 2+</div>
+                            <div>
+                                <ul>
+                                    <li>Capnometry - Maintain > 10mmHg.</li>
+                                    <li>Supraglottic Airway (SGA) - As soon as possible.</li>
+                                </ul>
+                            </div>
+                            <div class="skill-level-indicator bg-green-200 text-green-800">SL 3+</div>
+                            <div>
+                                <ul>
+                                    <li><span class="procedure">Vascular Access:</span> Establish ASAP.</li>
+                                    <li><span class="medication">Epinephrine (1mg/10mL)</span> 0.01mg/kg IV/IO, q 3-5 min.</li>
+                                    <li><span class="medication">Hypovolemia:</span> LR 20mL/kg IV/IO.</li>
+                                    <li><span class="medication">Hypoglycemia:</span> Dextrose 10% 5mL/kg IV/IO.</li>
+                                </ul>
+                            </div>
+                             <div class="skill-level-indicator bg-yellow-200 text-yellow-800">SL 4+</div>
+                            <div>
+                                <ul>
+                                    <li><strong>VF / Pulseless VT:</strong> Defibrillate at 2 J/kg, then 4 J/kg.</li>
+                                    <li>After first shock & Epi: <span class="medication">Amiodarone</span> 5mg/kg IV/IO.</li>
+                                    <li><strong>Torsades de Pointes:</strong> <span class="medication">Magnesium Sulfate</span> 25-50mg/kg IV/IO.</li>
+                                    <li><strong>Hyperkalemia:</strong> <span class="medication">Calcium Gluconate</span> 60mg/kg, <span class="medication">Sodium Bicarbonate</span> 1mEq/kg, <span class="medication">Albuterol</span> 10mg Nebulized.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    `
+                },
+                 {
+                    id: 'G-2c',
+                    title: 'Triage (START / JumpSTART)',
+                    category: 'specialty',
+                    content: `
+                        <h3>START Triage (Adults)</h3>
+                        <p class="mb-4">Simple Triage and Rapid Treatment is based on respirations, perfusion, and mental status.</p>
+                        <ol class="list-decimal pl-6 space-y-2">
+                            <li><strong>"Can you walk?"</strong> All who can are triaged <span class="font-bold text-green-600">MINOR (Green)</span>.</li>
+                            <li><strong>Assess Respirations:</strong>
+                                <ul>
+                                    <li>Not breathing &rarr; Open airway. Still not breathing &rarr; <span class="font-bold text-black">DECEASED (Black)</span>.</li>
+                                    <li>Breathing after opening airway &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Breathing > 30/min or < 10/min &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Breathing 10-30/min &rarr; Go to next step.</li>
+                                </ul>
+                            </li>
+                             <li><strong>Assess Perfusion:</strong>
+                                <ul>
+                                    <li>Radial pulse absent or Cap refill > 2 seconds &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Radial pulse present or Cap refill < 2 seconds &rarr; Go to next step.</li>
+                                </ul>
+                            </li>
+                             <li><strong>Assess Mental Status:</strong>
+                                <ul>
+                                    <li>Cannot follow simple commands ("squeeze my hand") &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Can follow simple commands &rarr; <span class="font-bold text-yellow-600">DELAYED (Yellow)</span>.</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3 class="mt-8">JumpSTART Triage (Pediatric)</h3>
+                         <p class="mb-4">Modified for children who appear to be between ages 1-8.</p>
+                         <ol class="list-decimal pl-6 space-y-2">
+                            <li><strong>"Can you walk?"</strong> All who can are triaged <span class="font-bold text-green-600">MINOR (Green)</span>.</li>
+                            <li><strong>Assess Breathing:</strong>
+                                <ul>
+                                    <li>Apneic &rarr; Open airway. Still apneic but has pulse &rarr; Give 5 rescue breaths.</li>
+                                    <li>Still apneic after breaths &rarr; <span class="font-bold text-black">DECEASED (Black)</span>.</li>
+                                    <li>Starts breathing after breaths &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Respiratory Rate < 15 or > 45/min &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Respiratory Rate 15-45/min &rarr; Go to next step.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Assess Perfusion:</strong>
+                                <ul>
+                                    <li>No palpable peripheral pulse (radial, brachial, or dorsalis pedis) &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>Palpable peripheral pulse &rarr; Go to next step.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Assess Mental Status (AVPU):</strong>
+                                <ul>
+                                    <li>"P" (Pain) or "U" (Unresponsive) &rarr; <span class="font-bold text-red-600">IMMEDIATE (Red)</span>.</li>
+                                    <li>"A" (Alert), "V" (Verbal), or "P" (Pain - appropriately localizes) &rarr; <span class="font-bold text-yellow-600">DELAYED (Yellow)</span>.</li>
+                                </ul>
+                            </li>
+                         </ol>
+                    `
+                },
+            ],
+            medications: [
+                { id: 'adenosine', name: 'Adenosine', content: `<h4>Class:</h4><p>Antiarrhythmic</p><h4>Mechanism:</h4><p>Slows conduction time through AV node; can interrupt re-entrant pathways.</p><h4>Indications:</h4><p>SVT (Narrow Complex Tachycardia), Wide Complex Tachycardia (regular/monomorphic)</p><h4>Contraindications:</h4><p>2nd or 3rd degree AV block, Sick Sinus Syndrome, WPW.</p><h4>Dose (Adult):</h4><p>6mg rapid IV/IO push, followed by 12mg if no conversion.</p><h4>Dose (Peds):</h4><p>0.1mg/kg (max 6mg), followed by 0.2mg/kg (max 12mg).</p><h4>Special Notes:</h4><p>Administer rapidly followed by a saline flush. Short half-life (<10 sec). Patient may feel a sense of "impending doom" or chest pressure.</p>` },
+                { id: 'amiodarone', name: 'Amiodarone', content: `<h4>Class:</h4><p>Antiarrhythmic</p><h4>Mechanism:</h4><p>Blocks sodium, potassium, and calcium channels, prolonging the action potential.</p><h4>Indications:</h4><p>Pulseless VT/VF, Wide Complex Tachycardia.</p><h4>Contraindications:</h4><p>Bradycardia, heart block, cardiogenic shock.</p><h4>Dose (Adult Cardiac Arrest):</h4><p>300mg IV/IO push, may repeat with 150mg.</p><h4>Dose (Peds Cardiac Arrest):</h4><p>5mg/kg IV/IO bolus, may repeat up to 2 times.</p><h4>Special Notes:</h4><p>May cause hypotension and bradycardia. Monitor patient closely.</p>` },
+                { id: 'epinephrine', name: 'Epinephrine', content: `<h4>Class:</h4><p>Sympathomimetic, Alpha/Beta Agonist</p><h4>Mechanism:</h4><p>Stimulates alpha, beta-1, and beta-2 receptors, causing vasoconstriction, increased heart rate/contractility, and bronchodilation.</p><h4>Indications:</h4><p>Cardiac Arrest, Anaphylaxis, Severe Asthma, Symptomatic Bradycardia.</p><h4>Dose (Adult Cardiac Arrest):</h4><p>1mg (1:10,000) IV/IO every 3-5 minutes.</p><h4>Dose (Adult Anaphylaxis):</h4><p>0.3-0.5mg (1:1,000) IM.</p><h4>Dose (Peds Cardiac Arrest):</h4><p>0.01mg/kg (1:10,000) IV/IO every 3-5 minutes.</p><h4>Special Notes:</h4><p>Increases myocardial oxygen demand.</p>` },
+                { id: 'naloxone', name: 'Naloxone (Narcan)', content: `<h4>Class:</h4><p>Opioid Antagonist</p><h4>Mechanism:</h4><p>Competitively blocks opioid receptor sites, reversing respiratory depression.</p><h4>Indications:</h4><p>Opioid overdose with respiratory depression.</p><h4>Contraindications:</h4><p>None in an emergency.</p><h4>Dose (Adult):</h4><p>0.4-2mg IV/IM/IN, may repeat. Many agencies now use 4mg IN pre-filled device.</p><h4>Dose (Peds):</h4><p>0.1mg/kg IV/IM/IN (max single dose 2mg).</p><h4>Special Notes:</h4><p>May precipitate acute withdrawal in dependent patients. Titrate to adequate respirations, not full consciousness. Duration may be shorter than the opioid's duration.</p>` },
+            ]
+        };
+
+        // --- APPLICATION LOGIC ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const contentArea = document.getElementById('content-area');
+            const searchInput = document.getElementById('search-input');
+            const searchContainer = document.getElementById('search-container');
+            const backButton = document.getElementById('back-button');
+            const appTitle = document.getElementById('app-title');
+            const navProtocols = document.getElementById('nav-protocols');
+            const navMeds = document.getElementById('nav-meds');
+
+            let historyStack = [];
+            let currentView = 'protocols'; // 'protocols' or 'meds'
+
+            const categoryColors = {
+                green: { bg: 'bg-green-100', text: 'text-green-800', border: 'border-green-500' },
+                blue: { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-500' },
+                red: { bg: 'bg-red-100', text: 'text-red-800', border: 'border-red-500' },
+                pink: { bg: 'bg-pink-100', text: 'text-pink-800', border: 'border-pink-500' },
+                yellow: { bg: 'bg-yellow-100', text: 'text-yellow-800', border: 'border-yellow-500' },
+                purple: { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-500' },
+                gray: { bg: 'bg-gray-200', text: 'text-gray-800', border: 'border-gray-500' },
+                indigo: { bg: 'bg-indigo-100', text: 'text-indigo-800', border: 'border-indigo-500' },
+            };
+
+            const renderHome = () => {
+                let html = '';
+                if (currentView === 'protocols') {
+                    appTitle.textContent = 'EMS Protocols';
+                    searchContainer.style.display = 'block';
+                    html += '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">';
+                    db.categories.forEach(cat => {
+                        const colors = categoryColors[cat.color] || categoryColors.gray;
+                        html += `
+                            <div class="category-card p-4 rounded-lg shadow-sm cursor-pointer ${colors.bg} border-l-4 ${colors.border} hover:shadow-md transition" data-category="${cat.id}">
+                                <h2 class="text-lg font-bold ${colors.text}">${cat.name}</h2>
+                            </div>
+                        `;
+                    });
+                     html += `
+                        <div class="md:col-span-2 p-4 rounded-lg bg-gray-100 border-l-4 border-gray-400 text-sm text-gray-600">
+                            <strong>Disclaimer:</strong> This application is for quick reference only. Always follow local protocols and on-line medical direction. Information is based on the FY25 Joint Prehospital Emergency Care Protocols, Version 4.
+                        </div>`;
+                    html += '</div>';
+                } else {
+                    appTitle.textContent = 'Medication Reference';
+                    searchContainer.style.display = 'block';
+                    html += renderMedList();
+                }
+                contentArea.innerHTML = html;
+                updateUIState('home');
+                searchInput.value = '';
+            };
+
+            const renderProtocolList = (categoryId) => {
+                const category = db.categories.find(c => c.id === categoryId);
+                const protocols = db.protocols.filter(p => p.category === categoryId);
+                const colors = categoryColors[category.color] || categoryColors.gray;
+                let html = `<h2 class="text-2xl font-bold mb-4 ${colors.text}">${category.name}</h2><div class="space-y-3">`;
+                protocols.forEach(protocol => {
+                    html += `
+                        <div class="protocol-item p-4 rounded-lg shadow-sm cursor-pointer bg-gray-50 hover:bg-gray-100 border-l-4 ${colors.border} transition" data-protocol-id="${protocol.id}">
+                            <span class="font-semibold">${protocol.id}:</span> ${protocol.title}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                contentArea.innerHTML = html;
+                appTitle.textContent = category.name;
+                updateUIState('list');
+            };
+
+            const renderProtocolDetail = (protocolId) => {
+                const protocol = db.protocols.find(p => p.id === protocolId);
+                const category = db.categories.find(c => c.id === protocol.category);
+                const colors = categoryColors[category.color] || categoryColors.gray;
+                const html = `
+                    <div class="border-l-4 ${colors.border} pl-4 mb-4">
+                        <h2 class="text-2xl font-bold">${protocol.title}</h2>
+                        <p class="text-sm font-semibold ${colors.text}">${category.name}</p>
+                    </div>
+                    <div class="protocol-content">${protocol.content}</div>
+                `;
+                contentArea.innerHTML = html;
+                appTitle.textContent = protocol.id;
+                updateUIState('detail');
+            };
+
+             const renderMedList = (filter = '') => {
+                const filteredMeds = db.medications
+                    .filter(med => med.name.toLowerCase().includes(filter.toLowerCase()))
+                    .sort((a, b) => a.name.localeCompare(b.name));
+
+                let html = '<div class="space-y-3">';
+                if (filteredMeds.length > 0) {
+                     filteredMeds.forEach(med => {
+                        html += `
+                            <div class="med-item p-4 rounded-lg shadow-sm cursor-pointer bg-gray-50 hover:bg-gray-100 border-l-4 border-indigo-500 transition" data-med-id="${med.id}">
+                                <span class="font-semibold">${med.name}</span>
+                            </div>
+                        `;
+                    });
+                } else {
+                     html += `<p class="text-gray-500 text-center">No medications found.</p>`;
+                }
+
+                html += '</div>';
+                return html;
+            };
+
+            const renderMedDetail = (medId) => {
+                const med = db.medications.find(p => p.id === medId);
+                const html = `
+                    <div class="border-l-4 border-indigo-500 pl-4 mb-4">
+                        <h2 class="text-2xl font-bold">${med.name}</h2>
+                    </div>
+                    <div class="protocol-content">${med.content}</div>
+                `;
+                contentArea.innerHTML = html;
+                appTitle.textContent = med.name;
+                updateUIState('detail');
+            };
+
+            const renderSearchResults = (query) => {
+                query = query.toLowerCase();
+                let resultsHtml = '';
+                
+                if (currentView === 'protocols') {
+                    const protocols = db.protocols.filter(p => p.title.toLowerCase().includes(query) || p.id.toLowerCase().includes(query));
+                    if (protocols.length > 0) {
+                        resultsHtml = '<h2 class="text-xl font-bold mb-4 text-gray-700">Protocol Results</h2><div class="space-y-3">';
+                        protocols.forEach(protocol => {
+                             const category = db.categories.find(c => c.id === protocol.category);
+                             const colors = categoryColors[category.color] || categoryColors.gray;
+                            resultsHtml += `
+                                <div class="protocol-item p-4 rounded-lg shadow-sm cursor-pointer bg-gray-50 hover:bg-gray-100 border-l-4 ${colors.border} transition" data-protocol-id="${protocol.id}">
+                                    <span class="font-semibold">${protocol.id}:</span> ${protocol.title}
+                                </div>
+                            `;
+                        });
+                        resultsHtml += '</div>';
+                    }
+                } else { // Meds view
+                    resultsHtml = renderMedList(query);
+                }
+
+                if (resultsHtml === '' || (currentView === 'meds' && !resultsHtml.includes('med-item'))) {
+                    resultsHtml = `<p class="text-center text-gray-500 mt-8">No results found for "${query}"</p>`;
+                }
+                
+                contentArea.innerHTML = resultsHtml;
+            };
+
+            const updateUIState = (state) => {
+                if (state === 'home') {
+                    backButton.classList.add('hidden');
+                    if (currentView === 'protocols') searchContainer.style.display = 'block';
+                } else {
+                    backButton.classList.remove('hidden');
+                    searchContainer.style.display = 'none';
+                }
+            };
+            
+            const navigate = (stateFn, ...args) => {
+                const currentState = contentArea.innerHTML;
+                const currentTitle = appTitle.textContent;
+                const currentSearchDisplay = searchContainer.style.display;
+                
+                historyStack.push({
+                    content: currentState, 
+                    title: currentTitle, 
+                    search: currentSearchDisplay
+                });
+                
+                stateFn(...args);
+            };
+
+            backButton.addEventListener('click', () => {
+                const lastState = historyStack.pop();
+                if (lastState) {
+                    contentArea.innerHTML = lastState.content;
+                    appTitle.textContent = lastState.title;
+                    searchContainer.style.display = lastState.search;
+                    if (historyStack.length === 0) {
+                        updateUIState('home');
+                    } else {
+                        updateUIState('list'); 
+                    }
+                }
+            });
+
+            contentArea.addEventListener('click', (e) => {
+                const categoryCard = e.target.closest('.category-card');
+                const protocolItem = e.target.closest('.protocol-item');
+                const medItem = e.target.closest('.med-item');
+
+                if (categoryCard) {
+                    const categoryId = categoryCard.dataset.category;
+                    navigate(renderProtocolList, categoryId);
+                } else if (protocolItem) {
+                    const protocolId = protocolItem.dataset.protocolId;
+                    navigate(renderProtocolDetail, protocolId);
+                } else if (medItem) {
+                    const medId = medItem.dataset.medId;
+                    navigate(renderMedDetail, medId);
+                }
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                const query = e.target.value;
+                if (query.length > 1) {
+                    renderSearchResults(query);
+                } else if (query.length === 0) {
+                    if (currentView === 'protocols') {
+                        renderHome();
+                    } else {
+                        contentArea.innerHTML = renderMedList();
+                    }
+                }
+            });
+            
+            navProtocols.addEventListener('click', () => {
+                if (currentView !== 'protocols') {
+                    currentView = 'protocols';
+                    navProtocols.classList.add('bg-gray-700');
+                    navMeds.classList.remove('bg-gray-700');
+                    historyStack = [];
+                    renderHome();
+                }
+            });
+
+            navMeds.addEventListener('click', () => {
+                if (currentView !== 'meds') {
+                    currentView = 'meds';
+                    navMeds.classList.add('bg-gray-700');
+                    navProtocols.classList.remove('bg-gray-700');
+                    historyStack = [];
+                    renderHome();
+                }
+            });
+
+            // Initial Load
+            renderHome();
+        });
+    </script>
+
+</body>
+</html>
+
