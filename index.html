@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMS Protocols</title>
+    <title>JPECP EMS Protocols</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -34,6 +34,14 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        /* Styles for collapsible categories */
+        .collapsible-content {
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        .chevron {
+             transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-gray-100 h-screen overflow-hidden">
@@ -44,7 +52,7 @@
         <div id="main-page" class="page absolute top-0 left-0 w-full h-full flex flex-col">
             <!-- Header -->
             <header class="bg-blue-600 text-white p-4 shadow-md z-10">
-                <h1 class="text-2xl font-bold text-center">EMS Protocols</h1>
+                <h1 class="text-2xl font-bold text-center">JPECP EMS Protocols</h1>
             </header>
 
             <!-- Search Bar -->
@@ -193,7 +201,7 @@
         }
 
         /**
-         * Renders the protocols into the main list.
+         * Renders the protocols into the main list with collapsible categories.
          * @param {Array} data - The protocol data to render.
          */
         function renderProtocols(data) {
@@ -203,13 +211,20 @@
                 return;
             }
             data.forEach(category => {
-                const categoryHeader = document.createElement('h2');
-                categoryHeader.className = 'text-lg font-semibold bg-gray-200 p-3 mt-4 sticky top-0';
-                categoryHeader.textContent = category.category;
-                protocolListContainer.appendChild(categoryHeader);
+                const categoryContainer = document.createElement('div');
+                
+                const categoryHeader = document.createElement('button');
+                categoryHeader.className = 'w-full text-left text-lg font-semibold bg-gray-200 p-3 mt-4 sticky top-0 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500 z-10 cursor-pointer';
+                categoryHeader.innerHTML = `
+                    <span>${category.category}</span>
+                    <svg class="chevron h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                `;
 
                 const list = document.createElement('ul');
-                list.className = 'divide-y divide-gray-200';
+                list.className = 'divide-y divide-gray-200 collapsible-content';
+                
                 category.protocols.forEach(protocol => {
                     const listItem = document.createElement('li');
                     listItem.className = 'p-4 hover:bg-blue-50 cursor-pointer flex justify-between items-center';
@@ -217,9 +232,29 @@
                     listItem.addEventListener('click', () => showDetail(protocol));
                     list.appendChild(listItem);
                 });
-                protocolListContainer.appendChild(list);
+                
+                categoryContainer.appendChild(categoryHeader);
+                categoryContainer.appendChild(list);
+                protocolListContainer.appendChild(categoryContainer);
+                
+                // Set initial state to collapsed
+                list.style.maxHeight = '0px';
+                categoryHeader.querySelector('.chevron').style.transform = 'rotate(-180deg)';
+
+                categoryHeader.addEventListener('click', () => {
+                    const isExpanded = list.style.maxHeight !== '0px';
+                    const chevron = categoryHeader.querySelector('.chevron');
+                    if (isExpanded) {
+                        list.style.maxHeight = '0px';
+                        chevron.style.transform = 'rotate(-180deg)';
+                    } else {
+                        list.style.maxHeight = list.scrollHeight + 'px';
+                        chevron.style.transform = 'rotate(0deg)';
+                    }
+                });
             });
         }
+
 
         /**
          * Filters and re-renders the protocol list based on search input.
