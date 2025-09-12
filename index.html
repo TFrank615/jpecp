@@ -93,9 +93,8 @@
 
     <script>
         // --- CONFIGURATION ---
-        // 1. Follow the instructions in 'instructions.md' to set up and publish your Google Sheet.
-        // 2. Paste the PUBLISHED .csv URL you get from Google Sheets here.
         const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBUFuqIIdxow_lZxa7bnjqrMIpAElnsOnIq60o5-xjt6XEMvf2XIw1rxUz6URFWUnpqCYe71P-xLOU/pub?gid=2105512997&single=true&output=csv';
+        const CACHE_KEY = 'jpecpProtocolsCache'; // Key for localStorage
 
         // --- DATA ---
         let protocolData = []; // This will be populated by the fetch from Google Sheets.
@@ -111,9 +110,24 @@
 
         // --- FUNCTIONS ---
         
+        /**
+         * Debounce function to delay execution of a function until after a certain time
+         * has passed without it being called. Useful for search input.
+         * @param {Function} func The function to debounce.
+         * @param {number} delay The delay in milliseconds.
+         */
+        function debounce(func, delay) {
+            let timeoutId;
+            return function(...args) {
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    func.apply(this, args);
+                }, delay);
+            };
+        }
+       
        /**
-         * Parses CSV text into a structured data format. This version properly handles
-         * quoted fields that may contain newlines and commas.
+         * Parses CSV text into a structured data format.
          * @param {string} csvText - The raw CSV string from the Google Sheet.
          * @returns {Array} An array of arrays, representing rows and fields.
          */
@@ -122,8 +136,6 @@
             let currentRow = [];
             let currentField = '';
             let inQuotes = false;
-
-            // Normalize line endings to LF
             const normalizedText = csvText.trim().replace(/\r\n/g, '\n');
 
             for (let i = 0; i < normalizedText.length; i++) {
@@ -132,19 +144,15 @@
 
                 if (char === '"') {
                     if (inQuotes && nextChar === '"') {
-                        // This is an escaped quote inside a quoted field
                         currentField += '"';
-                        i++; // Skip the next quote
+                        i++;
                     } else {
-                        // This is the start or end of a quoted field
                         inQuotes = !inQuotes;
                     }
                 } else if (char === ',' && !inQuotes) {
-                    // End of a field
                     currentRow.push(currentField);
                     currentField = '';
                 } else if (char === '\n' && !inQuotes) {
-                    // End of a row
                     currentRow.push(currentField);
                     rows.push(currentRow);
                     currentRow = [];
@@ -153,15 +161,12 @@
                     currentField += char;
                 }
             }
-            // Add the last field and row if the file doesn't end with a newline
             if (currentField || currentRow.length > 0) {
                  currentRow.push(currentField);
                  rows.push(currentRow);
             }
-            
             return rows;
         }
-
 
         /**
          * Groups the parsed CSV data by category.
@@ -181,16 +186,12 @@
             }
             
             const dataMap = new Map();
-
             rows.forEach(row => {
-                if (row.length < headers.length) return; // Skip malformed rows
-                
+                if (row.length < headers.length) return;
                 const category = row[categoryIndex];
                 const title = row[titleIndex];
                 const content = row[contentIndex] || '';
-
                 if (!category || !title) return;
-
                 if (!dataMap.has(category)) {
                     dataMap.set(category, []);
                 }
@@ -201,7 +202,6 @@
             dataMap.forEach((protocols, category) => {
                 groupedData.push({ category, protocols });
             });
-            
             return groupedData;
         }
 
@@ -217,7 +217,6 @@
             }
             data.forEach(category => {
                 const categoryContainer = document.createElement('div');
-                
                 const categoryHeader = document.createElement('button');
                 categoryHeader.className = 'w-full text-left text-lg font-semibold bg-gray-200 p-3 mt-4 sticky top-0 flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500 z-10 cursor-pointer';
                 categoryHeader.innerHTML = `
@@ -226,10 +225,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 `;
-
                 const list = document.createElement('ul');
                 list.className = 'divide-y divide-gray-200 collapsible-content';
-                
                 category.protocols.forEach(protocol => {
                     const listItem = document.createElement('li');
                     listItem.className = 'p-4 hover:bg-blue-50 cursor-pointer flex justify-between items-center';
@@ -237,15 +234,11 @@
                     listItem.addEventListener('click', () => showDetail(protocol));
                     list.appendChild(listItem);
                 });
-                
                 categoryContainer.appendChild(categoryHeader);
                 categoryContainer.appendChild(list);
                 protocolListContainer.appendChild(categoryContainer);
-                
-                // Set initial state to collapsed
                 list.style.maxHeight = '0px';
                 categoryHeader.querySelector('.chevron').style.transform = 'rotate(-180deg)';
-
                 categoryHeader.addEventListener('click', () => {
                     const isExpanded = list.style.maxHeight !== '0px';
                     const chevron = categoryHeader.querySelector('.chevron');
@@ -260,7 +253,6 @@
             });
         }
 
-
         /**
          * Filters and re-renders the protocol list based on search input.
          */
@@ -270,7 +262,6 @@
                 renderProtocols(protocolData);
                 return;
             }
-
             const filteredData = protocolData.map(category => {
                 const filteredProtocols = category.protocols.filter(protocol =>
                     protocol.title.toLowerCase().includes(query) ||
@@ -278,7 +269,6 @@
                 );
                 return { ...category, protocols: filteredProtocols };
             }).filter(category => category.protocols.length > 0);
-
             renderProtocols(filteredData);
         }
 
@@ -304,58 +294,72 @@
 
         /**
          * Fetches, parses, and renders the protocols from the Google Sheet.
+         * Implements a cache-first strategy for faster startups.
          */
         async function initializeApp() {
-            protocolListContainer.innerHTML = `
-                <div class="flex flex-col items-center justify-center mt-10">
-                    <div class="loader mb-4"></div>
-                    <p class="text-gray-600">Loading protocols...</p>
-                </div>`;
+            // --- Caching Improvement: Load from cache first for speed ---
+            const cachedCSV = localStorage.getItem(CACHE_KEY);
+            let hasRenderedFromCache = false;
+            if (cachedCSV) {
+                try {
+                    console.log("Loading data from cache...");
+                    const rows = parseCSV(cachedCSV);
+                    protocolData = groupProtocols(rows);
+                    renderProtocols(protocolData);
+                    hasRenderedFromCache = true;
+                } catch (e) {
+                    console.error("Could not parse cached data:", e);
+                    localStorage.removeItem(CACHE_KEY); // Clear bad cache
+                }
+            }
+
+            // If we haven't rendered from cache, show the loader.
+            if (!hasRenderedFromCache) {
+                 protocolListContainer.innerHTML = `
+                    <div class="flex flex-col items-center justify-center mt-10">
+                        <div class="loader mb-4"></div>
+                        <p class="text-gray-600">Loading protocols...</p>
+                    </div>`;
+            }
 
             if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL === 'YOUR_GOOGLE_SHEET_URL_HERE') {
                 protocolListContainer.innerHTML = `<p class="text-center text-red-600 p-4 mt-8"><b>Configuration Needed:</b><br>Please paste your published Google Sheet URL into the <code>GOOGLE_SHEET_URL</code> variable in the script.</p>`;
                 return;
             }
 
-            // Using a CORS proxy to ensure the data can be fetched reliably from any environment.
             const proxyUrl = 'https://api.allorigins.win/raw?url=';
-            // We encode the URL to ensure special characters are handled correctly by the proxy.
             const fetchUrl = proxyUrl + encodeURIComponent(GOOGLE_SHEET_URL);
 
             try {
                 const response = await fetch(fetchUrl);
-                if (!response.ok) {
-                    throw new Error(`Network Error (Status: ${response.status}). Please check a few things: <br>1. Is your Google Sheet URL correct? <br>2. Did you publish it to the web as a CSV? <br>3. The proxy service might be temporarily unavailable.`);
-                }
+                if (!response.ok) throw new Error(`Network Error (Status: ${response.status})`);
+                
                 const csvText = await response.text();
-                
-                // For debugging: log the fetched CSV to the console.
-                console.log("--- Fetched CSV Data ---");
-                console.log(csvText);
-                console.log("--- End of CSV Data ---");
+                if (!csvText) throw new Error("Fetched data is empty.");
 
-                if (!csvText) {
-                    throw new Error("Fetched data is empty. Your Google Sheet might be empty or not published correctly.");
+                // --- Caching Improvement: Check if fetched data is new ---
+                if (csvText !== cachedCSV) {
+                    console.log("New data fetched. Updating cache and UI.");
+                    localStorage.setItem(CACHE_KEY, csvText); // Save the new raw CSV
+                    const rows = parseCSV(csvText);
+                    protocolData = groupProtocols(rows);
+                    renderProtocols(protocolData); // Re-render with fresh data
+                } else {
+                    console.log("Data is already up to date.");
                 }
-                
-                const rows = parseCSV(csvText);
-                const fetchedData = groupProtocols(rows);
-                
-                if (fetchedData.length === 0) {
-                     throw new Error("Parsing failed or no data was found after parsing. Please check that your Google Sheet has the correct headers ('category', 'title', 'content') and at least one row of data.");
-                }
-                
-                protocolData = fetchedData; // Store globally for search function
-                renderProtocols(protocolData);
 
             } catch (error) {
                 console.error('Initialization failed:', error);
-                protocolListContainer.innerHTML = `<div class="text-center text-red-500 p-4 mt-8"><b>Error:</b> ${error.message}</div>`;
+                // Only show error if we didn't already render from cache
+                if (!hasRenderedFromCache) {
+                    protocolListContainer.innerHTML = `<div class="text-center text-red-500 p-4 mt-8"><b>Error:</b> ${error.message}</div>`;
+                }
             }
         }
 
         // --- EVENT LISTENERS ---
-        searchBar.addEventListener('input', handleSearch);
+        // Debounce search input for better performance
+        searchBar.addEventListener('input', debounce(handleSearch, 250));
         backButton.addEventListener('click', hideDetail);
 
         // --- INITIALIZE APP ---
