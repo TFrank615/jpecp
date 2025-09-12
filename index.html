@@ -93,11 +93,10 @@
 
     <script>
         // --- CONFIGURATION ---
-        const GOOGLE_SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQBUFuqIIdxow_lZxa7bnjqrMIpAElnsOnIq60o5-xjt6XEMvf2XIw1rxUz6URFWUnpqCYe71P-xLOU/pub?gid=2105512997&single=true&output=csv';
-        const CACHE_KEY = 'jpecpProtocolsCache'; // Key for localStorage
+        const LOCAL_CSV_PATH = 'protocols.csv'; // Path to your local CSV file
 
         // --- DATA ---
-        let protocolData = []; // This will be populated by the fetch from Google Sheets.
+        let protocolData = []; // This will be populated by the fetch from the local CSV.
 
         // --- DOM ELEMENTS ---
         const mainPage = document.getElementById('main-page');
@@ -293,67 +292,36 @@
         }
 
         /**
-         * Fetches, parses, and renders the protocols from the Google Sheet.
-         * Implements a cache-first strategy for faster startups.
+         * Fetches, parses, and renders the protocols from a local CSV file.
          */
         async function initializeApp() {
-            // --- Caching Improvement: Load from cache first for speed ---
-            const cachedCSV = localStorage.getItem(CACHE_KEY);
-            let hasRenderedFromCache = false;
-            if (cachedCSV) {
-                try {
-                    console.log("Loading data from cache...");
-                    const rows = parseCSV(cachedCSV);
-                    protocolData = groupProtocols(rows);
-                    renderProtocols(protocolData);
-                    hasRenderedFromCache = true;
-                } catch (e) {
-                    console.error("Could not parse cached data:", e);
-                    localStorage.removeItem(CACHE_KEY); // Clear bad cache
-                }
-            }
-
-            // If we haven't rendered from cache, show the loader.
-            if (!hasRenderedFromCache) {
-                 protocolListContainer.innerHTML = `
-                    <div class="flex flex-col items-center justify-center mt-10">
-                        <div class="loader mb-4"></div>
-                        <p class="text-gray-600">Loading protocols...</p>
-                    </div>`;
-            }
-
-            if (!GOOGLE_SHEET_URL || GOOGLE_SHEET_URL === 'YOUR_GOOGLE_SHEET_URL_HERE') {
-                protocolListContainer.innerHTML = `<p class="text-center text-red-600 p-4 mt-8"><b>Configuration Needed:</b><br>Please paste your published Google Sheet URL into the <code>GOOGLE_SHEET_URL</code> variable in the script.</p>`;
-                return;
-            }
-
-            const proxyUrl = 'https://api.allorigins.win/raw?url=';
-            const fetchUrl = proxyUrl + encodeURIComponent(GOOGLE_SHEET_URL);
+            protocolListContainer.innerHTML = `
+                <div class="flex flex-col items-center justify-center mt-10">
+                    <div class="loader mb-4"></div>
+                    <p class="text-gray-600">Loading protocols...</p>
+                </div>`;
 
             try {
-                const response = await fetch(fetchUrl);
-                if (!response.ok) throw new Error(`Network Error (Status: ${response.status})`);
+                const response = await fetch(LOCAL_CSV_PATH);
+                if (!response.ok) {
+                    throw new Error(`Could not load local protocols file (Status: ${response.status}). Make sure 'protocols.csv' is in the same folder as this HTML file.`);
+                }
                 
                 const csvText = await response.text();
-                if (!csvText) throw new Error("Fetched data is empty.");
-
-                // --- Caching Improvement: Check if fetched data is new ---
-                if (csvText !== cachedCSV) {
-                    console.log("New data fetched. Updating cache and UI.");
-                    localStorage.setItem(CACHE_KEY, csvText); // Save the new raw CSV
-                    const rows = parseCSV(csvText);
-                    protocolData = groupProtocols(rows);
-                    renderProtocols(protocolData); // Re-render with fresh data
-                } else {
-                    console.log("Data is already up to date.");
+                if (!csvText) throw new Error("Local protocols file is empty.");
+                
+                const rows = parseCSV(csvText);
+                protocolData = groupProtocols(rows);
+                
+                if (protocolData.length === 0) {
+                     throw new Error("Parsing failed or no data was found after parsing. Please check that your CSV file has the correct headers ('category', 'title', 'content') and at least one row of data.");
                 }
+
+                renderProtocols(protocolData);
 
             } catch (error) {
                 console.error('Initialization failed:', error);
-                // Only show error if we didn't already render from cache
-                if (!hasRenderedFromCache) {
-                    protocolListContainer.innerHTML = `<div class="text-center text-red-500 p-4 mt-8"><b>Error:</b> ${error.message}</div>`;
-                }
+                protocolListContainer.innerHTML = `<div class="text-center text-red-500 p-4 mt-8"><b>Error:</b> ${error.message}</div>`;
             }
         }
 
@@ -368,3 +336,4 @@
     </script>
 </body>
 </html>
+
