@@ -340,9 +340,7 @@ ADULT MEDICAL PROTOCOLS,B-1: General Patient Care / Monitoring & Vascular Access
 
 <hr class=""my-6"">
 <div class=""flex flex-col items-center text-center"">
-        <img src=""./images/b1-1.png"" alt=""b1-1"" class=""w-full"">
-        <img src=""./images/b1-2.png"" alt=""b1-2"" class=""w-full"">
-        <img src=""./images/b1-3.png"" alt=""b1-3"" class=""w-full"">
+        <img src=""./images/b1.png"" alt=""b1-1"" class=""w-full"">
       </div>"
 ADULT MEDICAL PROTOCOLS,B-2: Airway Management,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
@@ -395,12 +393,7 @@ ADULT MEDICAL PROTOCOLS,B-2: Airway Management,"<h3 class=""text-xl font-bold te
 <hr class=""my-6"">
        
 <div class=""flex flex-col items-center text-center"">
-        <img src=""./images/b2-1.png"" alt=""b2-1"" class=""w-full"">
-        <img src=""./images/b2-2.png"" alt=""b2-2"" class=""w-full"">
-        <img src=""./images/b2-3.png"" alt=""b2-3"" class=""w-full"">
-        <img src=""./images/b2-4.png"" alt=""b2-4"" class=""w-full"">
-        <img src=""./images/b2-5.png"" alt=""b2-5"" class=""w-full"">
-        <img src=""./images/b2-6.png"" alt=""b2-6"" class=""w-full"">
+        <img src=""./images/b2.png"" alt=""b2-1"" class=""w-full"">
       </div>"
 ADULT MEDICAL PROTOCOLS,B-3: Nausea & Vomiting,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
@@ -468,7 +461,13 @@ ADULT MEDICAL PROTOCOLS,B-4: Pain Management,"<h3 class=""text-xl font-bold text
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b4-1.png"" alt=""b4-1"" class=""w-full"">
+        <img src=""./images/b4-2.png"" alt=""b4-2"" class=""w-full"">
+        <img src=""./images/b4-3.png"" alt=""b4-3"" class=""w-full"">
+      </div>"
 ADULT MEDICAL PROTOCOLS,B-5: Cardiac Arrest,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -521,7 +520,12 @@ ADULT MEDICAL PROTOCOLS,B-5: Cardiac Arrest,"<h3 class=""text-xl font-bold text-
     <li><strong>Tension Pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (pulmonary), Thrombosis (coronary)</strong></li>
 </ul>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b5-1.png"" alt=""b5-1"" class=""w-full"">
+        <img src=""./images/b5-2.png"" alt=""b5-2"" class=""w-full"">
+      </div>"
 ADULT MEDICAL PROTOCOLS,B-6: ROSC & Post-Arrest Care,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -556,7 +560,12 @@ ADULT MEDICAL PROTOCOLS,B-6: ROSC & Post-Arrest Care,"<h3 class=""text-xl font-b
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b6-1.png"" alt=""b6-1"" class=""w-full"">
+        <img src=""./images/b6-2.png"" alt=""b6-2"" class=""w-full"">	
+		<img src=""./images/b6-3.png"" alt=""b6-3"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-7: Bradycardia,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <p class=""mb-2 italic text-gray-600"">Unstable (CHAPS): Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs of Shock.</p>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
@@ -586,7 +595,10 @@ ADULT MEDICAL PROTOCOLS,B-7: Bradycardia,"<h3 class=""text-xl font-bold text-gra
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b7-1.png"" alt=""b7-1"" class=""w-full"">	
+</div>"
 ADULT MEDICAL PROTOCOLS,"B-8: Tachycardia, Narrow Complex","<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <p class=""mb-2 italic text-gray-600"">Unstable (CHAPS): Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs of Shock.</p>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
@@ -661,7 +673,11 @@ ADULT MEDICAL PROTOCOLS,B-10: Chest Pain,"<h3 class=""text-xl font-bold text-gra
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b10-1.png"" alt=""b10-1"" class=""w-full"">
+		<img src=""./images/b10-2.png"" alt=""b10-2"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-11: Difficulty Breathing - Asthma / COPD,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -700,7 +716,11 @@ ADULT MEDICAL PROTOCOLS,B-11: Difficulty Breathing - Asthma / COPD,"<h3 class=""
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b11-1.png"" alt=""b11-1"" class=""w-full"">
+		<img src=""./images/b11-2.png"" alt=""b11-2"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-12: Difficulty Breathing - CHF / Pulmonary Edema,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -735,7 +755,11 @@ ADULT MEDICAL PROTOCOLS,B-12: Difficulty Breathing - CHF / Pulmonary Edema,"<h3 
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b12-1.png"" alt=""b12-1"" class=""w-full"">
+		<img src=""./images/b12-2.png"" alt=""b12-2"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-13: Stroke / CVA,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -775,7 +799,9 @@ ADULT MEDICAL PROTOCOLS,B-13: Stroke / CVA,"<h3 class=""text-xl font-bold text-g
     <li>Minor, rapidly improving, or resolved symptoms could indicate a TIA and require transport and evaluation.</li>
     <li>Stroke mimics include postictal states (after seizures) and Bell's Palsy. When in doubt, activate a Stroke Alert.</li>
 </ul>
-"
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b13-1.png"" alt=""b13-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,"B-14: Airborne Pathogens (COVID, etc.)","<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -789,7 +815,10 @@ ADULT MEDICAL PROTOCOLS,"B-14: Airborne Pathogens (COVID, etc.)","<h3 class=""te
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b14-1.png"" alt=""b14-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-15: Abdominal Pain,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -820,7 +849,10 @@ ADULT MEDICAL PROTOCOLS,B-15: Abdominal Pain,"<h3 class=""text-xl font-bold text
     <li>Consider Abdominal Aortic Aneurysm (AAA) in patients >50yo with abdominal/flank/back pain.</li>
 </ul>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b15-1.png"" alt=""b15-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-16: Altered Mental Status,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -888,7 +920,9 @@ ADULT MEDICAL PROTOCOLS,B-17: Anaphylaxis & Allergic Reaction,"<!-- Protocol B-1
 </div>
 
 <hr class=""my-6"">
-"
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b17-1.png"" alt=""b17-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-18: Behavioral Emergencies,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -914,7 +948,11 @@ ADULT MEDICAL PROTOCOLS,B-18: Behavioral Emergencies,"<h3 class=""text-xl font-b
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b18-1.png"" alt=""b18-1"" class=""w-full"">
+		<img src=""./images/b18-2.png"" alt=""b18-2"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-19: Bites and Envenomations,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -936,7 +974,10 @@ ADULT MEDICAL PROTOCOLS,B-19: Bites and Envenomations,"<h3 class=""text-xl font-
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b19-1.png"" alt=""b19-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-20: Diabetic Emergencies,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -996,7 +1037,10 @@ ADULT MEDICAL PROTOCOLS,B-22: Hyperthermia / Heat Injuries,"<h3 class=""text-xl 
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b22-1.png"" alt=""b22-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-23: Hypothermia / Cold Injuries,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1016,7 +1060,10 @@ ADULT MEDICAL PROTOCOLS,B-23: Hypothermia / Cold Injuries,"<h3 class=""text-xl f
     <li>Limit defibrillation to 3 attempts if core temp < 86°F.</li>
 </ul>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b23-1.png"" alt=""b23-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-24: Overdose / Toxic Ingestion,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1069,7 +1116,11 @@ ADULT MEDICAL PROTOCOLS,B-25: Renal Failure / Dialysis,"<h3 class=""text-xl font
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
 <p class=""p-2 bg-red-100 text-red-800 rounded-lg"">ALWAYS consider hyperkalemia. Do not start an IV or take a BP in an extremity with a shunt/fistula.</p>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b25-1.png"" alt=""b25-1"" class=""w-full"">
+		<img src=""./images/b25-2.png"" alt=""b25-2"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-26: Drowning / Submersion,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1112,7 +1163,11 @@ ADULT MEDICAL PROTOCOLS,B-27: Sepsis / Septic Shock,"<h3 class=""text-xl font-bo
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b27-1.png"" alt=""b27-1"" class=""w-full"">
+		<img src=""./images/b27-2.png"" alt=""b27-2"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-28: Seizures (Non-Pregnant),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1159,7 +1214,10 @@ ADULT MEDICAL PROTOCOLS,B-29: Shock / Hypotension (Non-Trauma),"<h3 class=""text
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b29-1.png"" alt=""b29-1"" class=""w-full"">
+</div>"
 ADULT MEDICAL PROTOCOLS,B-30: Syncope/ Dizziness / Weakness,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1205,7 +1263,10 @@ ADULT MEDICAL PROTOCOLS,B-31: Medical Support Apparatus,"<h3 class=""text-xl fon
     <li><strong>Defibrillator Vests:</strong> If patient is critical or has been shocked, remove vest and apply monitor pads.</li>
     <li><strong>Indwelling Catheters (PICC, Hickman, etc.):</strong> SL 4/5 may access per <span class=""text-blue-600 font-semibold"">B-1</span>. If dislodged, cover site and control bleeding.</li>
     <li><strong>Dialysis Fistulas/Grafts:</strong> Assess for ""thrill"". Control bleeding with direct pressure. <span class=""p-1 bg-red-100 text-red-800 rounded-md font-mono text-sm"">DO NOT use TQ unless direct pressure fails.</span> Access only in pulseless/peri-arrest patients (SL 4/5).</li>
-</ul>"
+</ul>
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/b31-1.png"" alt=""b31-1"" class=""w-full"">
+</div>"
 ADULT TRAUMA PROTOCOL,"C-1: Trauma, General","<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Key Concepts: MARCH-PAWS</h3>
 <ul class=""list-disc ml-5 space-y-2 text-gray-700"">
     <li><strong>M</strong> – Massive hemorrhage</li>
@@ -1252,7 +1313,12 @@ ADULT TRAUMA PROTOCOL,"C-1: Trauma, General","<h3 class=""text-xl font-bold text
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/c1-1.png"" alt=""c1-1"" class=""w-full"">
+        <img src=""./images/c1-2.png"" alt=""c1-2"" class=""w-full"">	
+		<img src=""./images/c1-3.png"" alt=""c1-3"" class=""w-full"">
+</div>"
 ADULT TRAUMA PROTOCOL,"C-2: Burns, General","<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1288,7 +1354,12 @@ ADULT TRAUMA PROTOCOL,"C-2: Burns, General","<h3 class=""text-xl font-bold text-
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/c2-1.png"" alt=""c2-1"" class=""w-full"">
+        <img src=""./images/c2-2.png"" alt=""c2-2"" class=""w-full"">	
+		<img src=""./images/c2-3.png"" alt=""c2-3"" class=""w-full"">
+</div>"
 ADULT TRAUMA PROTOCOL,C-3: Crush Injuries,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1332,7 +1403,10 @@ ADULT TRAUMA PROTOCOL,C-3: Crush Injuries,"<h3 class=""text-xl font-bold text-gr
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/c3-1.png"" alt=""c3-1"" class=""w-full"">
+</div>"
 ADULT TRAUMA PROTOCOL,C-4: Epistaxis,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1376,7 +1450,13 @@ ADULT TRAUMA PROTOCOL,C-5: Eye Injuries,"<h3 class=""text-xl font-bold text-gray
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/c5-1.png"" alt=""c5-1"" class=""w-full"">
+        <img src=""./images/c5-2.png"" alt=""c5-2"" class=""w-full"">	
+		<img src=""./images/c5-3.png"" alt=""c5-3"" class=""w-full"">
+		<img src=""./images/c5-4.png"" alt=""c5-4"" class=""w-full"">
+</div>"
 ADULT TRAUMA PROTOCOL,C-6: Head/Facial Injuries,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -1419,7 +1499,11 @@ ADULT TRAUMA PROTOCOL,C-6: Head/Facial Injuries,"<h3 class=""text-xl font-bold t
     <li>Rapid decline in mental status and/or unilateral pupil changes.</li>
 </ul>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/c6-1.png"" alt=""c6-1"" class=""w-full"">
+		<img src=""./images/c6-2.png"" alt=""c6-2"" class=""w-full"">
+</div>"
 ADULT TRAUMA PROTOCOL,C-7: Spinal Motion Restriction (SMR),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Spinal Motion Restriction Algorithm</h3>
 <h4 class=""mt-4 text-md font-semibold text-gray-800"">SMR is NOT indicated for penetrating trauma to head, neck or torso.</h4>
 <h4 class=""mt-4 text-md font-semibold text-gray-800"">Indications for SMR following BLUNT trauma include any of the following:</h4>
@@ -1439,7 +1523,11 @@ ADULT TRAUMA PROTOCOL,C-7: Spinal Motion Restriction (SMR),"<h3 class=""text-xl 
     <li>Fasten stretcher seat belts.</li>
 </ol>
 <p class=""mt-4 p-2 bg-red-100 text-red-800 rounded-lg"">Patients should NOT be transported on the Scoop device or LSB due to risks of tissue injury and interference with ventilation.</p>
-"
+
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/c7-1.png"" alt=""c7-1"" class=""w-full"">
+		<img src=""./images/c7-2.png"" alt=""c7-2"" class=""w-full"">
+</div>"
 OBGYN PROTOCOLS,D-1: Vaginal Bleeding (Non-Postpartum),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1481,7 +1569,11 @@ OBGYN PROTOCOLS,D-1: Vaginal Bleeding (Non-Postpartum),"<h3 class=""text-xl font
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
 <p class=""text-gray-700"">Serious causes: Ectopic pregnancy, placental abruption (painful), placenta previa (painless, bright red), uterine rupture.</p>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/d1-1.png"" alt=""d1-1"" class=""w-full"">
+		<img src=""./images/d1-2.png"" alt=""d1-2"" class=""w-full"">
+</div>"
 OBGYN PROTOCOLS,D-2: Seizures (Pregnant),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1516,7 +1608,10 @@ OBGYN PROTOCOLS,D-2: Seizures (Pregnant),"<h3 class=""text-xl font-bold text-gra
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
 <p class=""text-gray-700""><strong>Preeclampsia:</strong> SBP > 140 or DBP > 90 without seizure. <strong>Eclampsia:</strong> Hypertension with seizure. Can occur up to 6 weeks postpartum. Magnesium is the definitive treatment.</p>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/d2-1.png"" alt=""d2-1"" class=""w-full"">
+</div>"
 OBGYN PROTOCOLS,D-3: Childbirth / Labor,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1560,7 +1655,14 @@ OBGYN PROTOCOLS,D-3: Childbirth / Labor,"<h3 class=""text-xl font-bold text-gray
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/d3-1.png"" alt=""d3-1"" class=""w-full"">
+        <img src=""./images/d3-2.png"" alt=""d3-2"" class=""w-full"">	
+		<img src=""./images/d3-3.png"" alt=""d3-3"" class=""w-full"">
+		<img src=""./images/d3-4.png"" alt=""d3-4"" class=""w-full"">
+		<img src=""./images/d3-5.png"" alt=""d3-5"" class=""w-full"">
+</div>"
 OBGYN PROTOCOLS,D-4: Newborn Care,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines (Birth to 24 hours)</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1585,7 +1687,11 @@ OBGYN PROTOCOLS,D-4: Newborn Care,"<h3 class=""text-xl font-bold text-gray-800 m
 </ul>
 <p class=""mt-4 p-2 bg-red-100 text-red-800 rounded-lg"">Do not delay resuscitation to obtain an APGAR score.</p>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/d4-1.png"" alt=""d4-1"" class=""w-full"">
+		<img src=""./images/d4-2.png"" alt=""d4-2"" class=""w-full"">
+</div>"
 OBGYN PROTOCOLS,D-5: Newborn Resuscitation,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines (Birth to 24 hours)</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1629,7 +1735,17 @@ OBGYN PROTOCOLS,D-5: Newborn Resuscitation,"<h3 class=""text-xl font-bold text-g
             <li>After 5 min of CPR without improvement, check BGL. If < 40mg/dL: <span class=""font-semibold text-indigo-700"">D10W</span> 2mL/kg IV/IO.</li>
         </ul>
     </div>
-</div>"
+</div>
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/d5-1.png"" alt=""d5-1"" class=""w-full"">
+        <img src=""./images/d5-2.png"" alt=""d5-2"" class=""w-full"">	
+		<img src=""./images/d5-3.png"" alt=""d5-3"" class=""w-full"">
+		<img src=""./images/d5-4.png"" alt=""d5-4"" class=""w-full"">
+		<img src=""./images/d5-5.png"" alt=""d5-5"" class=""w-full"">
+		<img src=""./images/d5-6.png"" alt=""d5-6"" class=""w-full"">
+		<img src=""./images/d5-7.png"" alt=""d5-7"" class=""w-full"">
+		<img src=""./images/d5-8.png"" alt=""d5-8"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-1: General Patient Care (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Key Concepts</h3>
 <p class=""text-gray-700"">Use Pediatric Assessment Triangle (Appearance, Work of Breathing, Circulation to Skin). Consider ""toe-to-head"" approach for stable patients.</p>
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
@@ -1655,7 +1771,15 @@ PEDIATRIC MEDICAL PROTOCOLS,E-1: General Patient Care (Pediatric),"<h3 class=""t
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e1-1.png"" alt=""e1-1"" class=""w-full"">
+        <img src=""./images/e1-2.png"" alt=""e1-2"" class=""w-full"">	
+		<img src=""./images/e1-3.png"" alt=""e1-3"" class=""w-full"">
+		<img src=""./images/e1-4.png"" alt=""e1-4"" class=""w-full"">
+		<img src=""./images/e1-5.png"" alt=""e1-5"" class=""w-full"">
+		<img src=""./images/e1-6.png"" alt=""e1-6"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-2: Airway Management (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1696,7 +1820,28 @@ PEDIATRIC MEDICAL PROTOCOLS,E-2: Airway Management (Pediatric),"<h3 class=""text
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e2-1.png"" alt=""e2-1"" class=""w-full"">
+        <img src=""./images/e2-2.png"" alt=""e2-2"" class=""w-full"">	
+		<img src=""./images/e2-3.png"" alt=""e2-3"" class=""w-full"">
+		<img src=""./images/e2-4.png"" alt=""e2-4"" class=""w-full"">
+		<img src=""./images/e2-5.png"" alt=""e2-5"" class=""w-full"">
+		<img src=""./images/e2-6.png"" alt=""e2-6"" class=""w-full"">
+		<img src=""./images/e2-7.png"" alt=""e2-7"" class=""w-full"">
+        <img src=""./images/e2-8.png"" alt=""e2-8"" class=""w-full"">	
+		<img src=""./images/e2-9.png"" alt=""e2-9"" class=""w-full"">
+		<img src=""./images/e2-10.png"" alt=""e2-10"" class=""w-full"">
+		<img src=""./images/e2-11.png"" alt=""e2-11"" class=""w-full"">
+		<img src=""./images/e2-12.png"" alt=""e2-12"" class=""w-full"">
+		<img src=""./images/e2-13.png"" alt=""e2-13"" class=""w-full"">
+		<img src=""./images/e2-14.png"" alt=""e2-14"" class=""w-full"">
+		<img src=""./images/e2-15.png"" alt=""e2-15"" class=""w-full"">
+		<img src=""./images/e2-16.png"" alt=""e2-16"" class=""w-full"">
+		<img src=""./images/e2-17.png"" alt=""e2-17"" class=""w-full"">
+		<img src=""./images/e2-18.png"" alt=""e2-18"" class=""w-full"">
+		<img src=""./images/e2-19.png"" alt=""e2-19"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-3: Nausea / Vomiting & Abdominal Pain (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1732,7 +1877,10 @@ PEDIATRIC MEDICAL PROTOCOLS,E-3: Nausea / Vomiting & Abdominal Pain (Pediatric),
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
 <p class=""text-gray-700"">Emergent causes of peds abdominal pain: Appendicitis, Intussusception, Volvulus, DKA, Non-Accidental Trauma, Torsion (Ovarian/Testicular).</p>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e3-1.png"" alt=""e3-1"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-4: Pain Management (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1767,7 +1915,15 @@ PEDIATRIC MEDICAL PROTOCOLS,E-4: Pain Management (Pediatric),"<h3 class=""text-x
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e4-1.png"" alt=""e4-1"" class=""w-full"">
+        <img src=""./images/e4-2.png"" alt=""e4-2"" class=""w-full"">	
+		<img src=""./images/e4-3.png"" alt=""e4-3"" class=""w-full"">
+		<img src=""./images/e4-4.png"" alt=""e4-4"" class=""w-full"">
+		<img src=""./images/e4-5.png"" alt=""e4-5"" class=""w-full"">
+		<img src=""./images/e4-6.png"" alt=""e4-6"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-5: Cardiac Arrest (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1813,7 +1969,18 @@ PEDIATRIC MEDICAL PROTOCOLS,E-5: Cardiac Arrest (Pediatric),"<h3 class=""text-xl
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e5-1.png"" alt=""e5-1"" class=""w-full"">
+        <img src=""./images/e5-2.png"" alt=""e5-2"" class=""w-full"">	
+		<img src=""./images/e5-3.png"" alt=""e5-3"" class=""w-full"">
+		<img src=""./images/e5-4.png"" alt=""e5-4"" class=""w-full"">
+		<img src=""./images/e5-5.png"" alt=""e5-5"" class=""w-full"">
+		<img src=""./images/e5-6.png"" alt=""e5-6"" class=""w-full"">
+		<img src=""./images/e5-7.png"" alt=""e5-7"" class=""w-full"">
+		<img src=""./images/e5-8.png"" alt=""e5-8"" class=""w-full"">
+		<img src=""./images/e5-9.png"" alt=""e5-9"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-6: ROSC & Post-Arrest Care (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1840,7 +2007,14 @@ PEDIATRIC MEDICAL PROTOCOLS,E-6: ROSC & Post-Arrest Care (Pediatric),"<h3 class=
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e6-1.png"" alt=""e6-1"" class=""w-full"">
+        <img src=""./images/e6-2.png"" alt=""e6-2"" class=""w-full"">	
+		<img src=""./images/e6-3.png"" alt=""e6-3"" class=""w-full"">
+		<img src=""./images/e6-4.png"" alt=""e6-4"" class=""w-full"">
+		<img src=""./images/e6-5.png"" alt=""e6-5"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-7: Bradycardia (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1870,7 +2044,12 @@ PEDIATRIC MEDICAL PROTOCOLS,E-7: Bradycardia (Pediatric),"<h3 class=""text-xl fo
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e7-1.png"" alt=""e7-1"" class=""w-full"">
+        <img src=""./images/e7-2.png"" alt=""e7-2"" class=""w-full"">
+		<img src=""./images/e7-3.png"" alt=""e7-3"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,"E-8: Tachycardia, Narrow Complex (Pediatric)","<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <p class=""mb-2 italic text-gray-600"">Infants < 1 yr: HR > 220 bpm; Children > 1 yr: HR > 180 bpm</p>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
@@ -1891,7 +2070,11 @@ PEDIATRIC MEDICAL PROTOCOLS,"E-8: Tachycardia, Narrow Complex (Pediatric)","<h3 
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e8-1.png"" alt=""e8-1"" class=""w-full"">
+        <img src=""./images/e8-2.png"" alt=""e8-2"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,"E-9: Tachycardia, Wide Complex (Pediatric)","<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 4+ -->
@@ -1906,7 +2089,14 @@ PEDIATRIC MEDICAL PROTOCOLS,"E-9: Tachycardia, Wide Complex (Pediatric)","<h3 cl
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e9-1.png"" alt=""e9-1"" class=""w-full"">
+        <img src=""./images/e9-2.png"" alt=""e9-2"" class=""w-full"">
+		<img src=""./images/e9-3.png"" alt=""e9-3"" class=""w-full"">
+		<img src=""./images/e9-4.png"" alt=""e9-4"" class=""w-full"">
+</div>
+"
 PEDIATRIC MEDICAL PROTOCOLS,E-10: Altered Mental Status / BRUE (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1952,7 +2142,11 @@ PEDIATRIC MEDICAL PROTOCOLS,E-11: Anaphylaxis / Allergic Reaction (Pediatric),"<
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e11-1.png"" alt=""e11-1"" class=""w-full"">
+        <img src=""./images/e11-2.png"" alt=""e11-2"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-12: Asthma / Reactive Airway Disease (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -1982,7 +2176,11 @@ PEDIATRIC MEDICAL PROTOCOLS,E-12: Asthma / Reactive Airway Disease (Pediatric),"
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e12-1.png"" alt=""e12-1"" class=""w-full"">
+        <img src=""./images/e12-2.png"" alt=""e12-2"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-13: Croup / Epiglottitis / Bronchiolitis,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2011,7 +2209,10 @@ PEDIATRIC MEDICAL PROTOCOLS,E-13: Croup / Epiglottitis / Bronchiolitis,"<h3 clas
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e13-1.png"" alt=""e13-1"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-14: Diabetic Emergencies (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2048,7 +2249,10 @@ PEDIATRIC MEDICAL PROTOCOLS,E-14: Diabetic Emergencies (Pediatric),"<h3 class=""
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e14-1.png"" alt=""e14-1"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-15: Overdose / Toxic Ingestion (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2069,7 +2273,11 @@ PEDIATRIC MEDICAL PROTOCOLS,E-15: Overdose / Toxic Ingestion (Pediatric),"<h3 cl
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e15-1.png"" alt=""e15-1"" class=""w-full"">
+		<img src=""./images/e15-2.png"" alt=""e15-2"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-16: Sepsis / Septic Shock (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">SIRS Criteria</h3>
 <p class=""text-gray-700"">Based on age-specific abnormalities in Temp, HR, RR, or WBC count.</p>
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
@@ -2092,7 +2300,14 @@ PEDIATRIC MEDICAL PROTOCOLS,E-16: Sepsis / Septic Shock (Pediatric),"<h3 class="
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e16-1.png"" alt=""e16-1"" class=""w-full"">
+		<img src=""./images/e16-2.png"" alt=""e16-2"" class=""w-full"">
+		<img src=""./images/e16-3.png"" alt=""e16-3"" class=""w-full"">
+		<img src=""./images/e16-4.png"" alt=""e16-4"" class=""w-full"">
+		<img src=""./images/e16-5.png"" alt=""e16-5"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,E-17: Seizures & Post-Seizure Management (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2126,7 +2341,12 @@ PEDIATRIC MEDICAL PROTOCOLS,E-17: Seizures & Post-Seizure Management (Pediatric)
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
 <p class=""text-gray-700"">Febrile seizures are common from 6 months to 5 years. Status Epilepticus is seizure activity > 5 mins.</p>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e17-1.png"" alt=""e17-1"" class=""w-full"">
+		<img src=""./images/e17-2.png"" alt=""e17-2"" class=""w-full"">
+</div>
+"
 PEDIATRIC MEDICAL PROTOCOLS,E-18: Shock (non-Trauma) / Hypotension (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 3+ -->
@@ -2166,7 +2386,11 @@ PEDIATRIC MEDICAL PROTOCOLS,B-19: Bites & Envenomations - PEDIATRIC REFERENCE,"<
         </ul>
     </div>
 </div>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/e18-1.png"" alt=""e18-1"" class=""w-full"">
+		<img src=""./images/e18-2.png"" alt=""e18-2"" class=""w-full"">
+</div>"
 PEDIATRIC MEDICAL PROTOCOLS,G-1b: CO Poisoning / Smoke Inhalation & Cyanide Toxicity - PEDIATRIC REFERENCE,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">CO Poisoning / Smoke Inhalation & Cyanide (Pediatric)</h3>
 <p class=""italic mb-4 text-gray-600"">This protocol refers to the Adult Protocol <span class=""text-blue-600 font-semibold"">(G-1b)</span>. Use pediatric dosing for medications.</p>
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
@@ -2253,7 +2477,12 @@ PEDIATRIC TRAUMA PROTOCOLS,"F-1: Trauma, General (Pediatric)","<h3 class=""text-
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/f1-1.png"" alt=""f1-1"" class=""w-full"">
+		<img src=""./images/f1-2.png"" alt=""f1-2"" class=""w-full"">
+		<img src=""./images/f1-3.png"" alt=""f1-3"" class=""w-full"">
+</div>"
 PEDIATRIC TRAUMA PROTOCOLS,F-2: Burns (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2284,7 +2513,13 @@ PEDIATRIC TRAUMA PROTOCOLS,F-2: Burns (Pediatric),"<h3 class=""text-xl font-bold
     </div>
 </div>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/f2-1.png"" alt=""f2-1"" class=""w-full"">
+		<img src=""./images/f2-2.png"" alt=""f2-2"" class=""w-full"">
+		<img src=""./images/f2-3.png"" alt=""f2-3"" class=""w-full"">
+		<img src=""./images/f2-4.png"" alt=""f2-4"" class=""w-full"">
+</div>"
 PEDIATRIC TRAUMA PROTOCOLS,F-3: Head/Facial Injuries (Pediatric),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2326,7 +2561,13 @@ PEDIATRIC TRAUMA PROTOCOLS,F-3: Head/Facial Injuries (Pediatric),"<h3 class=""te
     <li>Posturing, rapid decline in mental status, pupil changes.</li>
 </ul>
 
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/f3-1.png"" alt=""f3-1"" class=""w-full"">
+		<img src=""./images/f3-2.png"" alt=""f3-2"" class=""w-full"">
+		<img src=""./images/f3-3.png"" alt=""f3-3"" class=""w-full"">
+		<img src=""./images/f3-4.png"" alt=""f3-4"" class=""w-full"">
+</div>"
 PEDIATRIC TRAUMA PROTOCOLS,C-4-Peds: Epistaxis (Pediatric),"<p class=""italic mb-4 text-gray-600"">This protocol refers to the Adult Protocol <span class=""text-blue-600 font-semibold"">(C-4)</span> with pediatric considerations.</p>
 <h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
@@ -2440,7 +2681,11 @@ SPECIALTY PROTOCOLS,G-1b: CO Poisoning / Smoke Inhalation / Cyanide,"<h3 class="
         </ul>
     </div>
 </div>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g1b-1.png"" alt=""g1b-1"" class=""w-full"">
+</div>
+"
 SPECIALTY PROTOCOLS,G-1c: Decompression Illness (Aerospace),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2463,7 +2708,13 @@ SPECIALTY PROTOCOLS,G-1c: Decompression Illness (Aerospace),"<h3 class=""text-xl
 </div>
 <h3 class=""text-xl font-bold text-gray-800 mt-6 mb-3 border-b pb-2"">Additional Considerations</h3>
 <p class=""text-gray-700"">Occurs when nitrogen bubbles form in the bloodstream after rapid altitude changes. Symptoms can occur up to 72 hours later. High-flow oxygen helps ""denitrify"" the blood. If transporting by air, cabin altitude should be < 1000ft.</p>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g1c-1.png"" alt=""g1c-1"" class=""w-full"">
+		<img src=""./images/g1c-2.png"" alt=""g1c-2"" class=""w-full"">
+		<img src=""./images/g1c-3.png"" alt=""g1c-3"" class=""w-full"">
+		<img src=""./images/g1c-4.png"" alt=""g1c-4"" class=""w-full"">
+</div>"
 SPECIALTY PROTOCOLS,G-1d: Decompression Sickness (Diving),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
@@ -2488,7 +2739,15 @@ SPECIALTY PROTOCOLS,G-2a: Mass Casualty Incidents (MCI),"<h3 class=""text-xl fon
     <li>Move triaged patients to a Casualty Collection Point (CCP).</li>
     <li>Continuously re-triage patients. If a patient's condition changes, update their triage category.</li>
 </ul>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g2a-1.png"" alt=""g2a-1"" class=""w-full"">
+		<img src=""./images/g2a-2.png"" alt=""g2a-2"" class=""w-full"">
+		<img src=""./images/g2a-3.png"" alt=""g2a-3"" class=""w-full"">
+		<img src=""./images/g2a-4.png"" alt=""g2a-4"" class=""w-full"">
+		<img src=""./images/g2a-5.png"" alt=""g2a-5"" class=""w-full"">
+		<img src=""./images/g2a-6.png"" alt=""g2a-6"" class=""w-full"">
+</div>"
 SPECIALTY PROTOCOLS,G-2b: Triage - SALT (Adults ONLY),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">SALT Triage</h3>
 <p class=""text-gray-700"">Sort, Assess, Life-Saving Interventions, Transport</p>
 <h4 class=""mt-4 text-md font-semibold text-gray-800"">Step 1: Sort (Global Sorting)</h4>
@@ -2508,7 +2767,10 @@ SPECIALTY PROTOCOLS,G-2b: Triage - SALT (Adults ONLY),"<h3 class=""text-xl font-
     <li><strong>Not in respiratory distress? Major hemorrhage controlled?</strong> No -> <strong class=""text-red-600"">IMMEDIATE</strong>. Yes -></li>
     <li><strong>Likely to survive given current resources?</strong> No -> <strong class=""text-gray-600"">EXPECTANT</strong>. Yes -> <strong class=""text-yellow-500"">DELAYED</strong>.</li>
 </ul>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g2b-1.png"" alt=""g1b-1"" class=""w-full"">
+</div>"
 SPECIALTY PROTOCOLS,G-2c: Triage (START / JumpSTART),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">START Triage (Adults)</h3>
 <p class=""mb-4 text-gray-700"">Simple Triage and Rapid Treatment is based on respirations, perfusion, and mental status.</p>
 <ol class=""list-decimal pl-6 space-y-2 text-gray-700"">
@@ -2561,7 +2823,15 @@ SPECIALTY PROTOCOLS,G-2c: Triage (START / JumpSTART),"<h3 class=""text-xl font-b
         </ul>
     </li>
 </ol>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g2c-1.png"" alt=""g2c-1"" class=""w-full"">
+		<img src=""./images/g2c-2.png"" alt=""g2c-2"" class=""w-full"">
+		<img src=""./images/g2c-3.png"" alt=""g2c-3"" class=""w-full"">
+		<img src=""./images/g2c-4.png"" alt=""g2c-4"" class=""w-full"">
+		<img src=""./images/g2c-5.png"" alt=""g2c-5"" class=""w-full"">
+		<img src=""./images/g2c-6.png"" alt=""g2c-6"" class=""w-full"">
+</div>"
 SPECIALTY PROTOCOLS,G-2d: Helicopter Landing Zone (HLZ) Operations,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">LZ Coordinator Responsibilities</h3>
 <ul class=""list-disc ml-5 space-y-2 text-gray-700"">
     <li>Command and secure the LZ (ideally 100x100 feet).</li>
@@ -2576,7 +2846,16 @@ SPECIALTY PROTOCOLS,G-2d: Helicopter Landing Zone (HLZ) Operations,"<h3 class=""
     <li>Do not carry anything above your head.</li>
     <li>Secure all loose equipment (blankets, etc.).</li>
 </ul>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g2d-1.png"" alt=""g2d-1"" class=""w-full"">
+		<img src=""./images/g2d-2.png"" alt=""g2d-2"" class=""w-full"">
+		<img src=""./images/g2d-3.png"" alt=""g2d-3"" class=""w-full"">
+		<img src=""./images/g2d-4.png"" alt=""g2d-4"" class=""w-full"">
+		<img src=""./images/g2d-5.png"" alt=""g2d-5"" class=""w-full"">
+		<img src=""./images/g2d-6.png"" alt=""g2d-6"" class=""w-full"">
+		<img src=""./images/g2d-7.png"" alt=""g2d-7"" class=""w-full"">
+</div>"
 SPECIALTY PROTOCOLS,G-2e: Scene Rehabilitation,"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Patient Care</h3>
 <ol class=""list-decimal pl-6 space-y-2 text-gray-700"">
     <li>Complete decon and remove gear before entering rehab. Treat life-threats immediately.</li>
@@ -2615,7 +2894,11 @@ SPECIALTY PROTOCOLS,G-2f: Exposure / Gross Decontamination,"<h3 class=""text-xl 
     <li><strong>Eyes/Skin:</strong> Flush with water for at least 15 min, wash with soap.</li>
     <li>Be prepared to treat seizures (<span class=""text-blue-600 font-semibold"">B-28</span>). Transport for evaluation.</li>
 </ul>
-<hr class=""my-6"">"
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g2f-1.png"" alt=""g2f-1"" class=""w-full"">
+</div>
+"
 SPECIALTY PROTOCOLS,G-2g: Interfacility Transports (IFT),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Key Concepts</h3>
 <ul class=""list-disc ml-5 space-y-2 text-gray-700"">
     <li>EMS mission is prehospital 9-1-1 response. IFT is the responsibility of the MTF.</li>
@@ -2685,8 +2968,15 @@ SPECIALTY PROTOCOLS,G-3a: Organophosphate / Nerve Agent Exposure,"<h3 class=""te
         </ul>
     </div>
 </div>
-<hr class=""my-6"">"
-SPECIALTY PROTOCOLS,G-3b: Exposure / Decontamination (Ionizing Radiation),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
+<hr class=""my-6"">
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g3a-1.png"" alt=""g3a-1"" class=""w-full"">
+		<img src=""./images/g3a-2.png"" alt=""g3a-2"" class=""w-full"">
+		<img src=""./images/g3a-3.png"" alt=""g3a-3"" class=""w-full"">
+		<img src=""./images/g3a-4.png"" alt=""g3a-4"" class=""w-full"">
+		<img src=""./images/g3a-5.png"" alt=""g3a-5"" class=""w-full"">
+</div>"
+SPECIALTY PROTOCOLS,G-3x: Exposure / Decontamination (Ionizing Radiation),"<h3 class=""text-xl font-bold text-gray-800 mb-3 border-b pb-2"">Clinical Practice Guidelines</h3>
 <div class=""grid grid-cols-[auto_1fr] gap-x-4 gap-y-6 mt-4"">
     <!-- SL 1-5 -->
     <div class=""font-semibold text-sm bg-gray-200 text-gray-800 rounded-md px-3 py-1 flex items-center justify-center"">SL 1-5</div>
@@ -2701,7 +2991,13 @@ SPECIALTY PROTOCOLS,G-3b: Exposure / Decontamination (Ionizing Radiation),"<h3 c
             <li>For expert consultation, call AFRRI MRAT (301-295-0530).</li>
         </ul>
     </div>
-</div>"
+</div>
+<div class=""flex flex-col items-center text-center"">
+        <img src=""./images/g3x-1.png"" alt=""g3x-1"" class=""w-full"">
+		<img src=""./images/g3x-2.png"" alt=""g3x-2"" class=""w-full"">
+		<img src=""./images/g3x-3.png"" alt=""g3x-3"" class=""w-full"">
+		<img src=""./images/g3x-4.png"" alt=""g3x-4"" class=""w-full"">
+</div>"
 MEDICATIONS,Acetaminophen,"<div class=""bg-gray-50 rounded-lg p-4 mb-6 border-l-4 border-indigo-500"">
     <h3 class=""text-2xl font-bold text-gray-800 mb-4"">Acetaminophen</h3>
     <div class=""space-y-3 text-gray-700"">
@@ -3866,311 +4162,322 @@ MEDICATIONS,Whole Blood,"<div class=""bg-gray-50 rounded-lg p-4 mb-6 border-l-4 
     </div>
 </div>
 "
-MISCELLANEOUS,ABBREVIATIONS AND ACRONYMS,"<h3 class=""text-xl font-bold mb-4"">Acronyms & Abbreviations</h3>
-<dl class=""space-y-2"">
-    <div><dt class=""font-semibold"">AAA</dt><dd class=""ml-4"">Abdominal Aortic Aneurysm</dd></div>
-    <div><dt class=""font-semibold"">AAL</dt><dd class=""ml-4"">Anterior Axillary Line</dd></div>
-    <div><dt class=""font-semibold"">AEMT</dt><dd class=""ml-4"">Advanced Emergency Medical Technician</dd></div>
-    <div><dt class=""font-semibold"">AC</dt><dd class=""ml-4"">Antecubital</dd></div>
-    <div><dt class=""font-semibold"">AChEI</dt><dd class=""ml-4"">Acetylcholinesterase Inhibitor</dd></div>
-    <div><dt class=""font-semibold"">ACLS</dt><dd class=""ml-4"">Advanced Cardiac Life Support</dd></div>
-    <div><dt class=""font-semibold"">ACS</dt><dd class=""ml-4"">Acute Coronary Syndrome</dd></div>
-    <div><dt class=""font-semibold"">AED</dt><dd class=""ml-4"">Automated External Defibrillator</dd></div>
-    <div><dt class=""font-semibold"">AEIOU-TIPS</dt><dd class=""ml-4"">Acidosis/Alkalosis/Alcohol, Epilepsy/Endocrine/Electrolytes, Infection, Overdose/Organophosphates, Uremia, Trauma/Tremor, Insulin/Intracranial Pressure, Psychosis/Poisoning, Stroke/Shock/Seizure</dd></div>
-    <div><dt class=""font-semibold"">AD</dt><dd class=""ml-4"">Advanced Directive</dd></div>
-    <div><dt class=""font-semibold"">AF</dt><dd class=""ml-4"">Air Force</dd></div>
-    <div><dt class=""font-semibold"">A-fib</dt><dd class=""ml-4"">Atrial Fibrillation</dd></div>
-    <div><dt class=""font-semibold"">AFMAN</dt><dd class=""ml-4"">Air Force Manual</dd></div>
-    <div><dt class=""font-semibold"">AGE</dt><dd class=""ml-4"">Arterial Gas Embolism</dd></div>
-    <div><dt class=""font-semibold"">AHA</dt><dd class=""ml-4"">American Heart Association</dd></div>
-    <div><dt class=""font-semibold"">AKA</dt><dd class=""ml-4"">Above the Knee Amputation</dd></div>
-    <div><dt class=""font-semibold"">ALS</dt><dd class=""ml-4"">Advanced Life Support</dd></div>
-    <div><dt class=""font-semibold"">AMA</dt><dd class=""ml-4"">Against Medical Advice</dd></div>
-    <div><dt class=""font-semibold"">AMI</dt><dd class=""ml-4"">Acute Myocardial Infarction</dd></div>
-    <div><dt class=""font-semibold"">AMS</dt><dd class=""ml-4"">Acute Mountain Sickness</dd></div>
-    <div><dt class=""font-semibold"">AMS</dt><dd class=""ml-4"">Altered Mental Status</dd></div>
-    <div><dt class=""font-semibold"">A&O x4</dt><dd class=""ml-4"">Alert and Oriented to person, place, time, and event</dd></div>
-    <div><dt class=""font-semibold"">AP</dt><dd class=""ml-4"">Advanced Paramedic</dd></div>
-    <div><dt class=""font-semibold"">APGAR</dt><dd class=""ml-4"">Appearance, Pulse, Grimace, Activity, Respiration</dd></div>
-    <div><dt class=""font-semibold"">ARC</dt><dd class=""ml-4"">American Red Cross</dd></div>
-    <div><dt class=""font-semibold"">ARDS</dt><dd class=""ml-4"">Acute Respiratory Distress Syndrome</dd></div>
-    <div><dt class=""font-semibold"">ASAP</dt><dd class=""ml-4"">As Soon As Possible</dd></div>
-    <div><dt class=""font-semibold"">ATNAA</dt><dd class=""ml-4"">Antidote Treatment Nerve Agent Antidote</dd></div>
-    <div><dt class=""font-semibold"">AV</dt><dd class=""ml-4"">Atrioventricular</dd></div>
-    <div><dt class=""font-semibold"">AVPU</dt><dd class=""ml-4"">Alert, Responsive to Verbal Stimuli, Responsive to Painful Stimuli, Unresponsive</dd></div>
-    <div><dt class=""font-semibold"">AXP</dt><dd class=""ml-4"">Ambulance Exchange Point</dd></div>
-    <div><dt class=""font-semibold"">BEE</dt><dd class=""ml-4"">Bioenvironmental Engineering</dd></div>
-    <div><dt class=""font-semibold"">BGL</dt><dd class=""ml-4"">Blood Glucose Level</dd></div>
-    <div><dt class=""font-semibold"">BiPAP</dt><dd class=""ml-4"">BiLevel Positive Airway Pressure</dd></div>
-    <div><dt class=""font-semibold"">BLS</dt><dd class=""ml-4"">Basic Life Support</dd></div>
-    <div><dt class=""font-semibold"">BP</dt><dd class=""ml-4"">Blood Pressure</dd></div>
-    <div><dt class=""font-semibold"">Bpm</dt><dd class=""ml-4"">Beats Per Minute</dd></div>
-    <div><dt class=""font-semibold"">BRUE</dt><dd class=""ml-4"">Brief Resolved Unexplained Event</dd></div>
-    <div><dt class=""font-semibold"">BSA</dt><dd class=""ml-4"">Body Surface Area</dd></div>
-    <div><dt class=""font-semibold"">BSI</dt><dd class=""ml-4"">Body Substance Isolation</dd></div>
-    <div><dt class=""font-semibold"">BURP</dt><dd class=""ml-4"">Backwards, Upwards, Rightward Pressure (change in condition, decreased SpO2/vent alarms)</dd></div>
-    <div><dt class=""font-semibold"">BVM</dt><dd class=""ml-4"">Bag Valve Mask</dd></div>
-    <div><dt class=""font-semibold"">CANA</dt><dd class=""ml-4"">Convulsant Antidote for Nerve Agent</dd></div>
-    <div><dt class=""font-semibold"">CBRNE</dt><dd class=""ml-4"">Chemical, Biological, Radiological, Nuclear, High Yield Explosive</dd></div>
-    <div><dt class=""font-semibold"">cc</dt><dd class=""ml-4"">cubic centimeter</dd></div>
-    <div><dt class=""font-semibold"">CCP</dt><dd class=""ml-4"">Casualty Collection Point</dd></div>
-    <div><dt class=""font-semibold"">CDC</dt><dd class=""ml-4"">Center for Disease Control</dd></div>
-    <div><dt class=""font-semibold"">CEP</dt><dd class=""ml-4"">Casualty Evacuation Plan</dd></div>
-    <div><dt class=""font-semibold"">CES</dt><dd class=""ml-4"">Civil Engineer Squadron</dd></div>
-    <div><dt class=""font-semibold"">CEW</dt><dd class=""ml-4"">Conductive Electrical Weapon</dd></div>
-    <div><dt class=""font-semibold"">CFETP</dt><dd class=""ml-4"">Career Field Education and Training Plan</dd></div>
-    <div><dt class=""font-semibold"">CHAPS</dt><dd class=""ml-4"">Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs/Symptoms of Shock</dd></div>
-    <div><dt class=""font-semibold"">CHF</dt><dd class=""ml-4"">Congestive Heart Failure</dd></div>
-    <div><dt class=""font-semibold"">CID</dt><dd class=""ml-4"">Criminal Investigation Division</dd></div>
-    <div><dt class=""font-semibold"">cmH2O</dt><dd class=""ml-4"">centimeters of water</dd></div>
-    <div><dt class=""font-semibold"">CNS</dt><dd class=""ml-4"">Central Nervous System</dd></div>
-    <div><dt class=""font-semibold"">CO</dt><dd class=""ml-4"">Carbon Monoxide</dd></div>
-    <div><dt class=""font-semibold"">COPD</dt><dd class=""ml-4"">Chronic Obstructive Pulmonary Disease</dd></div>
-    <div><dt class=""font-semibold"">CoTCCC</dt><dd class=""ml-4"">Committee on Tactical Causality Combat Care</dd></div>
-    <div><dt class=""font-semibold"">COVID-19</dt><dd class=""ml-4"">Coronavirus Disease 2019</dd></div>
-    <div><dt class=""font-semibold"">CP</dt><dd class=""ml-4"">Chest Pain</dd></div>
-    <div><dt class=""font-semibold"">CPAP</dt><dd class=""ml-4"">Continuous Positive Airway Pressure</dd></div>
-    <div><dt class=""font-semibold"">CPR</dt><dd class=""ml-4"">Cardiopulmonary Resuscitation</dd></div>
-    <div><dt class=""font-semibold"">CPSS</dt><dd class=""ml-4"">Cincinnati Pre-Hospital Stroke Scale</dd></div>
-    <div><dt class=""font-semibold"">CSF</dt><dd class=""ml-4"">Cerebral Spinal Fluid</dd></div>
-    <div><dt class=""font-semibold"">CSM</dt><dd class=""ml-4"">Circulation, Sensory, Motor</dd></div>
-    <div><dt class=""font-semibold"">CVA</dt><dd class=""ml-4"">Cerebrovascular Accident</dd></div>
-    <div><dt class=""font-semibold"">CVS</dt><dd class=""ml-4"">Cardiovascular System</dd></div>
-    <div><dt class=""font-semibold"">DBP</dt><dd class=""ml-4"">Diastolic Blood Pressure</dd></div>
-    <div><dt class=""font-semibold"">DCI</dt><dd class=""ml-4"">Decompression Illness</dd></div>
-    <div><dt class=""font-semibold"">DCS</dt><dd class=""ml-4"">Decompression Sickness</dd></div>
-    <div><dt class=""font-semibold"">DECON</dt><dd class=""ml-4"">Decontamination</dd></div>
-    <div><dt class=""font-semibold"">DKA</dt><dd class=""ml-4"">Diabetic Ketoacidosis</dd></div>
-    <div><dt class=""font-semibold"">dL</dt><dd class=""ml-4"">deciliter</dd></div>
-    <div><dt class=""font-semibold"">DM</dt><dd class=""ml-4"">Diabetes Mellitus</dd></div>
-    <div><dt class=""font-semibold"">DMO</dt><dd class=""ml-4"">Dive Medical Officer</dd></div>
-    <div><dt class=""font-semibold"">DNI</dt><dd class=""ml-4"">Do Not Intubate</dd></div>
-    <div><dt class=""font-semibold"">DNR</dt><dd class=""ml-4"">Do Not Resuscitate</dd></div>
-    <div><dt class=""font-semibold"">DOPE</dt><dd class=""ml-4"">Dislodgement, Obstruction, Pneumothorax, Equipment (vocal cord view)</dd></div>
-    <div><dt class=""font-semibold"">DUMBBELS</dt><dd class=""ml-4"">Diarrhea, Urination, Myosis, Bradycardia, Bronchorrhea, Emesis, Lacrimation, Salivation</dd></div>
-    <div><dt class=""font-semibold"">DVPRS</dt><dd class=""ml-4"">Defense and Veterans Pain Rating Scale</dd></div>
-    <div><dt class=""font-semibold"">D10W</dt><dd class=""ml-4"">Dextrose 10% in Water</dd></div>
-    <div><dt class=""font-semibold"">D50</dt><dd class=""ml-4"">Dextrose 50%</dd></div>
-    <div><dt class=""font-semibold"">ECP</dt><dd class=""ml-4"">Entry Control Point</dd></div>
-    <div><dt class=""font-semibold"">ED</dt><dd class=""ml-4"">Emergency Department</dd></div>
-    <div><dt class=""font-semibold"">E-FAST</dt><dd class=""ml-4"">Extended Focused Assessment with Sonography in Trauma</dd></div>
-    <div><dt class=""font-semibold"">EJ</dt><dd class=""ml-4"">External Jugular</dd></div>
-    <div><dt class=""font-semibold"">EKG</dt><dd class=""ml-4"">Electrocardiogram</dd></div>
-    <div><dt class=""font-semibold"">EM</dt><dd class=""ml-4"">Emergency Medicine</dd></div>
-    <div><dt class=""font-semibold"">EMR</dt><dd class=""ml-4"">Emergency Medical Responder</dd></div>
-    <div><dt class=""font-semibold"">EMS</dt><dd class=""ml-4"">Emergency Medical Services</dd></div>
-    <div><dt class=""font-semibold"">EMT</dt><dd class=""ml-4"">Emergency Medical Technician</dd></div>
-    <div><dt class=""font-semibold"">EOD</dt><dd class=""ml-4"">Explosive Ordnance Disposal</dd></div>
-    <div><dt class=""font-semibold"">EPAP</dt><dd class=""ml-4"">Expiratory Positive Airway Pressure</dd></div>
-    <div><dt class=""font-semibold"">ePCR</dt><dd class=""ml-4"">Electronic Patient Care Report</dd></div>
-    <div><dt class=""font-semibold"">EPU</dt><dd class=""ml-4"">Emergency Power Unit</dd></div>
-    <div><dt class=""font-semibold"">ER</dt><dd class=""ml-4"">Emergency Room</dd></div>
-    <div><dt class=""font-semibold"">EtCO2</dt><dd class=""ml-4"">End Tidal CO2</dd></div>
-    <div><dt class=""font-semibold"">ETI</dt><dd class=""ml-4"">Endotracheal Intubation</dd></div>
-    <div><dt class=""font-semibold"">ETT</dt><dd class=""ml-4"">Endotracheal Tube</dd></div>
-    <div><dt class=""font-semibold"">F&ES</dt><dd class=""ml-4"">Fire and Emergency Services</dd></div>
-    <div><dt class=""font-semibold"">FD</dt><dd class=""ml-4"">Fire Department</dd></div>
-    <div><dt class=""font-semibold"">FLACC</dt><dd class=""ml-4"">Face, Legs, Activity, Cry, Consolability</dd></div>
-    <div><dt class=""font-semibold"">FS</dt><dd class=""ml-4"">Flight Surgeon</dd></div>
-    <div><dt class=""font-semibold"">g</dt><dd class=""ml-4"">gram</dd></div>
-    <div><dt class=""font-semibold"">GCS</dt><dd class=""ml-4"">Glasgow Coma Scale</dd></div>
-    <div><dt class=""font-semibold"">GEMS</dt><dd class=""ml-4"">Ground Emergency Medical Service</dd></div>
-    <div><dt class=""font-semibold"">GI</dt><dd class=""ml-4"">Gastrointestinal</dd></div>
-    <div><dt class=""font-semibold"">G#P#AB#</dt><dd class=""ml-4"">Gravida, Para, Abortions (OB History)</dd></div>
-    <div><dt class=""font-semibold"">GPS</dt><dd class=""ml-4"">Global Positioning System</dd></div>
-    <div><dt class=""font-semibold"">gtt</dt><dd class=""ml-4"">guttae (Latin for “drop”)</dd></div>
-    <div><dt class=""font-semibold"">HACE</dt><dd class=""ml-4"">High Altitude Cerebral Edema</dd></div>
-    <div><dt class=""font-semibold"">HAPE</dt><dd class=""ml-4"">High Altitude Pulmonary Edema</dd></div>
-    <div><dt class=""font-semibold"">HAZMAT</dt><dd class=""ml-4"">Hazardous Material</dd></div>
-    <div><dt class=""font-semibold"">HDL</dt><dd class=""ml-4"">Hyperlipidemia</dd></div>
-    <div><dt class=""font-semibold"">HEPA</dt><dd class=""ml-4"">High Efficiency Particulate Air</dd></div>
-    <div><dt class=""font-semibold"">HEMS</dt><dd class=""ml-4"">Helicopter Emergency Medical Service</dd></div>
-    <div><dt class=""font-semibold"">HFNC</dt><dd class=""ml-4"">High Flow Nasal Cannula</dd></div>
-    <div><dt class=""font-semibold"">HIV</dt><dd class=""ml-4"">Human Immunodeficiency Virus</dd></div>
-    <div><dt class=""font-semibold"">HLZ</dt><dd class=""ml-4"">Helicopter Landing Zone</dd></div>
-    <div><dt class=""font-semibold"">HPMK</dt><dd class=""ml-4"">Hypothermia Prevention and Management Kit</dd></div>
-    <div><dt class=""font-semibold"">H2O</dt><dd class=""ml-4"">Water</dd></div>
-    <div><dt class=""font-semibold"">HR</dt><dd class=""ml-4"">Heart Rate</dd></div>
-    <div><dt class=""font-semibold"">hr</dt><dd class=""ml-4"">hour</dd></div>
-    <div><dt class=""font-semibold"">H’s & T’s</dt><dd class=""ml-4"">Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia, Tension Pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (pulmonary), Thrombosis (coronary)</dd></div>
-    <div><dt class=""font-semibold"">HTN</dt><dd class=""ml-4"">Hypertension</dd></div>
-    <div><dt class=""font-semibold"">Hx</dt><dd class=""ml-4"">History</dd></div>
-    <div><dt class=""font-semibold"">IAW</dt><dd class=""ml-4"">In Accordance With</dd></div>
-    <div><dt class=""font-semibold"">IC</dt><dd class=""ml-4"">Incident Commander</dd></div>
-    <div><dt class=""font-semibold"">ICH</dt><dd class=""ml-4"">Intracerebral Brain Hemorrhage</dd></div>
-    <div><dt class=""font-semibold"">ICP</dt><dd class=""ml-4"">Intracranial Pressure</dd></div>
-    <div><dt class=""font-semibold"">ICS</dt><dd class=""ml-4"">Intercostal Space</dd></div>
-    <div><dt class=""font-semibold"">IDMT</dt><dd class=""ml-4"">Independent Duty Medical Technician</dd></div>
-    <div><dt class=""font-semibold"">IFT</dt><dd class=""ml-4"">Interfacility Transport</dd></div>
-    <div><dt class=""font-semibold"">ILCOR</dt><dd class=""ml-4"">International Liaison Committee on Resuscitation</dd></div>
-    <div><dt class=""font-semibold"">IM</dt><dd class=""ml-4"">Intramuscular</dd></div>
-    <div><dt class=""font-semibold"">IN</dt><dd class=""ml-4"">Intranasal</dd></div>
-    <div><dt class=""font-semibold"">IO</dt><dd class=""ml-4"">Intraosseous</dd></div>
-    <div><dt class=""font-semibold"">IPAP</dt><dd class=""ml-4"">Inspiratory Positive Airway Pressure</dd></div>
-    <div><dt class=""font-semibold"">ISR</dt><dd class=""ml-4"">Institute for Surgical Research</dd></div>
-    <div><dt class=""font-semibold"">IV</dt><dd class=""ml-4"">Intravenous</dd></div>
-    <div><dt class=""font-semibold"">J</dt><dd class=""ml-4"">Joules</dd></div>
-    <div><dt class=""font-semibold"">JVD</dt><dd class=""ml-4"">Jugular Vein Distention</dd></div>
-    <div><dt class=""font-semibold"">KED</dt><dd class=""ml-4"">Kendrick Extrication Device</dd></div>
-    <div><dt class=""font-semibold"">Kg</dt><dd class=""ml-4"">Kilogram</dd></div>
-    <div><dt class=""font-semibold"">KIA</dt><dd class=""ml-4"">Killed in Action</dd></div>
-    <div><dt class=""font-semibold"">Kx</dt><dd class=""ml-4"">Knowledge Exchange</dd></div>
-    <div><dt class=""font-semibold"">LBBB</dt><dd class=""ml-4"">Left Bundle Branch Block</dd></div>
-    <div><dt class=""font-semibold"">L</dt><dd class=""ml-4"">Litter</dd></div>
-    <div><dt class=""font-semibold"">LE</dt><dd class=""ml-4"">Law Enforcement</dd></div>
-    <div><dt class=""font-semibold"">LEMON</dt><dd class=""ml-4"">Look, Evaluate (3-3-2), Mallampati, Obstruction/Obesity, Neck Rigidity (Difficult Laryngoscopy)</dd></div>
-    <div><dt class=""font-semibold"">LLL</dt><dd class=""ml-4"">Left Lower Lobe</dd></div>
-    <div><dt class=""font-semibold"">LMA</dt><dd class=""ml-4"">Laryngeal Mask Airway</dd></div>
-    <div><dt class=""font-semibold"">LMP</dt><dd class=""ml-4"">Last Menstrual Period</dd></div>
-    <div><dt class=""font-semibold"">LPM</dt><dd class=""ml-4"">Liters Per Minute</dd></div>
-    <div><dt class=""font-semibold"">LOC</dt><dd class=""ml-4"">Level of Consciousness</dd></div>
-    <div><dt class=""font-semibold"">LR</dt><dd class=""ml-4"">Lactated Ringers</dd></div>
-    <div><dt class=""font-semibold"">LBS</dt><dd class=""ml-4"">Long Spine Board</dd></div>
-    <div><dt class=""font-semibold"">LSI</dt><dd class=""ml-4"">Life Saving Intervention</dd></div>
-    <div><dt class=""font-semibold"">LUQ</dt><dd class=""ml-4"">Left Upper Quadrant</dd></div>
-    <div><dt class=""font-semibold"">LVH</dt><dd class=""ml-4"">Left Ventricular Hypertrophy</dd></div>
-    <div><dt class=""font-semibold"">LVO</dt><dd class=""ml-4"">Large Vessel Occlusion</dd></div>
-    <div><dt class=""font-semibold"">LZ</dt><dd class=""ml-4"">Landing Zone</dd></div>
-    <div><dt class=""font-semibold"">mA</dt><dd class=""ml-4"">milliampere</dd></div>
-    <div><dt class=""font-semibold"">MACE</dt><dd class=""ml-4"">Military Acute Concussion Evaluation</dd></div>
-    <div><dt class=""font-semibold"">MAP</dt><dd class=""ml-4"">Mean Arterial Pressure</dd></div>
-    <div><dt class=""font-semibold"">MARCH - PAWS</dt><dd class=""ml-4"">Massive Hemorrhage, Airway/AVPU, Respiration, Circulation, Hypothermia/Head – Pain, Antibiotics, Wounds, Splints</dd></div>
-    <div><dt class=""font-semibold"">MC</dt><dd class=""ml-4"">Medical Corps</dd></div>
-    <div><dt class=""font-semibold"">mcg</dt><dd class=""ml-4"">microgram</dd></div>
-    <div><dt class=""font-semibold"">MCI</dt><dd class=""ml-4"">Mass Casualty Incident</dd></div>
-    <div><dt class=""font-semibold"">MDI</dt><dd class=""ml-4"">Metered-dose Inhaler</dd></div>
-    <div><dt class=""font-semibold"">MERS</dt><dd class=""ml-4"">Middle East Respiratory Syndrome</dd></div>
-    <div><dt class=""font-semibold"">mEq</dt><dd class=""ml-4"">milliequivalent</dd></div>
-    <div><dt class=""font-semibold"">mg</dt><dd class=""ml-4"">milligram</dd></div>
-    <div><dt class=""font-semibold"">MI</dt><dd class=""ml-4"">Myocardial Infarction</dd></div>
-    <div><dt class=""font-semibold"">mL</dt><dd class=""ml-4"">milliliter</dd></div>
-    <div><dt class=""font-semibold"">mmHg</dt><dd class=""ml-4"">Millimeters of Mercury</dd></div>
-    <div><dt class=""font-semibold"">MOANS</dt><dd class=""ml-4"">Mask Seal, Obesity/Obstruction, Age > 55, No Teeth, Sleep Apnea/Stiff Lungs (difficult BVM seal)</dd></div>
-    <div><dt class=""font-semibold"">MODS</dt><dd class=""ml-4"">Multi-organ Dysfunction Syndrome</dd></div>
-    <div><dt class=""font-semibold"">MOI</dt><dd class=""ml-4"">Mechanism of Injury</dd></div>
-    <div><dt class=""font-semibold"">MP</dt><dd class=""ml-4"">Military Police</dd></div>
-    <div><dt class=""font-semibold"">mph</dt><dd class=""ml-4"">miles per hour</dd></div>
-    <div><dt class=""font-semibold"">MR SOPA</dt><dd class=""ml-4"">(M) Mask Seal/adjust Mask, (R) Reposition head/airway – if not effective – (S) Suction mouth then nose, (O) Open mouth and Lift Jaw Forward, (P) Unable to perform pre-hospital, (A) Consider LMA insertion</dd></div>
-    <div><dt class=""font-semibold"">MSDS</dt><dd class=""ml-4"">Material Safety Data Sheet</dd></div>
-    <div><dt class=""font-semibold"">MTF</dt><dd class=""ml-4"">Military Treatment Facility</dd></div>
-    <div><dt class=""font-semibold"">MVC</dt><dd class=""ml-4"">Motor Vehicle Collision</dd></div>
-    <div><dt class=""font-semibold"">NAAK</dt><dd class=""ml-4"">Nerve Agent Antidote Kit (Mark I Kit)</dd></div>
-    <div><dt class=""font-semibold"">NASA</dt><dd class=""ml-4"">National Aeronautics and Space Administration</dd></div>
-    <div><dt class=""font-semibold"">NC</dt><dd class=""ml-4"">Nasal Cannula</dd></div>
-    <div><dt class=""font-semibold"">NG</dt><dd class=""ml-4"">Nasogastric</dd></div>
-    <div><dt class=""font-semibold"">NHTSA</dt><dd class=""ml-4"">National Highway Traffic Safety Administration</dd></div>
-    <div><dt class=""font-semibold"">NIBP</dt><dd class=""ml-4"">Non-Invasive Blood Pressure</dd></div>
-    <div><dt class=""font-semibold"">NICU</dt><dd class=""ml-4"">Neonatal Intensive Care Unit</dd></div>
-    <div><dt class=""font-semibold"">NPA</dt><dd class=""ml-4"">Nasopharyngeal Airway</dd></div>
-    <div><dt class=""font-semibold"">NRAEMT</dt><dd class=""ml-4"">Nationally Registered Advanced Emergency Medical Technician</dd></div>
-    <div><dt class=""font-semibold"">NRB</dt><dd class=""ml-4"">Non-rebreather Mask</dd></div>
-    <div><dt class=""font-semibold"">NREMR</dt><dd class=""ml-4"">Nationally Registered Emergency Medical Responder</dd></div>
-    <div><dt class=""font-semibold"">NREMT</dt><dd class=""ml-4"">Nationally Registered Emergency Medical Technician</dd></div>
-    <div><dt class=""font-semibold"">NRP</dt><dd class=""ml-4"">Nationally Registered Paramedic</dd></div>
-    <div><dt class=""font-semibold"">NRS</dt><dd class=""ml-4"">Numeric Rating Scale</dd></div>
-    <div><dt class=""font-semibold"">NS</dt><dd class=""ml-4"">Normal Saline</dd></div>
-    <div><dt class=""font-semibold"">NTG</dt><dd class=""ml-4"">Nitroglycerine</dd></div>
-    <div><dt class=""font-semibold"">N/V</dt><dd class=""ml-4"">Nausea/Vomiting</dd></div>
-    <div><dt class=""font-semibold"">OB/Gyn</dt><dd class=""ml-4"">Obstetrics and Gynecology</dd></div>
-    <div><dt class=""font-semibold"">OC Spray</dt><dd class=""ml-4"">Oleoresin Capsicum (Pepper Spray)</dd></div>
-    <div><dt class=""font-semibold"">OD</dt><dd class=""ml-4"">Overdose</dd></div>
-    <div><dt class=""font-semibold"">ODT</dt><dd class=""ml-4"">Oral Disintegrating Tablet</dd></div>
-    <div><dt class=""font-semibold"">OG</dt><dd class=""ml-4"">Orogastric</dd></div>
-    <div><dt class=""font-semibold"">OLMC</dt><dd class=""ml-4"">On-Line Medical Control</dd></div>
-    <div><dt class=""font-semibold"">OLMD</dt><dd class=""ml-4"">On-Line Medical Direction</dd></div>
-    <div><dt class=""font-semibold"">O&M</dt><dd class=""ml-4"">Operations and Maintenance</dd></div>
-    <div><dt class=""font-semibold"">OPA</dt><dd class=""ml-4"">Oral Pharyngeal Airway</dd></div>
-    <div><dt class=""font-semibold"">OPQRST</dt><dd class=""ml-4"">Onset, Provocation, Quality, Radiation, Severity, Time</dd></div>
-    <div><dt class=""font-semibold"">OSI</dt><dd class=""ml-4"">Office of Special Investigations</dd></div>
-    <div><dt class=""font-semibold"">OTFC</dt><dd class=""ml-4"">Oral Transmucosal Fentanyl Citrate</dd></div>
-    <div><dt class=""font-semibold"">O2</dt><dd class=""ml-4"">Oxygen</dd></div>
-    <div><dt class=""font-semibold"">PACE Plan</dt><dd class=""ml-4"">Primary, Alternate, Contingency, Emergency (for HLZ operations)</dd></div>
-    <div><dt class=""font-semibold"">PALS</dt><dd class=""ml-4"">Pediatric Advanced Life Support</dd></div>
-    <div><dt class=""font-semibold"">PCI</dt><dd class=""ml-4"">Percutaneous Coronary Intervention</dd></div>
-    <div><dt class=""font-semibold"">PCR</dt><dd class=""ml-4"">Patient Care Report</dd></div>
-    <div><dt class=""font-semibold"">PD</dt><dd class=""ml-4"">Peritoneal Dialysis</dd></div>
-    <div><dt class=""font-semibold"">PE</dt><dd class=""ml-4"">Pulmonary Embolism</dd></div>
-    <div><dt class=""font-semibold"">PEA</dt><dd class=""ml-4"">Pulseless Electrical Activity</dd></div>
-    <div><dt class=""font-semibold"">PEEP</dt><dd class=""ml-4"">Positive End-Expiratory Pressure</dd></div>
-    <div><dt class=""font-semibold"">PGCS</dt><dd class=""ml-4"">Pediatric Glasgow Coma Scale</dd></div>
-    <div><dt class=""font-semibold"">PICC</dt><dd class=""ml-4"">Peripherally Inserted Central Catheter</dd></div>
-    <div><dt class=""font-semibold"">PMHx</dt><dd class=""ml-4"">Past Medical History</dd></div>
-    <div><dt class=""font-semibold"">PO</dt><dd class=""ml-4"">per os (Latin for “by mouth”) (oral administration)</dd></div>
-    <div><dt class=""font-semibold"">POL</dt><dd class=""ml-4"">Petroleum, Oil and Lubricants</dd></div>
-    <div><dt class=""font-semibold"">PPE</dt><dd class=""ml-4"">Personal Protective Equipment</dd></div>
-    <div><dt class=""font-semibold"">PPM CO</dt><dd class=""ml-4"">Parts per Million Carbon Monoxide measurement</dd></div>
-    <div><dt class=""font-semibold"">PR</dt><dd class=""ml-4"">Per Rectum</dd></div>
-    <div><dt class=""font-semibold"">PRN</dt><dd class=""ml-4"">Pro re nata (Latin for “when necessary”) and/or As needed</dd></div>
-    <div><dt class=""font-semibold"">Pt</dt><dd class=""ml-4"">Patient</dd></div>
-    <div><dt class=""font-semibold"">6 Ps</dt><dd class=""ml-4"">Pain, Pulselessness, Pallor, Paresthesia, Paralysis, Poikilothermia</dd></div>
-    <div><dt class=""font-semibold"">RLL</dt><dd class=""ml-4"">Right Lower Lobe</dd></div>
-    <div><dt class=""font-semibold"">RLQ</dt><dd class=""ml-4"">Right Lower Quadrant</dd></div>
-    <div><dt class=""font-semibold"">RN</dt><dd class=""ml-4"">Registered Nurse</dd></div>
-    <div><dt class=""font-semibold"">RODS</dt><dd class=""ml-4"">Restricted Mouth Opening, Obstruction, Disrupted/Distorted Airway, Still Lung/Cervical Spine (difficult extraglottic device)</dd></div>
-    <div><dt class=""font-semibold"">ROSC</dt><dd class=""ml-4"">Return of Spontaneous Circulation</dd></div>
-    <div><dt class=""font-semibold"">RR</dt><dd class=""ml-4"">Respiratory Rate</dd></div>
-    <div><dt class=""font-semibold"">RSI</dt><dd class=""ml-4"">Rapid Sequence Induction</dd></div>
-    <div><dt class=""font-semibold"">RSI</dt><dd class=""ml-4"">Rapid Sequence Intubation</dd></div>
-    <div><dt class=""font-semibold"">RT</dt><dd class=""ml-4"">Respiratory Therapist (Respiratory Care Practioner)</dd></div>
-    <div><dt class=""font-semibold"">RUQ</dt><dd class=""ml-4"">Right Upper Quadrant</dd></div>
-    <div><dt class=""font-semibold"">SAMPLE</dt><dd class=""ml-4"">Symptoms, Allergies, Medications, Previous medical history, Last meal, Events preceding</dd></div>
-    <div><dt class=""font-semibold"">SARS</dt><dd class=""ml-4"">Severe Acute Respiratory Syndrome</dd></div>
-    <div><dt class=""font-semibold"">SBP</dt><dd class=""ml-4"">Systolic Blood Pressure</dd></div>
-    <div><dt class=""font-semibold"">SCBA/SAR</dt><dd class=""ml-4"">Self-contained Breathing Apparatus/Supplied Air Respirator</dd></div>
-    <div><dt class=""font-semibold"">SCT</dt><dd class=""ml-4"">Specialty Care Transport</dd></div>
-    <div><dt class=""font-semibold"">SCUBA</dt><dd class=""ml-4"">Self-Contained Underwater Breathing Apparatus</dd></div>
-    <div><dt class=""font-semibold"">SDS</dt><dd class=""ml-4"">Safety Data Sheet</dd></div>
-    <div><dt class=""font-semibold"">Sec</dt><dd class=""ml-4"">Seconds</dd></div>
-    <div><dt class=""font-semibold"">SF</dt><dd class=""ml-4"">Security Forces</dd></div>
-    <div><dt class=""font-semibold"">SF 600</dt><dd class=""ml-4"">Standard Form 600</dd></div>
-    <div><dt class=""font-semibold"">SFS</dt><dd class=""ml-4"">Security Forces Squadron</dd></div>
-    <div><dt class=""font-semibold"">SFS</dt><dd class=""ml-4"">Senior Flight Surgeon</dd></div>
-    <div><dt class=""font-semibold"">SG</dt><dd class=""ml-4"">Surgeon General</dd></div>
-    <div><dt class=""font-semibold"">SGA</dt><dd class=""ml-4"">Supraglottic Airway</dd></div>
-    <div><dt class=""font-semibold"">SHORT</dt><dd class=""ml-4"">Surgery/scars (other obstruction), Hematoma (infection/abscess/mass), Obesity, Radiation distortion (deformity), Tumor (difficult cricothyroidotomy)</dd></div>
-    <div><dt class=""font-semibold"">SI/HI</dt><dd class=""ml-4"">Suicidal Ideations/Homicidal Ideations</dd></div>
-    <div><dt class=""font-semibold"">SIRS</dt><dd class=""ml-4"">Systemic Inflammatory Response Syndrome</dd></div>
-    <div><dt class=""font-semibold"">SJA</dt><dd class=""ml-4"">Staff Judge Advocate</dd></div>
-    <div><dt class=""font-semibold"">SL</dt><dd class=""ml-4"">Skill Level</dd></div>
-    <div><dt class=""font-semibold"">SL</dt><dd class=""ml-4"">Sublingual</dd></div>
-    <div><dt class=""font-semibold"">SLUDGE</dt><dd class=""ml-4"">Salivation, Lacrimation, Urination Defecation, GI Upset, Emesis</dd></div>
-    <div><dt class=""font-semibold"">SMR</dt><dd class=""ml-4"">Spinal Motion Restriction</dd></div>
-    <div><dt class=""font-semibold"">SOB</dt><dd class=""ml-4"">Shortness of Breath</dd></div>
-    <div><dt class=""font-semibold"">SpCO</dt><dd class=""ml-4"">Carbon Monoxide measurement</dd></div>
-    <div><dt class=""font-semibold"">SpHb</dt><dd class=""ml-4"">Hemoglobin Measurement</dd></div>
-    <div><dt class=""font-semibold"">SpO2</dt><dd class=""ml-4"">Pulse Oximetry (Oxygen)</dd></div>
-    <div><dt class=""font-semibold"">SQ Port</dt><dd class=""ml-4"">Subcutaneous Port</dd></div>
-    <div><dt class=""font-semibold"">S&S (S/Sx)</dt><dd class=""ml-4"">Signs and symptoms</dd></div>
-    <div><dt class=""font-semibold"">STEMI</dt><dd class=""ml-4"">ST-Elevation Myocardial Infarction</dd></div>
-    <div><dt class=""font-semibold"">SurgHX</dt><dd class=""ml-4"">Surgical History</dd></div>
-    <div><dt class=""font-semibold"">SVT</dt><dd class=""ml-4"">Supraventricular Tachycardia</dd></div>
-    <div><dt class=""font-semibold"">Sx</dt><dd class=""ml-4"">Symptoms</dd></div>
-    <div><dt class=""font-semibold"">TB</dt><dd class=""ml-4"">Tuberculosis</dd></div>
-    <div><dt class=""font-semibold"">TBI</dt><dd class=""ml-4"">Traumatic Brain Injury</dd></div>
-    <div><dt class=""font-semibold"">TBSA</dt><dd class=""ml-4"">Total Body Surface Area</dd></div>
-    <div><dt class=""font-semibold"">TCA</dt><dd class=""ml-4"">Tricyclic Antidepressant</dd></div>
-    <div><dt class=""font-semibold"">TCCC</dt><dd class=""ml-4"">Tactical Casualty Combat Care</dd></div>
-    <div><dt class=""font-semibold"">TIA</dt><dd class=""ml-4"">Transient Ischemic Attack</dd></div>
-    <div><dt class=""font-semibold"">TQ</dt><dd class=""ml-4"">Tourniquet</dd></div>
-    <div><dt class=""font-semibold"">Triage - SALT</dt><dd class=""ml-4"">Sort, Assess, Life-saving Interventions, Treatment/Transport</dd></div>
-    <div><dt class=""font-semibold"">Triage - START</dt><dd class=""ml-4"">Simple Triage and Rapid Transport</dd></div>
-    <div><dt class=""font-semibold"">Triage – JumpSTART</dt><dd class=""ml-4"">Simple Triage and Rapid Transport (used for pediatric mass casualty incident)</dd></div>
-    <div><dt class=""font-semibold"">Tx</dt><dd class=""ml-4"">Treatment</dd></div>
-    <div><dt class=""font-semibold"">TXA</dt><dd class=""ml-4"">Tranexamic Acid</dd></div>
-    <div><dt class=""font-semibold"">USA</dt><dd class=""ml-4"">United States Army</dd></div>
-    <div><dt class=""font-semibold"">USAF</dt><dd class=""ml-4"">United States Air Force</dd></div>
-    <div><dt class=""font-semibold"">USAISR</dt><dd class=""ml-4"">U.S. Army Institute of Surgical Research</dd></div>
-    <div><dt class=""font-semibold"">VAN Stroke Exam</dt><dd class=""ml-4"">Vision, Aphasia, Neglect</dd></div>
-    <div><dt class=""font-semibold"">VF</dt><dd class=""ml-4"">Ventricular Fibrillation</dd></div>
-    <div><dt class=""font-semibold"">V-fib</dt><dd class=""ml-4"">Ventricular Fibrillation</dd></div>
-    <div><dt class=""font-semibold"">VS</dt><dd class=""ml-4"">Vital Signs</dd></div>
-    <div><dt class=""font-semibold"">VT</dt><dd class=""ml-4"">Ventricular Tachycardia</dd></div>
-    <div><dt class=""font-semibold"">V-tach</dt><dd class=""ml-4"">Ventricular Tachycardia</dd></div>
-    <div><dt class=""font-semibold"">WB</dt><dd class=""ml-4"">Whole Blood</dd></div>
-    <div><dt class=""font-semibold"">WPW</dt><dd class=""ml-4"">Wolff-Parkinson-White</dd></div>
-    <div><dt class=""font-semibold"">W/WO</dt><dd class=""ml-4"">With/Without</dd></div>
-    <div><dt class=""font-semibold"">q</dt><dd class=""ml-4"">quaque (Latin for “every”)</dd></div>
-</dl>"
+MISCELLANEOUS,ABBREVIATIONS AND ACRONYMS,"        <h3 class=""text-2xl font-bold mb-6 text-gray-900 border-b pb-2"">Acronyms & Abbreviations</h3>
+        <dl class=""space-y-3"">
+            <div><dt class=""font-semibold text-lg"">6 Ps</dt><dd class=""ml-4 text-gray-700"">Pain, Pulselessness, Pallor, Paresthesia, Paralysis, Poikilothermia</dd></div>
+            <div><dt class=""font-semibold text-lg"">AAA</dt><dd class=""ml-4 text-gray-700"">Abdominal Aortic Aneurysm</dd></div>
+            <div><dt class=""font-semibold text-lg"">AAL</dt><dd class=""ml-4 text-gray-700"">Anterior Axillary Line</dd></div>
+            <div><dt class=""font-semibold text-lg"">AC</dt><dd class=""ml-4 text-gray-700"">Antecubital</dd></div>
+            <div><dt class=""font-semibold text-lg"">AChEI</dt><dd class=""ml-4 text-gray-700"">Acetylcholinesterase Inhibitor</dd></div>
+            <div><dt class=""font-semibold text-lg"">ACLS</dt><dd class=""ml-4 text-gray-700"">Advanced Cardiac Life Support</dd></div>
+            <div><dt class=""font-semibold text-lg"">ACS</dt><dd class=""ml-4 text-gray-700"">Acute Coronary Syndrome</dd></div>
+            <div><dt class=""font-semibold text-lg"">AD</dt><dd class=""ml-4 text-gray-700"">Advanced Directive</dd></div>
+            <div><dt class=""font-semibold text-lg"">AED</dt><dd class=""ml-4 text-gray-700"">Automated External Defibrillator</dd></div>
+            <div><dt class=""font-semibold text-lg"">AEIOU-TIPS</dt><dd class=""ml-4 text-gray-700"">Acidosis/Alkalosis/Alcohol, Epilepsy/Endocrine/Electrolytes, Infection, Overdose/Organophosphates, Uremia, Trauma/Tremor, Insulin/Intracranial Pressure, Psychosis/Poisoning, Stroke/Shock/Seizure</dd></div>
+            <div><dt class=""font-semibold text-lg"">AEMT</dt><dd class=""ml-4 text-gray-700"">Advanced Emergency Medical Technician</dd></div>
+            <div><dt class=""font-semibold text-lg"">AF</dt><dd class=""ml-4 text-gray-700"">Air Force</dd></div>
+            <div><dt class=""font-semibold text-lg"">A-fib</dt><dd class=""ml-4 text-gray-700"">Atrial Fibrillation</dd></div>
+            <div><dt class=""font-semibold text-lg"">AFMAN</dt><dd class=""ml-4 text-gray-700"">Air Force Manual</dd></div>
+            <div><dt class=""font-semibold text-lg"">AGE</dt><dd class=""ml-4 text-gray-700"">Arterial Gas Embolism</dd></div>
+            <div><dt class=""font-semibold text-lg"">AHA</dt><dd class=""ml-4 text-gray-700"">American Heart Association</dd></div>
+            <div><dt class=""font-semibold text-lg"">AKA</dt><dd class=""ml-4 text-gray-700"">Above the Knee Amputation</dd></div>
+            <div><dt class=""font-semibold text-lg"">ALS</dt><dd class=""ml-4 text-gray-700"">Advanced Life Support</dd></div>
+            <div><dt class=""font-semibold text-lg"">AMA</dt><dd class=""ml-4 text-gray-700"">Against Medical Advice</dd></div>
+            <div><dt class=""font-semibold text-lg"">AMI</dt><dd class=""ml-4 text-gray-700"">Acute Myocardial Infarction</dd></div>
+            <div><dt class=""font-semibold text-lg"">AMS</dt><dd class=""ml-4 text-gray-700"">Acute Mountain Sickness</dd></div>
+            <div><dt class=""font-semibold text-lg"">AMS</dt><dd class=""ml-4 text-gray-700"">Altered Mental Status</dd></div>
+            <div><dt class=""font-semibold text-lg"">A&O x4</dt><dd class=""ml-4 text-gray-700"">Alert and Oriented to person, place, time, and event</dd></div>
+            <div><dt class=""font-semibold text-lg"">AP</dt><dd class=""ml-4 text-gray-700"">Advanced Paramedic</dd></div>
+            <div><dt class=""font-semibold text-lg"">APGAR</dt><dd class=""ml-4 text-gray-700"">Appearance, Pulse, Grimace, Activity, Respiration</dd></div>
+            <div><dt class=""font-semibold text-lg"">ARC</dt><dd class=""ml-4 text-gray-700"">American Red Cross</dd></div>
+            <div><dt class=""font-semibold text-lg"">ARDS</dt><dd class=""ml-4 text-gray-700"">Acute Respiratory Distress Syndrome</dd></div>
+            <div><dt class=""font-semibold text-lg"">ASAP</dt><dd class=""ml-4 text-gray-700"">As Soon As Possible</dd></div>
+            <div><dt class=""font-semibold text-lg"">ATNAA</dt><dd class=""ml-4 text-gray-700"">Antidote Treatment Nerve Agent Antidote</dd></div>
+            <div><dt class=""font-semibold text-lg"">AV</dt><dd class=""ml-4 text-gray-700"">Atrioventricular</dd></div>
+            <div><dt class=""font-semibold text-lg"">AVPU</dt><dd class=""ml-4 text-gray-700"">Alert, Responsive to Verbal Stimuli, Responsive to Painful Stimuli, Unresponsive</dd></div>
+            <div><dt class=""font-semibold text-lg"">AXP</dt><dd class=""ml-4 text-gray-700"">Ambulance Exchange Point</dd></div>
+            <div><dt class=""font-semibold text-lg"">BEE</dt><dd class=""ml-4 text-gray-700"">Bioenvironmental Engineering</dd></div>
+            <div><dt class=""font-semibold text-lg"">BGL</dt><dd class=""ml-4 text-gray-700"">Blood Glucose Level</dd></div>
+            <div><dt class=""font-semibold text-lg"">BiPAP</dt><dd class=""ml-4 text-gray-700"">BiLevel Positive Airway Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">BLS</dt><dd class=""ml-4 text-gray-700"">Basic Life Support</dd></div>
+            <div><dt class=""font-semibold text-lg"">BP</dt><dd class=""ml-4 text-gray-700"">Blood Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">Bpm</dt><dd class=""ml-4 text-gray-700"">Beats Per Minute</dd></div>
+            <div><dt class=""font-semibold text-lg"">BRUE</dt><dd class=""ml-4 text-gray-700"">Brief Resolved Unexplained Event</dd></div>
+            <div><dt class=""font-semibold text-lg"">BSA</dt><dd class=""ml-4 text-gray-700"">Body Surface Area</dd></div>
+            <div><dt class=""font-semibold text-lg"">BSI</dt><dd class=""ml-4 text-gray-700"">Body Substance Isolation</dd></div>
+            <div><dt class=""font-semibold text-lg"">BURP</dt><dd class=""ml-4 text-gray-700"">Backwards, Upwards, Rightward Pressure (change in condition, decreased SpO2/vent alarms)</dd></div>
+            <div><dt class=""font-semibold text-lg"">BVM</dt><dd class=""ml-4 text-gray-700"">Bag Valve Mask</dd></div>
+            <div><dt class=""font-semibold text-lg"">CANA</dt><dd class=""ml-4 text-gray-700"">Convulsant Antidote for Nerve Agent</dd></div>
+            <div><dt class=""font-semibold text-lg"">CBRNE</dt><dd class=""ml-4 text-gray-700"">Chemical, Biological, Radiological, Nuclear, High Yield Explosive</dd></div>
+            <div><dt class=""font-semibold text-lg"">cc</dt><dd class=""ml-4 text-gray-700"">cubic centimeter</dd></div>
+            <div><dt class=""font-semibold text-lg"">CCP</dt><dd class=""ml-4 text-gray-700"">Casualty Collection Point</dd></div>
+            <div><dt class=""font-semibold text-lg"">CDC</dt><dd class=""ml-4 text-gray-700"">Center for Disease Control</dd></div>
+            <div><dt class=""font-semibold text-lg"">CEP</dt><dd class=""ml-4 text-gray-700"">Casualty Evacuation Plan</dd></div>
+            <div><dt class=""font-semibold text-lg"">CES</dt><dd class=""ml-4 text-gray-700"">Civil Engineer Squadron</dd></div>
+            <div><dt class=""font-semibold text-lg"">CEW</dt><dd class=""ml-4 text-gray-700"">Conductive Electrical Weapon</dd></div>
+            <div><dt class=""font-semibold text-lg"">CFETP</dt><dd class=""ml-4 text-gray-700"">Career Field Education and Training Plan</dd></div>
+            <div><dt class=""font-semibold text-lg"">CHAPS</dt><dd class=""ml-4 text-gray-700"">Chest Pain, Hypotension, Altered Mental Status, Pulmonary Edema, Signs/Symptoms of Shock</dd></div>
+            <div><dt class=""font-semibold text-lg"">CHF</dt><dd class=""ml-4 text-gray-700"">Congestive Heart Failure</dd></div>
+            <div><dt class=""font-semibold text-lg"">CID</dt><dd class=""ml-4 text-gray-700"">Criminal Investigation Division</dd></div>
+            <div><dt class=""font-semibold text-lg"">cmH2O</dt><dd class=""ml-4 text-gray-700"">centimeters of water</dd></div>
+            <div><dt class=""font-semibold text-lg"">CNS</dt><dd class=""ml-4 text-gray-700"">Central Nervous System</dd></div>
+            <div><dt class=""font-semibold text-lg"">CO</dt><dd class=""ml-4 text-gray-700"">Carbon Monoxide</dd></div>
+            <div><dt class=""font-semibold text-lg"">COPD</dt><dd class=""ml-4 text-gray-700"">Chronic Obstructive Pulmonary Disease</dd></div>
+            <div><dt class=""font-semibold text-lg"">CoTCCC</dt><dd class=""ml-4 text-gray-700"">Committee on Tactical Causality Combat Care</dd></div>
+            <div><dt class=""font-semibold text-lg"">COVID-19</dt><dd class=""ml-4 text-gray-700"">Coronavirus Disease 2019</dd></div>
+            <div><dt class=""font-semibold text-lg"">CP</dt><dd class=""ml-4 text-gray-700"">Chest Pain</dd></div>
+            <div><dt class=""font-semibold text-lg"">CPAP</dt><dd class=""ml-4 text-gray-700"">Continuous Positive Airway Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">CPR</dt><dd class=""ml-4 text-gray-700"">Cardiopulmonary Resuscitation</dd></div>
+            <div><dt class=""font-semibold text-lg"">CPSS</dt><dd class=""ml-4 text-gray-700"">Cincinnati Pre-Hospital Stroke Scale</dd></div>
+            <div><dt class=""font-semibold text-lg"">CSF</dt><dd class=""ml-4 text-gray-700"">Cerebral Spinal Fluid</dd></div>
+            <div><dt class=""font-semibold text-lg"">CSM</dt><dd class=""ml-4 text-gray-700"">Circulation, Sensory, Motor</dd></div>
+            <div><dt class=""font-semibold text-lg"">CVA</dt><dd class=""ml-4 text-gray-700"">Cerebrovascular Accident</dd></div>
+            <div><dt class=""font-semibold text-lg"">CVS</dt><dd class=""ml-4 text-gray-700"">Cardiovascular System</dd></div>
+            <div><dt class=""font-semibold text-lg"">D10W</dt><dd class=""ml-4 text-gray-700"">Dextrose 10% in Water</dd></div>
+            <div><dt class=""font-semibold text-lg"">D50</dt><dd class=""ml-4 text-gray-700"">Dextrose 50%</dd></div>
+            <div><dt class=""font-semibold text-lg"">DBP</dt><dd class=""ml-4 text-gray-700"">Diastolic Blood Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">DCI</dt><dd class=""ml-4 text-gray-700"">Decompression Illness</dd></div>
+            <div><dt class=""font-semibold text-lg"">DCS</dt><dd class=""ml-4 text-gray-700"">Decompression Sickness</dd></div>
+            <div><dt class=""font-semibold text-lg"">DECON</dt><dd class=""ml-4 text-gray-700"">Decontamination</dd></div>
+            <div><dt class=""font-semibold text-lg"">DKA</dt><dd class=""ml-4 text-gray-700"">Diabetic Ketoacidosis</dd></div>
+            <div><dt class=""font-semibold text-lg"">dL</dt><dd class=""ml-4 text-gray-700"">deciliter</dd></div>
+            <div><dt class=""font-semibold text-lg"">DM</dt><dd class=""ml-4 text-gray-700"">Diabetes Mellitus</dd></div>
+            <div><dt class=""font-semibold text-lg"">DMO</dt><dd class=""ml-4 text-gray-700"">Dive Medical Officer</dd></div>
+            <div><dt class=""font-semibold text-lg"">DNI</dt><dd class=""ml-4 text-gray-700"">Do Not Intubate</dd></div>
+            <div><dt class=""font-semibold text-lg"">DNR</dt><dd class=""ml-4 text-gray-700"">Do Not Resuscitate</dd></div>
+            <div><dt class=""font-semibold text-lg"">DOPE</dt><dd class=""ml-4 text-gray-700"">Dislodgement, Obstruction, Pneumothorax, Equipment (vocal cord view)</dd></div>
+            <div><dt class=""font-semibold text-lg"">DUMBBELS</dt><dd class=""ml-4 text-gray-700"">Diarrhea, Urination, Myosis, Bradycardia, Bronchorrhea, Emesis, Lacrimation, Salivation</dd></div>
+            <div><dt class=""font-semibold text-lg"">DVPRS</dt><dd class=""ml-4 text-gray-700"">Defense and Veterans Pain Rating Scale</dd></div>
+            <div><dt class=""font-semibold text-lg"">ECP</dt><dd class=""ml-4 text-gray-700"">Entry Control Point</dd></div>
+            <div><dt class=""font-semibold text-lg"">ED</dt><dd class=""ml-4 text-gray-700"">Emergency Department</dd></div>
+            <div><dt class=""font-semibold text-lg"">E-FAST</dt><dd class=""ml-4 text-gray-700"">Extended Focused Assessment with Sonography in Trauma</dd></div>
+            <div><dt class=""font-semibold text-lg"">EJ</dt><dd class=""ml-4 text-gray-700"">External Jugular</dd></div>
+            <div><dt class=""font-semibold text-lg"">EKG</dt><dd class=""ml-4 text-gray-700"">Electrocardiogram</dd></div>
+            <div><dt class=""font-semibold text-lg"">EM</dt><dd class=""ml-4 text-gray-700"">Emergency Medicine</dd></div>
+            <div><dt class=""font-semibold text-lg"">EMR</dt><dd class=""ml-4 text-gray-700"">Emergency Medical Responder</dd></div>
+            <div><dt class=""font-semibold text-lg"">EMS</dt><dd class=""ml-4 text-gray-700"">Emergency Medical Services</dd></div>
+            <div><dt class=""font-semibold text-lg"">EMT</dt><dd class=""ml-4 text-gray-700"">Emergency Medical Technician</dd></div>
+            <div><dt class=""font-semibold text-lg"">EOD</dt><dd class=""ml-4 text-gray-700"">Explosive Ordnance Disposal</dd></div>
+            <div><dt class=""font-semibold text-lg"">EPAP</dt><dd class=""ml-4 text-gray-700"">Expiratory Positive Airway Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">ePCR</dt><dd class=""ml-4 text-gray-700"">Electronic Patient Care Report</dd></div>
+            <div><dt class=""font-semibold text-lg"">EPU</dt><dd class=""ml-4 text-gray-700"">Emergency Power Unit</dd></div>
+            <div><dt class=""font-semibold text-lg"">ER</dt><dd class=""ml-4 text-gray-700"">Emergency Room</dd></div>
+            <div><dt class=""font-semibold text-lg"">EtCO2</dt><dd class=""ml-4 text-gray-700"">End Tidal CO2</dd></div>
+            <div><dt class=""font-semibold text-lg"">ETI</dt><dd class=""ml-4 text-gray-700"">Endotracheal Intubation</dd></div>
+            <div><dt class=""font-semibold text-lg"">ETT</dt><dd class=""ml-4 text-gray-700"">Endotracheal Tube</dd></div>
+            <div><dt class=""font-semibold text-lg"">F&ES</dt><dd class=""ml-4 text-gray-700"">Fire and Emergency Services</dd></div>
+            <div><dt class=""font-semibold text-lg"">FD</dt><dd class=""ml-4 text-gray-700"">Fire Department</dd></div>
+            <div><dt class=""font-semibold text-lg"">FLACC</dt><dd class=""ml-4 text-gray-700"">Face, Legs, Activity, Cry, Consolability</dd></div>
+            <div><dt class=""font-semibold text-lg"">FS</dt><dd class=""ml-4 text-gray-700"">Flight Surgeon</dd></div>
+            <div><dt class=""font-semibold text-lg"">g</dt><dd class=""ml-4 text-gray-700"">gram</dd></div>
+            <div><dt class=""font-semibold text-lg"">G#P#AB#</dt><dd class=""ml-4 text-gray-700"">Gravida, Para, Abortions (OB History)</dd></div>
+            <div><dt class=""font-semibold text-lg"">GCS</dt><dd class=""ml-4 text-gray-700"">Glasgow Coma Scale</dd></div>
+            <div><dt class=""font-semibold text-lg"">GEMS</dt><dd class=""ml-4 text-gray-700"">Ground Emergency Medical Service</dd></div>
+            <div><dt class=""font-semibold text-lg"">GI</dt><dd class=""ml-4 text-gray-700"">Gastrointestinal</dd></div>
+            <div><dt class=""font-semibold text-lg"">GPS</dt><dd class=""ml-4 text-gray-700"">Global Positioning System</dd></div>
+            <div><dt class=""font-semibold text-lg"">gtt</dt><dd class=""ml-4 text-gray-700"">guttae (Latin for “drop”)</dd></div>
+            <div><dt class=""font-semibold text-lg"">H’s & T’s</dt><dd class=""ml-4 text-gray-700"">Hypovolemia, Hypoxia, Hydrogen ion (acidosis), Hypo/Hyperkalemia, Hypothermia, Tension Pneumothorax, Tamponade (cardiac), Toxins, Thrombosis (pulmonary), Thrombosis (coronary)</dd></div>
+            <div><dt class=""font-semibold text-lg"">H2O</dt><dd class=""ml-4 text-gray-700"">Water</dd></div>
+            <div><dt class=""font-semibold text-lg"">HACE</dt><dd class=""ml-4 text-gray-700"">High Altitude Cerebral Edema</dd></div>
+            <div><dt class=""font-semibold text-lg"">HAPE</dt><dd class=""ml-4 text-gray-700"">High Altitude Pulmonary Edema</dd></div>
+            <div><dt class=""font-semibold text-lg"">HAZMAT</dt><dd class=""ml-4 text-gray-700"">Hazardous Material</dd></div>
+            <div><dt class=""font-semibold text-lg"">HDL</dt><dd class=""ml-4 text-gray-700"">Hyperlipidemia</dd></div>
+            <div><dt class=""font-semibold text-lg"">HEMS</dt><dd class=""ml-4 text-gray-700"">Helicopter Emergency Medical Service</dd></div>
+            <div><dt class=""font-semibold text-lg"">HEPA</dt><dd class=""ml-4 text-gray-700"">High Efficiency Particulate Air</dd></div>
+            <div><dt class=""font-semibold text-lg"">HFNC</dt><dd class=""ml-4 text-gray-700"">High Flow Nasal Cannula</dd></div>
+            <div><dt class=""font-semibold text-lg"">HIV</dt><dd class=""ml-4 text-gray-700"">Human Immunodeficiency Virus</dd></div>
+            <div><dt class=""font-semibold text-lg"">HLZ</dt><dd class=""ml-4 text-gray-700"">Helicopter Landing Zone</dd></div>
+            <div><dt class=""font-semibold text-lg"">HPMK</dt><dd class=""ml-4 text-gray-700"">Hypothermia Prevention and Management Kit</dd></div>
+            <div><dt class=""font-semibold text-lg"">hr</dt><dd class=""ml-4 text-gray-700"">hour</dd></div>
+            <div><dt class=""font-semibold text-lg"">HR</dt><dd class=""ml-4 text-gray-700"">Heart Rate</dd></div>
+            <div><dt class=""font-semibold text-lg"">HTN</dt><dd class=""ml-4 text-gray-700"">Hypertension</dd></div>
+            <div><dt class=""font-semibold text-lg"">Hx</dt><dd class=""ml-4 text-gray-700"">History</dd></div>
+            <div><dt class=""font-semibold text-lg"">IAW</dt><dd class=""ml-4 text-gray-700"">In Accordance With</dd></div>
+            <div><dt class=""font-semibold text-lg"">IC</dt><dd class=""ml-4 text-gray-700"">Incident Commander</dd></div>
+            <div><dt class=""font-semibold text-lg"">ICH</dt><dd class=""ml-4 text-gray-700"">Intracerebral Brain Hemorrhage</dd></div>
+            <div><dt class=""font-semibold text-lg"">ICP</dt><dd class=""ml-4 text-gray-700"">Intracranial Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">ICS</dt><dd class=""ml-4 text-gray-700"">Intercostal Space</dd></div>
+            <div><dt class=""font-semibold text-lg"">IDMT</dt><dd class=""ml-4 text-gray-700"">Independent Duty Medical Technician</dd></div>
+            <div><dt class=""font-semibold text-lg"">IFT</dt><dd class=""ml-4 text-gray-700"">Interfacility Transport</dd></div>
+            <div><dt class=""font-semibold text-lg"">ILCOR</dt><dd class=""ml-4 text-gray-700"">International Liaison Committee on Resuscitation</dd></div>
+            <div><dt class=""font-semibold text-lg"">IM</dt><dd class=""ml-4 text-gray-700"">Intramuscular</dd></div>
+            <div><dt class=""font-semibold text-lg"">IN</dt><dd class=""ml-4 text-gray-700"">Intranasal</dd></div>
+            <div><dt class=""font-semibold text-lg"">IO</dt><dd class=""ml-4 text-gray-700"">Intraosseous</dd></div>
+            <div><dt class=""font-semibold text-lg"">IPAP</dt><dd class=""ml-4 text-gray-700"">Inspiratory Positive Airway Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">ISR</dt><dd class=""ml-4 text-gray-700"">Institute for Surgical Research</dd></div>
+            <div><dt class=""font-semibold text-lg"">IU</dt><dd class=""ml-4 text-gray-700"">International Unit</dd></div>
+            <div><dt class=""font-semibold text-lg"">IV</dt><dd class=""ml-4 text-gray-700"">Intravenous</dd></div>
+            <div><dt class=""font-semibold text-lg"">J</dt><dd class=""ml-4 text-gray-700"">Joules</dd></div>
+            <div><dt class=""font-semibold text-lg"">JVD</dt><dd class=""ml-4 text-gray-700"">Jugular Vein Distention</dd></div>
+            <div><dt class=""font-semibold text-lg"">KED</dt><dd class=""ml-4 text-gray-700"">Kendrick Extrication Device</dd></div>
+            <div><dt class=""font-semibold text-lg"">Kg</dt><dd class=""ml-4 text-gray-700"">Kilogram</dd></div>
+            <div><dt class=""font-semibold text-lg"">KIA</dt><dd class=""ml-4 text-gray-700"">Killed in Action</dd></div>
+            <div><dt class=""font-semibold text-lg"">Kx</dt><dd class=""ml-4 text-gray-700"">Knowledge Exchange</dd></div>
+            <div><dt class=""font-semibold text-lg"">L</dt><dd class=""ml-4 text-gray-700"">Litter</dd></div>
+            <div><dt class=""font-semibold text-lg"">LBBB</dt><dd class=""ml-4 text-gray-700"">Left Bundle Branch Block</dd></div>
+            <div><dt class=""font-semibold text-lg"">LBS</dt><dd class=""ml-4 text-gray-700"">Long Spine Board</dd></div>
+            <div><dt class=""font-semibold text-lg"">LE</dt><dd class=""ml-4 text-gray-700"">Law Enforcement</dd></div>
+            <div><dt class=""font-semibold text-lg"">LEMON</dt><dd class=""ml-4 text-gray-700"">Look, Evaluate (3-3-2), Mallampati, Obstruction/Obesity, Neck Rigidity (Difficult Laryngoscopy)</dd></div>
+            <div><dt class=""font-semibold text-lg"">LLL</dt><dd class=""ml-4 text-gray-700"">Left Lower Lobe</dd></div>
+            <div><dt class=""font-semibold text-lg"">LMA</dt><dd class=""ml-4 text-gray-700"">Laryngeal Mask Airway</dd></div>
+            <div><dt class=""font-semibold text-lg"">LMP</dt><dd class=""ml-4 text-gray-700"">Last Menstrual Period</dd></div>
+            <div><dt class=""font-semibold text-lg"">LOC</dt><dd class=""ml-4 text-gray-700"">Level of Consciousness</dd></div>
+            <div><dt class=""font-semibold text-lg"">LPM</dt><dd class=""ml-4 text-gray-700"">Liters Per Minute</dd></div>
+            <div><dt class=""font-semibold text-lg"">LR</dt><dd class=""ml-4 text-gray-700"">Lactated Ringers</dd></div>
+            <div><dt class=""font-semibold text-lg"">LSI</dt><dd class=""ml-4 text-gray-700"">Life Saving Intervention</dd></div>
+            <div><dt class=""font-semibold text-lg"">LUQ</dt><dd class=""ml-4 text-gray-700"">Left Upper Quadrant</dd></div>
+            <div><dt class=""font-semibold text-lg"">LVH</dt><dd class=""ml-4 text-gray-700"">Left Ventricular Hypertrophy</dd></div>
+            <div><dt class=""font-semibold text-lg"">LVO</dt><dd class=""ml-4 text-gray-700"">Large Vessel Occlusion</dd></div>
+            <div><dt class=""font-semibold text-lg"">LZ</dt><dd class=""ml-4 text-gray-700"">Landing Zone</dd></div>
+            <div><dt class=""font-semibold text-lg"">mA</dt><dd class=""ml-4 text-gray-700"">milliampere</dd></div>
+            <div><dt class=""font-semibold text-lg"">MACE</dt><dd class=""ml-4 text-gray-700"">Military Acute Concussion Evaluation</dd></div>
+            <div><dt class=""font-semibold text-lg"">MAOI</dt><dd class=""ml-4 text-gray-700"">Monoamine Oxidase Inhibitors</dd></div>
+            <div><dt class=""font-semibold text-lg"">MAP</dt><dd class=""ml-4 text-gray-700"">Mean Arterial Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">MARCH - PAWS</dt><dd class=""ml-4 text-gray-700"">Massive Hemorrhage, Airway/AVPU, Respiration, Circulation, Hypothermia/Head – Pain, Antibiotics, Wounds, Splints</dd></div>
+            <div><dt class=""font-semibold text-lg"">MC</dt><dd class=""ml-4 text-gray-700"">Medical Corps</dd></div>
+            <div><dt class=""font-semibold text-lg"">mcg</dt><dd class=""ml-4 text-gray-700"">microgram</dd></div>
+            <div><dt class=""font-semibold text-lg"">MCI</dt><dd class=""ml-4 text-gray-700"">Mass Casualty Incident</dd></div>
+            <div><dt class=""font-semibold text-lg"">MDI</dt><dd class=""ml-4 text-gray-700"">Metered-dose Inhaler</dd></div>
+            <div><dt class=""font-semibold text-lg"">mEq</dt><dd class=""ml-4 text-gray-700"">milliequivalent</dd></div>
+            <div><dt class=""font-semibold text-lg"">MERS</dt><dd class=""ml-4 text-gray-700"">Middle East Respiratory Syndrome</dd></div>
+            <div><dt class=""font-semibold text-lg"">mg</dt><dd class=""ml-4 text-gray-700"">milligram</dd></div>
+            <div><dt class=""font-semibold text-lg"">MI</dt><dd class=""ml-4 text-gray-700"">Myocardial Infarction</dd></div>
+            <div><dt class=""font-semibold text-lg"">min</dt><dd class=""ml-4 text-gray-700"">Minute</dd></div>
+            <div><dt class=""font-semibold text-lg"">Misc</dt><dd class=""ml-4 text-gray-700"">Miscellaneous</dd></div>
+            <div><dt class=""font-semibold text-lg"">mL</dt><dd class=""ml-4 text-gray-700"">milliliter</dd></div>
+            <div><dt class=""font-semibold text-lg"">mmHg</dt><dd class=""ml-4 text-gray-700"">Millimeters of Mercury</dd></div>
+            <div><dt class=""font-semibold text-lg"">MOANS</dt><dd class=""ml-4 text-gray-700"">Mask Seal, Obesity/Obstruction, Age > 55, No Teeth, Sleep Apnea/Stiff Lungs (difficult BVM seal)</dd></div>
+            <div><dt class=""font-semibold text-lg"">MODS</dt><dd class=""ml-4 text-gray-700"">Multi-organ Dysfunction Syndrome</dd></div>
+            <div><dt class=""font-semibold text-lg"">MOI</dt><dd class=""ml-4 text-gray-700"">Mechanism of Injury</dd></div>
+            <div><dt class=""font-semibold text-lg"">MP</dt><dd class=""ml-4 text-gray-700"">Military Police</dd></div>
+            <div><dt class=""font-semibold text-lg"">mph</dt><dd class=""ml-4 text-gray-700"">miles per hour</dd></div>
+            <div><dt class=""font-semibold text-lg"">MR SOPA</dt><dd class=""ml-4 text-gray-700"">(M) Mask Seal/adjust Mask, (R) Reposition head/airway – if not effective – (S) Suction mouth then nose, (O) Open mouth and Lift Jaw Forward, (P) Unable to perform pre-hospital, (A) Consider LMA insertion</dd></div>
+            <div><dt class=""font-semibold text-lg"">MSDS</dt><dd class=""ml-4 text-gray-700"">Material Safety Data Sheet</dd></div>
+            <div><dt class=""font-semibold text-lg"">MTF</dt><dd class=""ml-4 text-gray-700"">Military Treatment Facility</dd></div>
+            <div><dt class=""font-semibold text-lg"">MVC</dt><dd class=""ml-4 text-gray-700"">Motor Vehicle Collision</dd></div>
+            <div><dt class=""font-semibold text-lg"">N/V</dt><dd class=""ml-4 text-gray-700"">Nausea/Vomiting</dd></div>
+            <div><dt class=""font-semibold text-lg"">NAAK</dt><dd class=""ml-4 text-gray-700"">Nerve Agent Antidote Kit (Mark I Kit)</dd></div>
+            <div><dt class=""font-semibold text-lg"">NASA</dt><dd class=""ml-4 text-gray-700"">National Aeronautics and Space Administration</dd></div>
+            <div><dt class=""font-semibold text-lg"">NC</dt><dd class=""ml-4 text-gray-700"">Nasal Cannula</dd></div>
+            <div><dt class=""font-semibold text-lg"">NG</dt><dd class=""ml-4 text-gray-700"">Nasogastric</dd></div>
+            <div><dt class=""font-semibold text-lg"">NHTSA</dt><dd class=""ml-4 text-gray-700"">National Highway Traffic Safety Administration</dd></div>
+            <div><dt class=""font-semibold text-lg"">NIBP</dt><dd class=""ml-4 text-gray-700"">Non-Invasive Blood Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">NICU</dt><dd class=""ml-4 text-gray-700"">Neonatal Intensive Care Unit</dd></div>
+            <div><dt class=""font-semibold text-lg"">NPA</dt><dd class=""ml-4 text-gray-700"">Nasopharyngeal Airway</dd></div>
+            <div><dt class=""font-semibold text-lg"">NRAEMT</dt><dd class=""ml-4 text-gray-700"">Nationally Registered Advanced Emergency Medical Technician</dd></div>
+            <div><dt class=""font-semibold text-lg"">NRB</dt><dd class=""ml-4 text-gray-700"">Non-rebreather Mask</dd></div>
+            <div><dt class=""font-semibold text-lg"">NREMR</dt><dd class=""ml-4 text-gray-700"">Nationally Registered Emergency Medical Responder</dd></div>
+            <div><dt class=""font-semibold text-lg"">NREMT</dt><dd class=""ml-4 text-gray-700"">Nationally Registered Emergency Medical Technician</dd></div>
+            <div><dt class=""font-semibold text-lg"">NRP</dt><dd class=""ml-4 text-gray-700"">Nationally Registered Paramedic</dd></div>
+            <div><dt class=""font-semibold text-lg"">NRS</dt><dd class=""ml-4 text-gray-700"">Numeric Rating Scale</dd></div>
+            <div><dt class=""font-semibold text-lg"">NS</dt><dd class=""ml-4 text-gray-700"">Normal Saline</dd></div>
+            <div><dt class=""font-semibold text-lg"">NTG</dt><dd class=""ml-4 text-gray-700"">Nitroglycerine</dd></div>
+            <div><dt class=""font-semibold text-lg"">O2</dt><dd class=""ml-4 text-gray-700"">Oxygen</dd></div>
+            <div><dt class=""font-semibold text-lg"">O&M</dt><dd class=""ml-4 text-gray-700"">Operations and Maintenance</dd></div>
+            <div><dt class=""font-semibold text-lg"">OB/Gyn</dt><dd class=""ml-4 text-gray-700"">Obstetrics and Gynecology</dd></div>
+            <div><dt class=""font-semibold text-lg"">OC Spray</dt><dd class=""ml-4 text-gray-700"">Oleoresin Capsicum (Pepper Spray)</dd></div>
+            <div><dt class=""font-semibold text-lg"">OD</dt><dd class=""ml-4 text-gray-700"">Overdose</dd></div>
+            <div><dt class=""font-semibold text-lg"">ODT</dt><dd class=""ml-4 text-gray-700"">Oral Disintegrating Tablet</dd></div>
+            <div><dt class=""font-semibold text-lg"">OG</dt><dd class=""ml-4 text-gray-700"">Orogastric</dd></div>
+            <div><dt class=""font-semibold text-lg"">OLMC</dt><dd class=""ml-4 text-gray-700"">On-Line Medical Control</dd></div>
+            <div><dt class=""font-semibold text-lg"">OLMD</dt><dd class=""ml-4 text-gray-700"">On-Line Medical Direction</dd></div>
+            <div><dt class=""font-semibold text-lg"">OPA</dt><dd class=""ml-4 text-gray-700"">Oral Pharyngeal Airway</dd></div>
+            <div><dt class=""font-semibold text-lg"">OPQRST</dt><dd class=""ml-4 text-gray-700"">Onset, Provocation, Quality, Radiation, Severity, Time</dd></div>
+            <div><dt class=""font-semibold text-lg"">OSI</dt><dd class=""ml-4 text-gray-700"">Office of Special Investigations</dd></div>
+            <div><dt class=""font-semibold text-lg"">OTFC</dt><dd class=""ml-4 text-gray-700"">Oral Transmucosal Fentanyl Citrate</dd></div>
+            <div><dt class=""font-semibold text-lg"">PACE Plan</dt><dd class=""ml-4 text-gray-700"">Primary, Alternate, Contingency, Emergency (for HLZ operations)</dd></div>
+            <div><dt class=""font-semibold text-lg"">PALS</dt><dd class=""ml-4 text-gray-700"">Pediatric Advanced Life Support</dd></div>
+            <div><dt class=""font-semibold text-lg"">PCI</dt><dd class=""ml-4 text-gray-700"">Percutaneous Coronary Intervention</dd></div>
+            <div><dt class=""font-semibold text-lg"">PCR</dt><dd class=""ml-4 text-gray-700"">Patient Care Report</dd></div>
+            <div><dt class=""font-semibold text-lg"">PD</dt><dd class=""ml-4 text-gray-700"">Peritoneal Dialysis</dd></div>
+            <div><dt class=""font-semibold text-lg"">PE</dt><dd class=""ml-4 text-gray-700"">Pulmonary Embolism</dd></div>
+            <div><dt class=""font-semibold text-lg"">PEA</dt><dd class=""ml-4 text-gray-700"">Pulseless Electrical Activity</dd></div>
+            <div><dt class=""font-semibold text-lg"">PEEP</dt><dd class=""ml-4 text-gray-700"">Positive End-Expiratory Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">PGCS</dt><dd class=""ml-4 text-gray-700"">Pediatric Glasgow Coma Scale</dd></div>
+            <div><dt class=""font-semibold text-lg"">PICC</dt><dd class=""ml-4 text-gray-700"">Peripherally Inserted Central Catheter</dd></div>
+            <div><dt class=""font-semibold text-lg"">PMHx</dt><dd class=""ml-4 text-gray-700"">Past Medical History</dd></div>
+            <div><dt class=""font-semibold text-lg"">PO</dt><dd class=""ml-4 text-gray-700"">per os (Latin for “by mouth”) (oral administration)</dd></div>
+            <div><dt class=""font-semibold text-lg"">POL</dt><dd class=""ml-4 text-gray-700"">Petroleum, Oil and Lubricants</dd></div>
+            <div><dt class=""font-semibold text-lg"">PPE</dt><dd class=""ml-4 text-gray-700"">Personal Protective Equipment</dd></div>
+            <div><dt class=""font-semibold text-lg"">PPM CO</dt><dd class=""ml-4 text-gray-700"">Parts per Million Carbon Monoxide measurement</dd></div>
+            <div><dt class=""font-semibold text-lg"">PR</dt><dd class=""ml-4 text-gray-700"">Per Rectum</dd></div>
+            <div><dt class=""font-semibold text-lg"">PRN</dt><dd class=""ml-4 text-gray-700"">Pro re nata (Latin for “when necessary”) and/or As needed</dd></div>
+            <div><dt class=""font-semibold text-lg"">Pt</dt><dd class=""ml-4 text-gray-700"">Patient</dd></div>
+            <div><dt class=""font-semibold text-lg"">q</dt><dd class=""ml-4 text-gray-700"">quaque (Latin for “every”)</dd></div>
+            <div><dt class=""font-semibold text-lg"">Resp</dt><dd class=""ml-4 text-gray-700"">Respiratory</dd></div>
+            <div><dt class=""font-semibold text-lg"">RLL</dt><dd class=""ml-4 text-gray-700"">Right Lower Lobe</dd></div>
+            <div><dt class=""font-semibold text-lg"">RLQ</dt><dd class=""ml-4 text-gray-700"">Right Lower Quadrant</dd></div>
+            <div><dt class=""font-semibold text-lg"">RN</dt><dd class=""ml-4 text-gray-700"">Registered Nurse</dd></div>
+            <div><dt class=""font-semibold text-lg"">RODS</dt><dd class=""ml-4 text-gray-700"">Restricted Mouth Opening, Obstruction, Disrupted/Distorted Airway, Still Lung/Cervical Spine (difficult extraglottic device)</dd></div>
+            <div><dt class=""font-semibold text-lg"">ROSC</dt><dd class=""ml-4 text-gray-700"">Return of Spontaneous Circulation</dd></div>
+            <div><dt class=""font-semibold text-lg"">RR</dt><dd class=""ml-4 text-gray-700"">Respiratory Rate</dd></div>
+            <div><dt class=""font-semibold text-lg"">RSI</dt><dd class=""ml-4 text-gray-700"">Rapid Sequence Induction</dd></div>
+            <div><dt class=""font-semibold text-lg"">RSI</dt><dd class=""ml-4 text-gray-700"">Rapid Sequence Intubation</dd></div>
+            <div><dt class=""font-semibold text-lg"">RT</dt><dd class=""ml-4 text-gray-700"">Respiratory Therapist (Respiratory Care Practioner)</dd></div>
+            <div><dt class=""font-semibold text-lg"">RUQ</dt><dd class=""ml-4 text-gray-700"">Right Upper Quadrant</dd></div>
+            <div><dt class=""font-semibold text-lg"">S&S (S/Sx)</dt><dd class=""ml-4 text-gray-700"">Signs and symptoms</dd></div>
+            <div><dt class=""font-semibold text-lg"">SAMPLE</dt><dd class=""ml-4 text-gray-700"">Symptoms, Allergies, Medications, Previous medical history, Last meal, Events preceding</dd></div>
+            <div><dt class=""font-semibold text-lg"">SARS</dt><dd class=""ml-4 text-gray-700"">Severe Acute Respiratory Syndrome</dd></div>
+            <div><dt class=""font-semibold text-lg"">SBP</dt><dd class=""ml-4 text-gray-700"">Systolic Blood Pressure</dd></div>
+            <div><dt class=""font-semibold text-lg"">SCBA/SAR</dt><dd class=""ml-4 text-gray-700"">Self-contained Breathing Apparatus/Supplied Air Respirator</dd></div>
+            <div><dt class=""font-semibold text-lg"">SCT</dt><dd class=""ml-4 text-gray-700"">Specialty Care Transport</dd></div>
+            <div><dt class=""font-semibold text-lg"">SCUBA</dt><dd class=""ml-4 text-gray-700"">Self-Contained Underwater Breathing Apparatus</dd></div>
+            <div><dt class=""font-semibold text-lg"">SDS</dt><dd class=""ml-4 text-gray-700"">Safety Data Sheet</dd></div>
+            <div><dt class=""font-semibold text-lg"">Sec</dt><dd class=""ml-4 text-gray-700"">Seconds</dd></div>
+            <div><dt class=""font-semibold text-lg"">SF</dt><dd class=""ml-4 text-gray-700"">Security Forces</dd></div>
+            <div><dt class=""font-semibold text-lg"">SF 600</dt><dd class=""ml-4 text-gray-700"">Standard Form 600</dd></div>
+            <div><dt class=""font-semibold text-lg"">SFS</dt><dd class=""ml-4 text-gray-700"">Security Forces Squadron</dd></div>
+            <div><dt class=""font-semibold text-lg"">SFS</dt><dd class=""ml-4 text-gray-700"">Senior Flight Surgeon</dd></div>
+            <div><dt class=""font-semibold text-lg"">SG</dt><dd class=""ml-4 text-gray-700"">Surgeon General</dd></div>
+            <div><dt class=""font-semibold text-lg"">SGA</dt><dd class=""ml-4 text-gray-700"">Supraglottic Airway</dd></div>
+            <div><dt class=""font-semibold text-lg"">SHORT</dt><dd class=""ml-4 text-gray-700"">Surgery/scars (other obstruction), Hematoma (infection/abscess/mass), Obesity, Radiation distortion (deformity), Tumor (difficult cricothyroidotomy)</dd></div>
+            <div><dt class=""font-semibold text-lg"">SI/HI</dt><dd class=""ml-4 text-gray-700"">Suicidal Ideations/Homicidal Ideations</dd></div>
+            <div><dt class=""font-semibold text-lg"">SIRS</dt><dd class=""ml-4 text-gray-700"">Systemic Inflammatory Response Syndrome</dd></div>
+            <div><dt class=""font-semibold text-lg"">SJA</dt><dd class=""ml-4 text-gray-700"">Staff Judge Advocate</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL</dt><dd class=""ml-4 text-gray-700"">Skill Level</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL</dt><dd class=""ml-4 text-gray-700"">Sublingual</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL 1</dt><dd class=""ml-4 text-gray-700"">EMR</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL 2</dt><dd class=""ml-4 text-gray-700"">F&ES EMT</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL 3</dt><dd class=""ml-4 text-gray-700"">AEMT / 68W EMT / 4N EMT</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL 4</dt><dd class=""ml-4 text-gray-700"">NRP</dd></div>
+            <div><dt class=""font-semibold text-lg"">SL 5</dt><dd class=""ml-4 text-gray-700"">Army Paramedic Supervisor</dd></div>
+            <div><dt class=""font-semibold text-lg"">SLUDGE</dt><dd class=""ml-4 text-gray-700"">Salivation, Lacrimation, Urination Defecation, GI Upset, Emesis</dd></div>
+            <div><dt class=""font-semibold text-lg"">SMR</dt><dd class=""ml-4 text-gray-700"">Spinal Motion Restriction</dd></div>
+            <div><dt class=""font-semibold text-lg"">SOB</dt><dd class=""ml-4 text-gray-700"">Shortness of Breath</dd></div>
+            <div><dt class=""font-semibold text-lg"">SpCO</dt><dd class=""ml-4 text-gray-700"">Carbon Monoxide measurement</dd></div>
+            <div><dt class=""font-semibold text-lg"">SpHb</dt><dd class=""ml-4 text-gray-700"">Hemoglobin Measurement</dd></div>
+            <div><dt class=""font-semibold text-lg"">SpO2</dt><dd class=""ml-4 text-gray-700"">Pulse Oximetry (Oxygen)</dd></div>
+            <div><dt class=""font-semibold text-lg"">SQ Port</dt><dd class=""ml-4 text-gray-700"">Subcutaneous Port</dd></div>
+            <div><dt class=""font-semibold text-lg"">STEMI</dt><dd class=""ml-4 text-gray-700"">ST-Elevation Myocardial Infarction</dd></div>
+            <div><dt class=""font-semibold text-lg"">SurgHX</dt><dd class=""ml-4 text-gray-700"">Surgical History</dd></div>
+            <div><dt class=""font-semibold text-lg"">SVT</dt><dd class=""ml-4 text-gray-700"">Supraventricular Tachycardia</dd></div>
+            <div><dt class=""font-semibold text-lg"">Sx</dt><dd class=""ml-4 text-gray-700"">Symptoms</dd></div>
+            <div><dt class=""font-semibold text-lg"">TB</dt><dd class=""ml-4 text-gray-700"">Tuberculosis</dd></div>
+            <div><dt class=""font-semibold text-lg"">TBI</dt><dd class=""ml-4 text-gray-700"">Traumatic Brain Injury</dd></div>
+            <div><dt class=""font-semibold text-lg"">TBSA</dt><dd class=""ml-4 text-gray-700"">Total Body Surface Area</dd></div>
+            <div><dt class=""font-semibold text-lg"">TCA</dt><dd class=""ml-4 text-gray-700"">Tricyclic Antidepressant</dd></div>
+            <div><dt class=""font-semibold text-lg"">TCCC</dt><dd class=""ml-4 text-gray-700"">Tactical Casualty Combat Care</dd></div>
+            <div><dt class=""font-semibold text-lg"">TIA</dt><dd class=""ml-4 text-gray-700"">Transient Ischemic Attack</dd></div>
+            <div><dt class=""font-semibold text-lg"">TQ</dt><dd class=""ml-4 text-gray-700"">Tourniquet</dd></div>
+            <div><dt class=""font-semibold text-lg"">Triage - SALT</dt><dd class=""ml-4 text-gray-700"">Sort, Assess, Life-saving Interventions, Treatment/Transport</dd></div>
+            <div><dt class=""font-semibold text-lg"">Triage - START</dt><dd class=""ml-4 text-gray-700"">Simple Triage and Rapid Transport</dd></div>
+            <div><dt class=""font-semibold text-lg"">Triage – JumpSTART</dt><dd class=""ml-4 text-gray-700"">Simple Triage and Rapid Transport (used for pediatric mass casualty incident)</dd></div>
+            <div><dt class=""font-semibold text-lg"">Tx</dt><dd class=""ml-4 text-gray-700"">Treatment</dd></div>
+            <div><dt class=""font-semibold text-lg"">TXA</dt><dd class=""ml-4 text-gray-700"">Tranexamic Acid</dd></div>
+            <div><dt class=""font-semibold text-lg"">USA</dt><dd class=""ml-4 text-gray-700"">United States Army</dd></div>
+            <div><dt class=""font-semibold text-lg"">USAF</dt><dd class=""ml-4 text-gray-700"">United States Air Force</dd></div>
+            <div><dt class=""font-semibold text-lg"">USAISR</dt><dd class=""ml-4 text-gray-700"">U.S. Army Institute of Surgical Research</dd></div>
+            <div><dt class=""font-semibold text-lg"">VAN Stroke Exam</dt><dd class=""ml-4 text-gray-700"">Vision, Aphasia, Neglect</dd></div>
+            <div><dt class=""font-semibold text-lg"">VF</dt><dd class=""ml-4 text-gray-700"">Ventricular Fibrillation</dd></div>
+            <div><dt class=""font-semibold text-lg"">V-fib</dt><dd class=""ml-4 text-gray-700"">Ventricular Fibrillation</dd></div>
+            <div><dt class=""font-semibold text-lg"">VS</dt><dd class=""ml-4 text-gray-700"">Vital Signs</dd></div>
+            <div><dt class=""font-semibold text-lg"">VT</dt><dd class=""ml-4 text-gray-700"">Ventricular Tachycardia</dd></div>
+            <div><dt class=""font-semibold text-lg"">V-tach</dt><dd class=""ml-4 text-gray-700"">Ventricular Tachycardia</dd></div>
+            <div><dt class=""font-semibold text-lg"">W/WO</dt><dd class=""ml-4 text-gray-700"">With/Without</dd></div>
+            <div><dt class=""font-semibold text-lg"">WB</dt><dd class=""ml-4 text-gray-700"">Whole Blood</dd></div>
+            <div><dt class=""font-semibold text-lg"">WPW</dt><dd class=""ml-4 text-gray-700"">Wolff-Parkinson-White</dd></div>
+            <div><dt class=""font-semibold text-lg"">x</dt><dd class=""ml-4 text-gray-700"">Times</dd></div>
+        </dl>"
 MEDICATIONS,Drug Bag Email,"Below is from the Major overseeing the pharmacy. I am providing to you for your awareness, like every fire department around documentation is paramount. 
  
 There must be a paper trail.
